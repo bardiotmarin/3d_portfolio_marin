@@ -16,7 +16,6 @@ const LanguageSelector = () => {
       <select id="language-select" onChange={changeLanguage}>
         <option value="en">English</option>
         <option value="fr">Français</option>
-        {/* Add more language options if needed */}
       </select>
     </div>
   );

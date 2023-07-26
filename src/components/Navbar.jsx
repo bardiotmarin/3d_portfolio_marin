@@ -45,7 +45,7 @@ const Navbar = () => {
       window.removeEventListener("scroll", navbarHighlighter);
     };
   }, []);
-
+ 
   return (
     <nav
       className={`${
