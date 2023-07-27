@@ -1,11 +1,11 @@
 Model Information:
-* title:	Exoplanet SG10446623
-* source:	https://sketchfab.com/3d-models/exoplanet-sg10446623-128ba361498049e9b12baede75bf7b5a
-* author:	tamminen (https://sketchfab.com/tamminen)
+* title:	Run The Jewels to Another Diminsion
+* source:	https://sketchfab.com/3d-models/run-the-jewels-to-another-diminsion-27fa63bbf49140f4937d43aad0e910ff
+* author:	liltreasont (https://sketchfab.com/liltreasont)
 
 Model License:
-* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
-* requirements:	Author must be credited. Commercial use is allowed.
+* license type:	CC-BY-NC-SA-4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)
+* requirements:	Author must be credited. No commercial use. Modified versions must have the same license.
 
 If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
-This work is based on "Exoplanet SG10446623" (https://sketchfab.com/3d-models/exoplanet-sg10446623-128ba361498049e9b12baede75bf7b5a) by tamminen (https://sketchfab.com/tamminen) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+This work is based on "Run The Jewels to Another Diminsion" (https://sketchfab.com/3d-models/run-the-jewels-to-another-diminsion-27fa63bbf49140f4937d43aad0e910ff) by liltreasont (https://sketchfab.com/liltreasont) licensed under CC-BY-NC-SA-4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)

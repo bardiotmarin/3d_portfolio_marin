@@ -8,10 +8,12 @@ import { useTranslation } from "react-i18next";
 
 
 
-const Hero = () => {
-  const { t } = useTranslation();
 
+const Hero = () => {
+  const { t } = useTranslation(); 
+  
   return (
+    
     <section className={`relative w-full h-screen mx-auto`}>
       <div
         className={`absolute inset-0 top-[120px] max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
@@ -23,7 +25,7 @@ const Hero = () => {
 
         <div>
           <h1 className={`${styles.heroHeadText} text-white`}>
-          {t("hello")}, Je suis <span className="text-[#915EFF]">Marin</span>
+          {t('hello')},{t('iam')}  <span className="text-[#915EFF]">Marin</span>
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
             Je developpe <br className="sm:block hidden" />

@@ -1,19 +1,11 @@
 import { BrowserRouter } from "react-router-dom";
-import "./i18n";
-import LanguageSelector from "./components/LanguageSelector"; // Importez le composant LanguageSelector
-import {
-  About,
-  Contact,
-  Experience,
-  Feedbacks,
-  Hero,
-  Navbar,
-  Tech,
-  Works,
-  StarsCanvas,
-} from "./components";
+import { Suspense } from 'react';
+import { useTranslation } from 'react-i18next'; // Import the useTranslation hook
+import { About, Contact, Experience, Hero, Navbar, Tech, Works, StarsCanvas } from "./components";
 
 const App = () => {
+  const { t } = useTranslation(); // Use the useTranslation hook to access translations
+
   return (
     <BrowserRouter>
       <div className="relative z-0 bg-primary">
@@ -25,7 +17,6 @@ const App = () => {
         <Experience />
         <Tech />
         <Works />
-        <Feedbacks />
         <div className="relative z-0">
           <Contact />
           <StarsCanvas />

@@ -1,23 +1,21 @@
-// LanguageSelector.jsx
 import React from "react";
-import { useTranslation } from "react-i18next";
+import i18next from "i18next";
 
 const LanguageSelector = () => {
-  const { i18n } = useTranslation();
-
   const changeLanguage = (event) => {
     const selectedLanguage = event.target.value;
-    i18n.changeLanguage(selectedLanguage);
+    i18next.changeLanguage(selectedLanguage);
   };
 
   return (
-    <div>
-      <label htmlFor="language-select">Select Language:</label>
-      <select id="language-select" onChange={changeLanguage}>
-        <option value="en">English</option>
-        <option value="fr">Français</option>
-      </select>
-    </div>
+    <select
+      className="text-white font-medium cursor-pointer bg-transparent border-none outline-none appearance-none"
+      onChange={changeLanguage}
+    >
+      <option value="fr">FR</option>
+      <option value="en">EN</option>
+      {/* Ajoutez d'autres options pour chaque langue prise en charge */}
+    </select>
   );
 };
 

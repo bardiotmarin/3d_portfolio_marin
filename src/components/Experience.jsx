@@ -46,9 +46,23 @@ const ExperienceCard = ({ experience }) => {
         {experience.points.map((point, index) => (
           <li
             key={`experience-point-${index}`}
-            className="text-white-100 text-[14px] pl-1 tracking-wider"
+            className="text-white-500 text-[14px] pl-1 tracking-wider"
           >
             {point}
+            {experience.subPoints &&
+              experience.subPoints[index] &&
+              experience.subPoints[index].length > 0 && (
+                <ul className="ml-5 list-disc space-y-2">
+                  {experience.subPoints[index].map((subPoint, subIndex) => (
+                    <li
+                      key={`experience-subpoint-${subIndex}`}
+                      className="text-white-100 text-[14px] pl-1 tracking-wider"
+                    >
+                      {subPoint}
+                    </li>
+                  ))}
+                </ul>
+              )}
           </li>
         ))}
       </ul>
@@ -60,8 +74,8 @@ const Experience = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText}>What I have done so far</p>
-        <h2 className={styles.sectionHeadText}>Work Experience.</h2>
+        <p className={styles.sectionSubText}>Ce que j'ai fait jusqu'à maintenant</p>
+        <h2 className={styles.sectionHeadText}>Expériences professionnelles.</h2>
       </motion.div>
 
       <div className="mt-20 flex flex-col">

@@ -44,7 +44,7 @@ const About = () => {
     <>
       <motion.div variants={textVariant()}>
         <p className={styles.sectionSubText}>Introduction</p>
-        <h2 className={styles.sectionHeadText}>Overview.</h2>
+        <h2 className={styles.sectionHeadText}>Vue d'ensemble.</h2>
       </motion.div>
 
       <motion.p
@@ -53,7 +53,7 @@ const About = () => {
       >
        
         Jeune développeur passionné, spécialisé en TypeScript, 
-        JavaScript, Vue, et Node.js. J'explore actuellement Three.js. 
+        JavaScript, Vue, Php, et Node.js. J'explore actuellement Three.js. 
         Créatif, efficace et prêt à donner vie à vos idées. Travaillons ensemble !
   
       </motion.p>

@@ -1,0 +1,14 @@
+{
+  "translation": {
+    "hello": "Hello",
+    "about": "About",
+    "iam": "I'am",
+    "experience": "Experience",
+    "tech": "Tech",
+    "works": "Works",
+    "contact": "Contact",
+    "selectLanguage": "Select Language",
+    "english": "English",
+    "french": "Français"
+  }
+}

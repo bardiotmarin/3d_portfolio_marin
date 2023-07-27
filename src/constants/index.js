@@ -28,33 +28,33 @@ import {
 export const navLinks = [
   {
     id: "about",
-    title: "About",
+    title: "À propos",
   },
   {
     id: "work",
-    title: "Work",
+    title: "Travail",
   },
   {
     id: "contact",
-    title: "Contact",
+    title: "Contacter",
   },
 ];
 
 const services = [
   {
-    title: "Web Developer",
+    title: "Développeur d'applications web",
     icon: web,
   },
   {
-    title: "React Native Developer",
+    title: "Compositeur de musique",
     icon: mobile,
   },
   {
-    title: "Backend Developer",
+    title: "Développeur backend et frontend",
     icon: backend,
   },
   {
-    title: "Content Creator",
+    title: "Créateur de contenu",
     icon: creator,
   },
 ];
@@ -116,11 +116,11 @@ const technologies = [
 
 const experiences = [
   {
-    title: "React.js Developer",
-    company_name: "Starbucks",
+    title: "Dj Compositeur independant ",
+    company_name: "nebula beatz",
     icon: starbucks,
     iconBg: "#383E56",
-    date: "March 2020 - April 2021",
+    date: "2017",
     points: [
       "Developing and maintaining web applications using React.js and other related technologies.",
       "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
@@ -129,44 +129,167 @@ const experiences = [
     ],
   },
   {
-    title: "React Native Developer",
-    company_name: "Tesla",
+    title: "DJ et Technicien Son pour Lookéa - Expérience Musicale Enthousiasmante",
+    company_name: "Lookea",
     icon: tesla,
     iconBg: "#E6DEDD",
-    date: "Jan 2021 - Feb 2022",
+    date: "Sept 2018 - Sept 2019",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Dj :",
+      "Technicien Son et Lumière pour Lookéa :",
+      "Scénographie, Décoration de Spectacles et Gestion de Projet :",
+      "Compétences Transférables pour le Développement Web :",
+    ],
+    subPoints: [
+      [
+        "Création d'une ambiance musicale dynamique et envoûtante pour les vacanciers.",
+        "Adaptation de la sélection musicale en fonction de l'atmosphère.",
+        "Animation musicale lors des soirées et moments de détente.",
+        "Gestion du temps et de l'énergie pour maintenir l'enthousiasme.",
+        "Capacité à lire et à interpréter le public.",
+        "Expérience de communication et d'interaction interculturelle.",
+      ],
+      [
+        "Mise en place optimale des équipements son et lumière pour les spectacles.",
+        "Opération des systèmes audio et d'éclairage pendant les performances.",
+        "Gestion des transitions et effets lumineux pour une atmosphère immersive.",
+        "Collaboration étroite avec les équipes artistiques et d'animation.",
+      ],
+      [
+        "Conception et réalisation de décors de spectacles pour les soirées à thème.",
+        "Création d'ambiances visuelles uniques en utilisant des éléments.",
+        "Adaptation des décors en fonction des différentes thématiques et styles musicaux.",
+        "Collaboration avec les équipes artistiques pour des performances uniques.",
+      ],
+      [
+        "Gestion de projet pour la réalisation des spectacles et installations techniques.",
+        "Gestion efficace des ressources, du temps et des délais.",
+        "Polyvalence pour jongler entre tâches techniques, artistiques et logistiques.",
+        "Travail autonome avec un sens aigu de l'initiative.",
+      ],
+      [
+        "Résolution créative et efficace des problèmes techniques.",
+        "Excellentes compétences en communication et en collaboration.",
+        "Sensibilité artistique et esthétique pour des interfaces utilisateur attrayantes.",
+        "Gestion efficace des projets, des ressources et des délais.",
+      ],
     ],
   },
   {
-    title: "Web Developer",
-    company_name: "Shopify",
+    title: "Growth Hacker & A&R",
+    company_name: "Agency IKØNE",
     icon: shopify,
     iconBg: "#383E56",
-    date: "Jan 2022 - Jan 2023",
+    date: "Janv 2019 - Juin 2023",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Développement de sites web pour artistes",
+      "Marketing musical et playlisting",
+      "Relations publiques et promotion",
+      "Stratégie de croissance sur les réseaux sociaux",
+      "Design et création de contenu",
+      "Conseil en stratégie d'entreprise",
+      "Croissance durable pour les artistes",
+      "Placements de musique et synchronisation",
+      "Conseils en stratégie de médias sociaux",
+    ],
+    subPoints: [
+      // Développement de sites web pour artistes
+      [
+        "Sites web personnalisés pour promouvoir les artistes et leur musique.",
+        "Conception réactive pour une expérience utilisateur optimale.",
+        "Intégration de fonctionnalités spécifiques : musique, calendriers de tournée, etc.",
+      ],
+      // Marketing musical et playlisting
+      [
+        "Rapports marketing ciblés pour promouvoir les artistes et leur musique.",
+        "Gestion de campagnes de playlisting sur les plateformes de streaming.",
+        "Utilisation des données pour des campagnes basées sur les données.",
+      ],
+      // Relations publiques et promotion
+      [
+        "Stratégies de relations publiques pour accroître la notoriété des artistes.",
+        "Promotion auprès des médias, influenceurs et acteurs clés de l'industrie.",
+      ],
+      // Stratégie de croissance sur les réseaux sociaux
+      [
+        "Mise en œuvre de stratégies de croissance pour augmenter les abonnés et les followers.",
+        "Utilisation des données pour identifier les opportunités d'engagement.",
+      ],
+      // Design et création de contenu
+      [
+        "Création de visuels et de contenu graphique : pochettes d'albums, bannières, etc.",
+        "Conception de contenu vidéo pour promouvoir les artistes.",
+      ],
+      // Conseil en stratégie d'entreprise
+      [
+        "Aide aux artistes dans leur plan de croissance et de développement de carrière.",
+        "Assistance dans les démarches de financement et d'investissement.",
+      ],
+      // Croissance durable pour les artistes
+      [
+        "Fourniture de conseils et de solutions pour une croissance durable des carrières musicales.",
+        "Élaboration de stratégies à long terme pour l'épanouissement des artistes.",
+      ],
+      // Placements de musique et synchronisation
+      [
+        "Recherche et négociation de placements de musique dans des projets de films, séries, publicités, etc.",
+        "Gestion des placements de musique synchronisée pour maximiser la visibilité et les revenus.",
+      ],
+      // Conseils en stratégie de médias sociaux
+      [
+        "Élaboration de stratégies spécifiques aux médias sociaux pour optimiser la présence et l'impact en ligne.",
+      ],
     ],
   },
+  
   {
-    title: "Full stack Developer",
-    company_name: "Meta",
+    title: "Concepteur Développeur d'application En Alternance",
+    company_name: "Chromatotec",
     icon: meta,
     iconBg: "#E6DEDD",
-    date: "Jan 2023 - Present",
+    date: "Sept 2021 - Juin 2023",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Conception et développement d'applications web en utilisant WordPress et d'autres technologies connexes.",
+      "Collaboration avec des équipes pluridisciplinaires pour créer des produits de haute qualité.",
+      "Mise en œuvre de conceptions adaptatives pour assurer la compatibilité multi-navigateurs.",
+      "Création de plug-ins pour WooCommerce et WordPress pour répondre aux besoins spécifiques de l'entreprise.",
+      "Développement d'une solution interne similaire à WeTransfer pour les besoins de Chromatotec et des scientifiques.",
+      "Suivi d'une formation d'administration système et réseau de bas niveau avec mon tuteur de diplôme.",
+      "Participation aux révisions de code et fourniture de commentaires constructifs aux autres développeurs et administrateurs système."
+    ],
+    subPoints: [
+      [
+        "Création de sites web personnalisés pour répondre aux besoins spécifiques de l'entreprise.",
+        "Utilisation de technologies front-end telles que HTML, CSS, JavaScript pour modifier l'interface utilisateur du cms.",
+        "Intégration de bases de données et développement côté serveur pour les fonctionnalités avancées."
+      ],
+      [
+        "Échange avec l'équipe marketing pour intégrer mes maquettes graphiques.",
+        "Coopération avec les chefs de produit france , europe et asie pour comprendre les besoins fonctionnels."
+      ],
+      [
+        "Utilisation de Media Queries pour les designs réactifs.",
+        "Tests approfondis sur différentes plateformes et navigateurs."
+      ],
+      [
+        "Développement de fonctionnalités personnalisées pour la boutiques de devis en ligne.",
+        "Intégration de modules  complémentaires que j'ai développer pour améliorer les performances du parcours utilisateur et administrateur"
+      ],
+      [
+        "Integration d'un système de transfert de fichiers sécurisé et convivial en interne",
+        "Intégration de fonctionnalités de suivi des envois et des téléchargements."
+      ],
+      [
+        "Apprentissage des bases de l'administration des systèmes et des réseaux.",
+        "Mise en pratique des connaissances acquises sur des projets internes."
+      ],
+      [
+        "Analyse approfondie du code pour détecter les erreurs et les améliorations potentielles.",
+        "Collaboration avec l'équipe pour améliorer la qualité et les performances des applications."
+      ],
     ],
   },
+
 ];
 
 const testimonials = [
