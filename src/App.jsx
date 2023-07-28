@@ -1,10 +1,9 @@
 import { BrowserRouter } from "react-router-dom";
-import { Suspense } from 'react';
 import { useTranslation } from 'react-i18next'; // Import the useTranslation hook
 import { About, Contact, Experience, Hero, Navbar, Tech, Works, StarsCanvas } from "./components";
+import "./i18n";
 
 const App = () => {
-  const { t } = useTranslation(); // Use the useTranslation hook to access translations
 
   return (
     <BrowserRouter>

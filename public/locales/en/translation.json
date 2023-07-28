@@ -1,6 +1,6 @@
 {
-  "translation": {
-    "hello": "Hello",
+
+     "hello": "Hello",
     "about": "About",
     "iam": "I'am",
     "experience": "Experience",
@@ -10,5 +10,6 @@
     "selectLanguage": "Select Language",
     "english": "English",
     "french": "Français"
-  }
+
+
 }

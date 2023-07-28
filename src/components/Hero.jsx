@@ -5,10 +5,6 @@ import { ComputersCanvas } from "./canvas";
 
 import { useTranslation } from "react-i18next";
 
-
-
-
-
 const Hero = () => {
   const { t } = useTranslation(); 
   
