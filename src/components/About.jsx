@@ -40,7 +40,8 @@ const ServiceCard = ({ index, title, icon }) => (
 );
 
 const About = () => {
-  return (
+    const { t } = useTranslation();
+    return (
     <>
       <motion.div variants={textVariant()}>
         <p className={styles.sectionSubText}>Introduction</p>
@@ -51,8 +52,7 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
-       
-        Jeune développeur passionné, spécialisé en TypeScript, 
+        Jeune développeur passionné, spécialisé en TypeScript,
         JavaScript, Vue, Php, et Node.js. J'explore actuellement Three.js. 
         Créatif, efficace et prêt à donner vie à vos idées. Travaillons ensemble !
   

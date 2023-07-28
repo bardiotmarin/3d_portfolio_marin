@@ -1,15 +1,14 @@
 {
 
-     "hello": "Hello",
-    "about": "About",
-    "iam": "I'am",
-    "experience": "Experience",
-    "tech": "Tech",
-    "works": "Works",
-    "contact": "Contact",
-    "selectLanguage": "Select Language",
-    "english": "English",
-    "french": "Français"
+  "hello": "Hello",
+  "iam": "I am",
+  "your_name": "Your name",
+  "name": "What is your name?",
+  "your_email": "Your email",
+  "email": "What is your email?",
+  "your_message": "Your message",
+  "message": "What you want to say to me ?",
+
 
 
 }

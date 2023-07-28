@@ -11,4 +11,5 @@ i18n
     debug: true,
     fallbackLng: 'fr',
   });
+
 export default i18n;
