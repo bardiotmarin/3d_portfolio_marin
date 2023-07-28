@@ -1,5 +1,5 @@
 import { BrowserRouter } from "react-router-dom";
-import { useTranslation } from 'react-i18next'; // Import the useTranslation hook
+
 import { About, Contact, Experience, Hero, Navbar, Tech, Works, StarsCanvas } from "./components";
 import "./i18n";
 
