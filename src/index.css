@@ -71,6 +71,7 @@
   -webkit-text-fill-color: transparent;
 }
 
+/* text gradian cyberpunk ambience*/
 .green-text-gradient {
   background: #11998e; /* fallback for old browsers */
   background: -webkit-linear-gradient(
@@ -119,6 +120,97 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+/* Dégradé de texte rouge électrique au violet */
+.cyberpunk-red-violet-text-gradient {
+  background: linear-gradient(90deg, #ff3d00, #833ab4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Dégradé de texte bleu électrique au rose fluo */
+.cyberpunk-blue-pink-text-gradient {
+  background: linear-gradient(90deg, #1e90ff, #ff1493);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Dégradé de texte vert fluo au jaune néon */
+.cyberpunk-green-yellow-text-gradient {
+  background: linear-gradient(90deg, #39ff14, #f9dc5c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/*        text gradian ambiance futiristic        */
+
+/* Dégradé de texte bleu clair au turquoise */
+.futuristic-light-blue-turquoise-text-gradient {
+  background: linear-gradient(90deg, #87cefa, #40e0d0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Dégradé de texte argenté au bleu électrique */
+.futuristic-silver-blue-text-gradient {
+  background: linear-gradient(90deg, #c0c0c0, #1e90ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Dégradé de texte violet foncé au rose métallique */
+.futuristic-dark-violet-pink-text-gradient {
+  background: linear-gradient(90deg, #4b0082, #b76e79);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/*        text gradian ambiance neon      */
+/* Dégradé de texte vert néon au jaune fluo */
+.neon-green-yellow-text-gradient {
+  background: linear-gradient(90deg, #39ff14, #ffdc00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Dégradé de texte rose fluo au violet néon */
+.neon-pink-violet-text-gradient {
+  background: linear-gradient(90deg, #ff1493, #9400d3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Dégradé de texte bleu néon au turquoise fluo */
+.neon-blue-turquoise-text-gradient {
+  background: linear-gradient(90deg, #1e90ff, #00ffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/*        text gradian ambiance plage      */
+
+/* Dégradé de texte bleu océan au sable doré */
+.beach-ocean-sand-text-gradient {
+  background: linear-gradient(90deg, #007bff, #ffd700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Dégradé de texte turquoise au sable doré */
+.beach-turquoise-golden-sand-text-gradient {
+  background: linear-gradient(90deg, #40e0d0, #ffd700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Dégradé de texte bleu ciel au beige */
+.beach-sky-blue-beige-text-gradient {
+  background: linear-gradient(90deg, #87ceeb, #f5f5dc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
 
 /* canvas- styles */
 .canvas-loader {

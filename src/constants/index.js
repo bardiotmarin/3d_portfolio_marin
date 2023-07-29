@@ -19,9 +19,14 @@ import {
   starbucks,
   tesla,
   shopify,
-  carrent,
-  jobit,
+  chromatotecWebsite,
+  anavoc,
   tripguide,
+  findtherose,
+  playerRemake,
+  agencyIkone,
+  snippet,
+  wedrums,
   threejs,
 } from "../assets";
 
@@ -32,7 +37,7 @@ export const navLinks = [
   },
   {
     id: "work",
-    title: "my-works",
+    title: "my_works",
   },
   {
     id: "contact",
@@ -42,19 +47,19 @@ export const navLinks = [
 
 const services = [
   {
-    title: "Développeur d'applications web",
+    title: "about_dev",
     icon: web,
   },
   {
-    title: "Compositeur de musique",
+    title: "about_music",
     icon: mobile,
   },
   {
-    title: "Développeur backend et frontend",
+    title: "about_dev_frontandback",
     icon: backend,
   },
   {
-    title: "Créateur de contenu",
+    title: "about_creator",
     icon: creator,
   },
 ];
@@ -116,180 +121,166 @@ const technologies = [
 
 const experiences = [
   {
-    title: "Dj Compositeur independant ",
+    title: "Dj Compositeur independant",
     company_name: "nebula beatz",
-    icon: starbucks,
+    icon: starbucks, // Replace with the imported icon for nebula beatz
     iconBg: "#383E56",
     date: "2017",
     points: [
       "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "experience.1.point2",
+      "experience.1.point3",
+      "experience.1.point4",
     ],
   },
   {
     title: "DJ et Technicien Son pour Lookéa - Expérience Musicale Enthousiasmante",
     company_name: "Lookea",
-    icon: tesla,
+    icon: tesla, // Replace with the imported icon for Lookea
     iconBg: "#E6DEDD",
     date: "Sept 2018 - Sept 2019",
     points: [
-      "Dj :",
-      "Technicien Son et Lumière pour Lookéa :",
-      "Scénographie, Décoration de Spectacles et Gestion de Projet :",
-      "Compétences Transférables pour le Développement Web :",
+      "experience.2.point1",
+      "experience.2.point2",
+      "experience.2.point3",
+      "experience.2.point4",
     ],
     subPoints: [
       [
-        "Création d'une ambiance musicale dynamique et envoûtante pour les vacanciers.",
-        "Adaptation de la sélection musicale en fonction de l'atmosphère.",
-        "Animation musicale lors des soirées et moments de détente.",
-        "Gestion du temps et de l'énergie pour maintenir l'enthousiasme.",
-        "Capacité à lire et à interpréter le public.",
-        "Expérience de communication et d'interaction interculturelle.",
+        "experience.2.subPoint1.1",
+        "experience.2.subPoint1.2",
+        "experience.2.subPoint1.3",
+        "experience.2.subPoint1.4",
+        "experience.2.subPoint1.5",
+        "experience.2.subPoint1.6",
       ],
       [
-        "Mise en place optimale des équipements son et lumière pour les spectacles.",
-        "Opération des systèmes audio et d'éclairage pendant les performances.",
-        "Gestion des transitions et effets lumineux pour une atmosphère immersive.",
-        "Collaboration étroite avec les équipes artistiques et d'animation.",
+        "experience.2.subPoint2.1",
+        "experience.2.subPoint2.2",
+        "experience.2.subPoint2.3",
+        "experience.2.subPoint2.4",
       ],
       [
-        "Conception et réalisation de décors de spectacles pour les soirées à thème.",
-        "Création d'ambiances visuelles uniques en utilisant des éléments.",
-        "Adaptation des décors en fonction des différentes thématiques et styles musicaux.",
-        "Collaboration avec les équipes artistiques pour des performances uniques.",
+        "experience.2.subPoint3.1",
+        "experience.2.subPoint3.2",
+        "experience.2.subPoint3.3",
+        "experience.2.subPoint3.4",
       ],
       [
-        "Gestion de projet pour la réalisation des spectacles et installations techniques.",
-        "Gestion efficace des ressources, du temps et des délais.",
-        "Polyvalence pour jongler entre tâches techniques, artistiques et logistiques.",
-        "Travail autonome avec un sens aigu de l'initiative.",
+        "experience.2.subPoint4.1",
+        "experience.2.subPoint4.2",
+        "experience.2.subPoint4.3",
+        "experience.2.subPoint4.4",
       ],
       [
-        "Résolution créative et efficace des problèmes techniques.",
-        "Excellentes compétences en communication et en collaboration.",
-        "Sensibilité artistique et esthétique pour des interfaces utilisateur attrayantes.",
-        "Gestion efficace des projets, des ressources et des délais.",
+        "experience.2.subPoint5.1",
+        "experience.2.subPoint5.2",
+        "experience.2.subPoint5.3",
+        "experience.2.subPoint5.4",
       ],
     ],
   },
   {
     title: "Growth Hacker & A&R",
     company_name: "Agency IKØNE",
-    icon: shopify,
+    icon: shopify, // Replace with the imported icon for Agency IKØNE
     iconBg: "#383E56",
     date: "Janv 2019 - Juin 2023",
     points: [
-      "Développement de sites web pour artistes",
-      "Marketing musical et playlisting",
-      "Relations publiques et promotion",
-      "Stratégie de croissance sur les réseaux sociaux",
-      "Design et création de contenu",
-      "Conseil en stratégie d'entreprise",
-      "Croissance durable pour les artistes",
-      "Placements de musique et synchronisation",
-      "Conseils en stratégie de médias sociaux",
+      "experience.3.point1",
+      "experience.3.point2",
+      "experience.3.point3",
+      "experience.3.point4",
+      "experience.3.point5",
+      "experience.3.point6",
+      "experience.3.point7",
+      "experience.3.point8",
+      "experience.3.point9",
     ],
     subPoints: [
-      // Développement de sites web pour artistes
+      // Subpoints for Growth Hacker & A&R
       [
-        "Sites web personnalisés pour promouvoir les artistes et leur musique.",
-        "Conception réactive pour une expérience utilisateur optimale.",
-        "Intégration de fonctionnalités spécifiques : musique, calendriers de tournée, etc.",
+        "experience.3.subPoint1.1",
+        "experience.3.subPoint1.2",
+        "experience.3.subPoint1.3",
       ],
-      // Marketing musical et playlisting
       [
-        "Rapports marketing ciblés pour promouvoir les artistes et leur musique.",
-        "Gestion de campagnes de playlisting sur les plateformes de streaming.",
-        "Utilisation des données pour des campagnes basées sur les données.",
+        "experience.3.subPoint2.1",
+        "experience.3.subPoint2.2",
+        "experience.3.subPoint2.3",
       ],
-      // Relations publiques et promotion
       [
-        "Stratégies de relations publiques pour accroître la notoriété des artistes.",
-        "Promotion auprès des médias, influenceurs et acteurs clés de l'industrie.",
+        "experience.3.subPoint3.1",
+        "experience.3.subPoint3.2",
       ],
-      // Stratégie de croissance sur les réseaux sociaux
       [
-        "Mise en œuvre de stratégies de croissance pour augmenter les abonnés et les followers.",
-        "Utilisation des données pour identifier les opportunités d'engagement.",
+        "experience.3.subPoint4.1",
+        "experience.3.subPoint4.2",
       ],
-      // Design et création de contenu
       [
-        "Création de visuels et de contenu graphique : pochettes d'albums, bannières, etc.",
-        "Conception de contenu vidéo pour promouvoir les artistes.",
+        "experience.3.subPoint5.1",
+        "experience.3.subPoint5.2",
       ],
-      // Conseil en stratégie d'entreprise
       [
-        "Aide aux artistes dans leur plan de croissance et de développement de carrière.",
-        "Assistance dans les démarches de financement et d'investissement.",
+        "experience.3.subPoint6.1",
+        "experience.3.subPoint6.2",
       ],
-      // Croissance durable pour les artistes
       [
-        "Fourniture de conseils et de solutions pour une croissance durable des carrières musicales.",
-        "Élaboration de stratégies à long terme pour l'épanouissement des artistes.",
+        "experience.3.subPoint7.1",
+        "experience.3.subPoint7.2",
       ],
-      // Placements de musique et synchronisation
       [
-        "Recherche et négociation de placements de musique dans des projets de films, séries, publicités, etc.",
-        "Gestion des placements de musique synchronisée pour maximiser la visibilité et les revenus.",
-      ],
-      // Conseils en stratégie de médias sociaux
-      [
-        "Élaboration de stratégies spécifiques aux médias sociaux pour optimiser la présence et l'impact en ligne.",
+        "experience.3.subPoint8.1",
       ],
     ],
   },
-  
   {
     title: "Concepteur Développeur d'application En Alternance",
     company_name: "Chromatotec",
-    icon: meta,
+    icon: meta, // Replace with the imported icon for Chromatotec
     iconBg: "#E6DEDD",
     date: "Sept 2021 - Juin 2023",
     points: [
-      "Conception et développement d'applications web en utilisant WordPress et d'autres technologies connexes.",
-      "Collaboration avec des équipes pluridisciplinaires pour créer des produits de haute qualité.",
-      "Mise en œuvre de conceptions adaptatives pour assurer la compatibilité multi-navigateurs.",
-      "Création de plug-ins pour WooCommerce et WordPress pour répondre aux besoins spécifiques de l'entreprise.",
-      "Développement d'une solution interne similaire à WeTransfer pour les besoins de Chromatotec et des scientifiques.",
-      "Suivi d'une formation d'administration système et réseau de bas niveau avec mon tuteur de diplôme.",
-      "Participation aux révisions de code et fourniture de commentaires constructifs aux autres développeurs et administrateurs système."
+      "experience.4.point1",
+      "experience.4.point2",
+      "experience.4.point3",
+      "experience.4.point4",
+      "experience.4.point5",
+      "experience.4.point6",
+      "experience.4.point7",
     ],
     subPoints: [
       [
-        "Création de sites web personnalisés pour répondre aux besoins spécifiques de l'entreprise.",
-        "Utilisation de technologies front-end telles que HTML, CSS, JavaScript pour modifier l'interface utilisateur du cms.",
-        "Intégration de bases de données et développement côté serveur pour les fonctionnalités avancées."
+        "experience.4.subPoint1.1",
+        "experience.4.subPoint1.2",
+        "experience.4.subPoint1.3",
       ],
       [
-        "Échange avec l'équipe marketing pour intégrer mes maquettes graphiques.",
-        "Coopération avec les chefs de produit france , europe et asie pour comprendre les besoins fonctionnels."
+        "experience.4.subPoint2.1",
+        "experience.4.subPoint2.2",
       ],
       [
-        "Utilisation de Media Queries pour les designs réactifs.",
-        "Tests approfondis sur différentes plateformes et navigateurs."
+        "experience.4.subPoint3.1",
+        "experience.4.subPoint3.2",
       ],
       [
-        "Développement de fonctionnalités personnalisées pour la boutiques de devis en ligne.",
-        "Intégration de modules  complémentaires que j'ai développer pour améliorer les performances du parcours utilisateur et administrateur"
+        "experience.4.subPoint4.1",
+        "experience.4.subPoint4.2",
       ],
       [
-        "Integration d'un système de transfert de fichiers sécurisé et convivial en interne",
-        "Intégration de fonctionnalités de suivi des envois et des téléchargements."
+        "experience.4.subPoint5.1",
+        "experience.4.subPoint5.2",
       ],
       [
-        "Apprentissage des bases de l'administration des systèmes et des réseaux.",
-        "Mise en pratique des connaissances acquises sur des projets internes."
+        "experience.4.subPoint6.1",
+        "experience.4.subPoint6.2",
       ],
       [
-        "Analyse approfondie du code pour détecter les erreurs et les améliorations potentielles.",
-        "Collaboration avec l'équipe pour améliorer la qualité et les performances des applications."
+        "experience.4.subPoint7.1",
+        "experience.4.subPoint7.2",
       ],
     ],
   },
-
 ];
 
 const testimonials = [
@@ -320,68 +311,280 @@ const testimonials = [
 ];
 
 const projects = [
+
   {
-    name: "Car Rent",
+    name: "Wedrums",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "text_currently_under",
     tags: [
       {
-        name: "react",
-        color: "blue-text-gradient",
+        name: "typescript",
+        color: "neon-pink-violet-text-gradient",
       },
       {
-        name: "mongodb",
-        color: "green-text-gradient",
+        name: "vue.js",
+        color: "neon-blue-turquoise-text-gradient",
       },
       {
-        name: "tailwind",
+        name: "nuxt.js",
+        color: "futuristic-silver-blue-text-gradient",
+      },
+      {
+        name: "pwa ",
+        color: "beach-sky-blue-beige-text-gradient",
+      },
+      {
+        name: "node.js",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "nest.js",
+        color: "futuristic-silver-blue-text-gradient",
+      },
+      {
+        name: "mikro-ORM",
+        color: "cyberpunk-red-violet-text-gradient",
+      },
+      {
+        name: "postgreSQL",
+        color: "neon-green-yellow-text-gradient",
+      },
+      {
+        name: "materal_design",
+        color: "neon-blue-turquoise-text-gradient",
+      },
+      {
+        name: "pinia",
+        color: "beach-sky-blue-beige-text-gradient",
+      },
+      {
+        name: "jest",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "vitest",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "helmet",
+        color: "futuristic-light-blue-turquoise-text-gradient",
+      },
+      {
+        name: "railway",
+        color: "beach-ocean-sand-text-gradient",
+      },
+      {
+        name: "github projects ",
+        color: "beach-turquoise-golden-sand-text-gradient ",
+      },
+      {
+        name: "postman ",
         color: "pink-text-gradient",
       },
     ],
-    image: carrent,
-    source_code_link: "https://github.com/",
+    image: wedrums,
+    source_code_link: "https://wedrums.up.railway.app/",
   },
   {
-    name: "Job IT",
+    name: "support_chromatotec",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+        "text_product_support",
     tags: [
       {
-        name: "react",
-        color: "blue-text-gradient",
+        name: "php",
+        color: "neon-pink-violet-text-gradient",
       },
       {
-        name: "restapi",
-        color: "green-text-gradient",
+        name: "woocommerce",
+        color: "beach-sky-blue-beige-text-gradient",
       },
       {
-        name: "scss",
+        name: "wordpress",
+        color: "cyberpunk-green-yellow-text-gradient",
+      },
+      {
+        name: "JustTheDeveloper ",
         color: "pink-text-gradient",
+      },
+      {
+        name: "HandsOffMaintenance ",
+        color: "futuristic-silver-blue-text-gradient",
       },
     ],
-    image: jobit,
-    source_code_link: "https://github.com/",
+    image: chromatotecWebsite,
+    source_code_link: "https://support.chromatotec.com/",
   },
   {
-    name: "Trip Guide",
+    name: "anaVOC",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      "text_LABCOM",
     tags: [
       {
-        name: "nextjs",
-        color: "blue-text-gradient",
+        name: "php",
+        color: "neon-pink-violet-text-gradient",
       },
       {
-        name: "supabase",
-        color: "green-text-gradient",
+        name: "wordpress",
+        color: "cyberpunk-green-yellow-text-gradient",
       },
       {
-        name: "css",
+        name: "JustTheDeveloper ",
         color: "pink-text-gradient",
+      },
+      {
+        name: "HandsOffMaintenance ",
+        color: "futuristic-silver-blue-text-gradient",
+      },
+    ],
+    image: anavoc,
+    source_code_link: "https://anavoc.com/labcom/",
+  },
+  {
+    name: "review_gen",
+    description:
+      "text_review_generator",
+    tags: [
+      {
+        name: "Python",
+        color: "neon-pink-violet-text-gradient",
+      },
+      {
+        name: "rest-api",
+        color: "futuristic-silver-blue-text-gradient",
+      },
+      {
+        name: "openai",
+        color: "neon-blue-turquoise-text-gradient",
+      },
+      {
+        name: "AutomatedCommentary",
+        color: "cyberpunk-red-violet-text-gradient",
+      },
+      {
+        name: "AIReviewer",
+        color: "beach-turquoise-golden-sand-text-gradient",
       },
     ],
     image: tripguide,
-    source_code_link: "https://github.com/",
+    source_code_link: "https://github.com/bardiotmarin/review_generator",
+  },
+  {
+    name: "lecteur_audio_kotlin",
+    description:
+        "text_kotlin_player",
+    tags: [
+      {
+        name: "android studio",
+        color: "futuristic-light-blue-turquoise-text-gradient",
+      },
+      {
+        name: "kotlin",
+        color: "neon-pink-violet-text-gradient",
+      },
+    ],
+    image: playerRemake,
+    source_code_link: "https://github.com/bardiotmarin/MarinMusicPlayer",
+  },
+  {
+    name: "agence_IKØNE",
+    description:
+        "text_agency_ikone",
+    tags: [
+      {
+        name: "wordpress",
+        color: "cyberpunk-green-yellow-text-gradient",
+      },
+      {
+        name: "php",
+        color: "neon-pink-violet-text-gradient",
+      },
+      {
+        name: "personnal plugin",
+        color: "futuristic-silver-blue-text-gradient",
+      },
+
+      {
+        name: "woocommerce",
+        color: "beach-sky-blue-beige-text-gradient",
+      },
+    ],
+    image: agencyIkone,
+    source_code_link: "https://github.com/bardiotmarin/WordpressWocommerce-Plugin-Order_Excel-_export_via_email",
+  },
+  {
+    name: "blanco_banco",
+    description:
+        "text_blanco_banco",
+    tags: [
+      {
+        name: "Symfony",
+        color: "cyberpunk-green-yellow-text-gradient",
+      },
+      {
+        name: "php",
+        color: "neon-pink-violet-text-gradient",
+      },
+      {
+        name: "mysql",
+        color: "neon-green-yellow-text-gradient",
+      },
+
+      {
+        name: "scss",
+        color: "neon-blue-turquoise-text-gradient",
+      },
+      {
+        name: "poo",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "composer",
+        color: "beach-sky-blue-beige-text-gradient",
+      },
+    ],
+    image: tripguide,
+    source_code_link: "https://github.com/bardiotmarin/blancobancco",
+  },
+
+  {
+    name: "find_the_rose",
+    description:
+        "text_findtherose",
+    tags: [
+      {
+        name: "html",
+        color: "neon-pink-violet-text-gradient",
+      },
+      {
+        name: "javascript",
+        color: "beach-sky-blue-beige-text-gradient",
+      },
+      {
+        name: "css",
+        color: "neon-blue-turquoise-text-gradient",
+      },
+
+    ],
+    image: findtherose,
+    source_code_link: "https://github.com/bardiotmarin/blancobancco",
+  },
+  {
+    name: "projet_open_source",
+    description:
+        "text_snippet_pack_wordpress",
+    tags: [
+      {
+        name: "php",
+        color: "neon-pink-violet-text-gradient",
+      },
+      {
+        name: "wordpress",
+        color: "cyberpunk-green-yellow-text-gradient",
+      },
+
+    ],
+    image: snippet,
+    source_code_link: "https://github.com/bardiotmarin/THE-SNIPPET-PACK",
   },
 ];
 

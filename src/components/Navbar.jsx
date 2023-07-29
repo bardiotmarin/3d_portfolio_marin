@@ -10,7 +10,7 @@ const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,7 +59,13 @@ const Navbar = () => {
                           active === nav.id ? "text-white" : "text-secondary"
                       } hover:text-white text-[18px] font-medium cursor-pointer`}
                   >
-                    <a href={`#${nav.id}`}>{nav.title}</a>
+                    {/* Utiliser le composant Link de React Router */}
+                    <Link
+                        to={`#${nav.id}`}
+                        onClick={() => setActive(nav.id)} // Définir le lien actif au clic
+                    >
+                      {t(nav.title)}
+                    </Link>
                   </li>
               ))}
             </ul>
@@ -90,7 +96,8 @@ const Navbar = () => {
                           setToggle(!toggle);
                         }}
                     >
-                      <a href={`#${nav.id}`}>{t(nav.title)}</a>
+                      {/* Utiliser le composant Link de React Router */}
+                      <Link to={`#${nav.id}`}>{t(nav.title)}</Link>
                     </li>
                 ))}
               </ul>

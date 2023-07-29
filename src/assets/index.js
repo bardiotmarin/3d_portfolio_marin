@@ -26,9 +26,15 @@ import shopify from "./company/shopify.png";
 import starbucks from "./company/starbucks.png";
 import tesla from "./company/tesla.png";
 
-import carrent from "./carrent.png";
-import jobit from "./jobit.png";
+import chromatotecWebsite from "./chromatotecWebsite.png";
+import anavoc from "./anavoc.png";
 import tripguide from "./tripguide.png";
+import findtherose from "./findtherose.png";
+import playerRemake from "./playerRemake.png";
+import agencyIkone from "./agencyIkone.png";
+import snippet from "./snippet.png";
+import wedrums from "./wedrums.png";
+
 
 export {
   logo,
@@ -56,7 +62,12 @@ export {
   shopify,
   starbucks,
   tesla,
-  carrent,
-  jobit,
+  chromatotecWebsite,
+  anavoc,
   tripguide,
+  findtherose,
+  playerRemake,
+  agencyIkone,
+  snippet,
+  wedrums,
 };

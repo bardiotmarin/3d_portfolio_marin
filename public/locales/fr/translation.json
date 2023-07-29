@@ -6,12 +6,18 @@
     "EN": "EN",
     "iam": "Je suis",
     "your_name": "Votre nom",
-    "name?" : "Qu'elle et votre nom ?",
+    "name?" : "Quel et votre nom ?",
     "your_email": "Votre email",
-    "email?": "Qu'elle et votre email ?",
+    "email?": "Quel et votre email ?",
     "your_message": "Votre message",
     "message?": "Vous voulez discuter avec moi ?",
     "send": "Envoyer",
+    "get_in_touch": "Contactez-moi",
+
+    "about_dev": "Développeur d'applications web",
+    "about_music": "Compositeur de musique",
+    "about_dev_frontandback": "Développeur backend et frontend",
+    "about_creator": "Créateur de contenu",
 
     "about": "A propos",
     "overview": "Vue d'ensemble",
@@ -21,10 +27,284 @@
 
     "about_text": "Jeune développeur passionné, spécialisé en TypeScript,\n        JavaScript, Vue, Php, et Node.js. J'explore actuellement Three.js. \n        Créatif, efficace et prêt à donner vie à vos idées. Travaillons ensemble !",
 
-    "what_i_have_done" : "Ce que j'ai fait jusqu'à maintenant",
-    "proffesional_experience": "Expérience professionnelle",
+    "what_i_have_done": "Ce que j'ai fait jusqu'à maintenant",
+    "professional_experience": "Expérience professionnelle",
 
-    "works_text" : " Mon portfolio présente mes premiers projets en tant que jeune professionnel,\n           reflétant mes compétences acquises et expériences concrètes.\n            J'ajouterai volontiers les dépôts publics et démonstrations en direct.\n             Mon parcours est en constante évolution,\n              et je suis fier(e) de partager ces réalisations,\n               témoignant de mon engagement à progresser dans mon domaine d'intérêt.",
-    "my-works": "Mon travail"
+    "works_text" : " Mon portfolio présente mes premiers projets en tant que jeune professionnel,\n           reflétant mes compétences acquises et expériences concrètes.\n            J'ajouterai volontiers les dépôts publics et démonstrations en direct.\n             Mon parcours est en constante évolution,\n              et je suis fier de partager ces réalisations,\n               témoignant de mon engagement à progresser dans mon domaine d'intérêt.",
+    "my_works": "Mon travail",
 
+    "Wedrums": "Wedrums",
+    "support_chromatotec": "Site Support Chromatotec",
+    "anaVOC": "anaVOC",
+    "review_gen": "Logiciel de Génération de Critiques",
+    "lecteur_audio_kotlin": "Exercise de Refonte du Lecteur Audio Natif Android",
+    "agence_IKØNE": "Agence IKØNE",
+    "blanco_banco": "Blanco Banco",
+    "find_the_rose": "Find The Rose",
+    "projet_open_source": "Projet Open Source - The Snippet Pack",
+    "text_currently_under": "Actuellement en développement, notre projet vise à faciliter l'accès à l'industrie musicale pour tous les artistes. Nous offrirons des services de qualité à des prix compétitifs, aidant ainsi les artistes à se connecter avec des professionnels, des responsables de playlists et des influenceurs. Notre objectif est de promouvoir leurs œuvres et de recueillir des retours constructifs, afin qu'ils puissent se concentrer sur leur art. Bientôt disponible !",
+    "text_product_support": "Site web de support produits et tutoriel,  et de commande de produits en devis complet, utilisant WordPress et d'autres technologies connexes, permettant aux utilisateurs de générer et de gérer facilement des devis personnalisés, tout en collaborant avec des équipes pluridisciplinaires pour assurer la qualité du produit.",
+    "text_LABCOM": "J'ai développé le site web du projet \"LABCOM anaVOC\" en utilisant WordPress pour permettre aux scientifiques de Chromatotec, du CNRS et de l'Université de Strasbourg de partager et de mettre à jour facilement les avancées et les objectifs du projet de développement de méthodes d'analyses en temps réel des Composés Organiques Volatils et Semi-Volatils dans l'air et l'eau, en mettant l'accent sur la simplicité d'utilisation pour les non-codeurs.",
+    "text_review_generator": "J'ai développé un logiciel qui utilise le moteur d'OpenAI pour générer des commentaires sous forme de revues ou d'articles sur des artistes musicaux. Ce logiciel prend en compte de nombreux paramètres personnalisables que l'utilisateur peut ajouter pour obtenir des critiques complètes et détaillées sur la musique, offrant ainsi une analyse précise et personnalisée.",
+    "text_kotlin_player": "Je me suis entraîné avec Kotlin en refaisant un lecteur audio qui utilise le matériel audio disponible sur le téléphone, m'inspirant du lecteur audio natif d'Android et d'iTunes pour smartphone.",
+    "text_agency_ikone": "Le site de l'agence IKØNE offre des services complets de croissance, de marketing musical et de stratégie pour les artistes, mettant en valeur leur talent sur les plateformes numériques et les guidant vers une croissance durable dans l'industrie musicale.",
+    "text_blanco_banco": "Blanco Bianco est un designer, photographe et monteur vidéo. Cette construction de site web est pour présenter ses services, vendre les vêtements de la marque qu'il a créée et ses travaux.",
+    "text_findtherose": "C'est un site web test pour présenter mon projet musical, notre discographie, nos dates possibles, notre bio, nos photos et nos vidéos.",
+    "text_snippet_pack_wordpress": "Ce projet open source rassemble des snippets PHP et des astuces liées à WordPress et à son écosystème. Vous y trouverez des morceaux de code utiles pour personnaliser votre site WordPress, implémenter des fonctionnalités spécifiques, utiliser Polylang pour la traduction multilingue, et bien plus encore. La communauté est la bienvenue pour contribuer en ajoutant de nouveaux snippets, corrigeant des erreurs, ou améliorant les snippets existants.",
+
+
+    "experience.1.title": "Développeur Web chez Nebula Beatz",
+    "experience.1.point1": "Développement et maintenance d'applications web utilisant React.js et d'autres technologies connexes.",
+    "experience.1.point2": "Collaboration avec des équipes pluridisciplinaires, y compris des designers, des gestionnaires de produits et d'autres développeurs, pour créer des produits de haute qualité.",
+    "experience.1.point3": "Mise en œuvre de la conception réactive et assurance de la compatibilité multi-navigateurs.",
+    "experience.1.point4": "Participation aux revues de code et fourniture de commentaires constructifs aux autres développeurs.",
+
+    "experience.2.title": "DJ et Technicien Son pour Lookéa - Expérience Musicale Passionnante",
+    "experience.2.subPoint1.1": "Création d'une atmosphère musicale dynamique et captivante pour les vacanciers.",
+    "experience.2.subPoint1.2": "Adaptation de la sélection musicale en fonction de l'ambiance.",
+    "experience.2.subPoint1.3": "Animation musicale lors des soirées et des moments de détente.",
+    "experience.2.subPoint1.4": "Gestion du temps et de l'énergie pour maintenir l'enthousiasme.",
+    "experience.2.subPoint1.5": "Capacité à lire et interpréter le public.",
+    "experience.2.subPoint1.6": "Expérience en communication et interaction interculturelles.",
+
+    "experience.2.subPoint2.1": "Configuration optimale du matériel son et lumière pour les spectacles.",
+    "experience.2.subPoint2.2": "Utilisation des systèmes audio et d'éclairage pendant les performances.",
+    "experience.2.subPoint2.3": "Gestion des transitions et effets lumineux pour une atmosphère immersive.",
+    "experience.2.subPoint2.4": "Collaboration étroite avec les équipes artistiques et d'animation.",
+
+    "experience.2.subPoint3.1": "Conception et création de décors de scène pour les soirées à thème.",
+    "experience.2.subPoint3.2": "Création d'ambiances visuelles uniques à l'aide d'éléments.",
+    "experience.2.subPoint3.3": "Adaptation des décors en fonction des différents thèmes et styles musicaux.",
+    "experience.2.subPoint3.4": "Collaboration avec les équipes artistiques pour des performances uniques.",
+
+    "experience.2.subPoint4.1": "Gestion de projet pour la réalisation de spectacles et d'installations techniques.",
+    "experience.2.subPoint4.2": "Gestion efficace des ressources, du temps et des délais.",
+    "experience.2.subPoint4.3": "Polyvalence pour jongler entre les tâches techniques, artistiques et logistiques.",
+    "experience.2.subPoint4.4": "Travail autonome avec un grand sens de l'initiative.",
+
+    "experience.2.subPoint5.1": "Résolution créative et efficace des problèmes techniques.",
+    "experience.2.subPoint5.2": "Excellentes compétences en communication et en collaboration.",
+    "experience.2.subPoint5.3": "Sensibilité artistique et esthétique pour des interfaces utilisateur attrayantes.",
+    "experience.2.subPoint5.4": "Gestion efficace de projets, de ressources et de temps.",
+
+    "experience.3.title": "Growth Hacker & A&R chez Agency IKØNE",
+    "experience.3.point1": "Développement web pour les artistes.",
+    "experience.3.point2": "Marketing musical et création de listes de lecture.",
+    "experience.3.point3": "Relations publiques et promotion.",
+    "experience.3.point4": "Stratégie de croissance sur les réseaux sociaux.",
+    "experience.3.point5": "Conception et création de contenu.",
+    "experience.3.point6": "Conseil en stratégie d'entreprise.",
+    "experience.3.point7": "Croissance durable pour les artistes.",
+    "experience.3.point8": "Placements musicaux et synchronisation.",
+    "experience.3.point9": "Conseil en stratégie sur les réseaux sociaux.",
+
+    "experience.3.subPoint1.1": "Création de sites web sur mesure pour promouvoir les artistes et leur musique.",
+    "experience.3.subPoint1.2": "Conception réactive pour une expérience utilisateur optimale.",
+    "experience.3.subPoint1.3": "Intégration de fonctionnalités spécifiques : musique, calendriers de tournée, etc.",
+
+    "experience.3.subPoint2.1": "Rapports de marketing ciblés pour promouvoir les artistes et leur musique.",
+    "experience.3.subPoint2.2": "Gestion de campagnes de listes de lecture sur les plateformes de streaming.",
+    "experience.3.subPoint2.3": "Utilisation des données pour des campagnes basées sur les données.",
+
+    "experience.3.subPoint3.1": "Stratégies de relations publiques pour augmenter la visibilité des artistes.",
+    "experience.3.subPoint3.2": "Promotion auprès des médias, des influenceurs et des acteurs clés de l'industrie.",
+
+    "experience.3.subPoint4.1": "Mise en œuvre de stratégies de croissance pour augmenter les abonnés et les followers.",
+    "experience.3.subPoint4.2": "Utilisation des données pour identifier les opportunités d'engagement.",
+
+    "experience.3.subPoint5.1": "Création de visuels et de contenus graphiques : pochettes d'album, bannières, etc.",
+    "experience.3.subPoint5.2": "Conception de contenus vidéo pour promouvoir les artistes.",
+
+    "experience.3.subPoint6.1": "Assistance aux artistes dans leur plan de croissance et de développement de carrière.",
+    "experience.3.subPoint6.2": "Soutien dans les processus de financement et d'investissement.",
+
+    "experience.3.subPoint7.1": "Fourniture de conseils et de solutions pour une croissance durable des carrières musicales.",
+    "experience.3.subPoint7.2": "Élaboration de stratégies à long terme pour la croissance des artistes.",
+
+    "experience.4.title": "Concepteur et Développeur d'Applications en Apprentissage chez Chromatotec",
+    "experience.4.point1": "Conception et développement d'applications web utilisant WordPress et d'autres technologies connexes.",
+    "experience.4.point2": "Collaboration avec des équipes multidisciplinaires pour créer des produits de haute qualité.",
+    "experience.4.point3": "Mise en œuvre de conceptions adaptatives pour assurer la compatibilité multi-navigateurs.",
+    "experience.4.point4": "Création de plugins pour WooCommerce et WordPress pour répondre aux besoins spécifiques de l'entreprise.",
+    "experience.4.point5": "Développement d'une solution interne similaire à WeTransfer pour les besoins de Chromatotec et des scientifiques.",
+    "experience.4.point6": "Réussite d'une formation en administration de systèmes et réseaux de bas niveau avec mon tuteur de diplôme.",
+    "experience.4.point7": "Participation aux revues de code et fourniture de commentaires constructifs aux autres développeurs et administrateurs système.",
+
+    "experience.4.subPoint1.1": "Création de sites web sur mesure pour répondre aux besoins spécifiques de l'entreprise.",
+    "experience.4.subPoint1.2": "Utilisation de technologies frontales telles que HTML, CSS, JavaScript pour modifier l'interface utilisateur du cms.",
+    "experience.4.subPoint1.3": "Intégration de bases de données et développement côté serveur pour des fonctionnalités avancées.",
+
+    "experience.4.subPoint2.1": "Échange avec l'équipe marketing pour intégrer mes maquettes graphiques.",
+    "experience.4.subPoint2.2": "Collaboration avec les responsables produits en France, en Europe et en Asie pour comprendre les besoins fonctionnels.",
+
+    "experience.4.subPoint3.1": "Utilisation de Media Queries pour des conceptions adaptatives.",
+    "experience.4.subPoint3.2": "Tests approfondis sur différentes plates-formes et navigateurs.",
+
+    "experience.4.subPoint4.1": "Développement de fonctionnalités personnalisées pour la boutique de devis en ligne.",
+    "experience.4.subPoint4.2": "Intégration de modules supplémentaires que j'ai développés pour améliorer les performances de l'utilisateur et du parcours administrateur.",
+
+    "experience.4.subPoint5.1": "Intégration d'un système de transfert de fichiers sécurisé et convivial en interne.",
+    "experience.4.subPoint5.2": "Intégration de fonctionnalités de suivi pour les expéditions et les téléchargements.",
+
+    "experience.4.subPoint6.1": "Apprentissage des bases de l'administration de systèmes et de réseaux.",
+    "experience.4.subPoint6.2": "Mise en pratique des connaissances acquises sur des projets internes.",
+
+    "experience.4.subPoint7.1": "Analyse approfondie du code pour détecter les erreurs et les améliorations potentielles.",
+    "experience.4.subPoint7.2": "Collaboration avec l'équipe pour améliorer la qualité et les performances des applications.",
+
+
+"experience": [
+        {
+            "title": "Dj Compositeur independant",
+            "company_name": "nebula beatz",
+            "points": [
+                "Developing and maintaining web applications using React.js and other related technologies.",
+                "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
+                "Implementing responsive design and ensuring cross-browser compatibility.",
+                "Participating in code reviews and providing constructive feedback to other developers."
+            ]
+        },
+        {
+            "title": "DJ et Technicien Son pour Lookéa - Expérience Musicale Enthousiasmante",
+            "company_name": "Lookea",
+            "points": [
+                "Dj :",
+                "Technicien Son et Lumière pour Lookéa :",
+                "Scénographie, Décoration de Spectacles et Gestion de Projet :",
+                "Compétences Transférables pour le Développement Web :"
+            ],
+            "subPoints": [
+                [
+                    "Création d'une ambiance musicale dynamique et envoûtante pour les vacanciers.",
+                    "Adaptation de la sélection musicale en fonction de l'atmosphère.",
+                    "Animation musicale lors des soirées et moments de détente.",
+                    "Gestion du temps et de l'énergie pour maintenir l'enthousiasme.",
+                    "Capacité à lire et à interpréter le public.",
+                    "Expérience de communication et d'interaction interculturelle."
+                ],
+                [
+                    "Mise en place optimale des équipements son et lumière pour les spectacles.",
+                    "Opération des systèmes audio et d'éclairage pendant les performances.",
+                    "Gestion des transitions et effets lumineux pour une atmosphère immersive.",
+                    "Collaboration étroite avec les équipes artistiques et d'animation."
+                ],
+                [
+                    "Conception et réalisation de décors de spectacles pour les soirées à thème.",
+                    "Création d'ambiances visuelles uniques en utilisant des éléments.",
+                    "Adaptation des décors en fonction des différentes thématiques et styles musicaux.",
+                    "Collaboration avec les équipes artistiques pour des performances uniques."
+                ],
+                [
+                    "Gestion de projet pour la réalisation des spectacles et installations techniques.",
+                    "Gestion efficace des ressources, du temps et des délais.",
+                    "Polyvalence pour jongler entre tâches techniques, artistiques et logistiques.",
+                    "Travail autonome avec un sens aigu de l'initiative."
+                ],
+                [
+                    "Résolution créative et efficace des problèmes techniques.",
+                    "Excellentes compétences en communication et en collaboration.",
+                    "Sensibilité artistique et esthétique pour des interfaces utilisateur attrayantes.",
+                    "Gestion efficace des projets, des ressources et des délais."
+                ]
+            ]
+        },
+        {
+            "title": "Growth Hacker & A&R",
+            "company_name": "Agency IKØNE",
+            "points": [
+                "Développement de sites web pour artistes",
+                "Marketing musical et playlisting",
+                "Relations publiques et promotion",
+                "Stratégie de croissance sur les réseaux sociaux",
+                "Design et création de contenu",
+                "Conseil en stratégie d'entreprise",
+                "Croissance durable pour les artistes",
+                "Placements de musique et synchronisation",
+                "Conseils en stratégie de médias sociaux"
+            ],
+            "subPoints": [
+                [
+                    "Sites web personnalisés pour promouvoir les artistes et leur musique.",
+                    "Conception réactive pour une expérience utilisateur optimale.",
+                    "Intégration de fonctionnalités spécifiques : musique, calendriers de tournée, etc."
+                ],
+                [
+                    "Rapports marketing ciblés pour promouvoir les artistes et leur musique.",
+                    "Gestion de campagnes de playlisting sur les plateformes de streaming.",
+                    "Utilisation des données pour des campagnes basées sur les données."
+                ],
+                [
+                    "Stratégies de relations publiques pour accroître la notoriété des artistes.",
+                    "Promotion auprès des médias, influenceurs et acteurs clés de l'industrie."
+                ],
+                [
+                    "Mise en œuvre de stratégies de croissance pour augmenter les abonnés et les followers.",
+                    "Utilisation des données pour identifier les opportunités d'engagement."
+                ],
+                [
+                    "Création de visuels et de contenu graphique : pochettes d'albums, bannières, etc.",
+                    "Conception de contenu vidéo pour promouvoir les artistes."
+                ],
+                [
+                    "Aide aux artistes dans leur plan de croissance et de développement de carrière.",
+                    "Assistance dans les démarches de financement et d'investissement."
+                ],
+                [
+                    "Fourniture de conseils et de solutions pour une croissance durable des carrières musicales.",
+                    "Élaboration de stratégies à long terme pour l'épanouissement des artistes."
+                ],
+                [
+                    "Recherche et négociation de placements de musique dans des projets de films, séries, publicités, etc.",
+                    "Gestion des placements de musique synchronisée pour maximiser la visibilité et les revenus."
+                ],
+                [
+                    "Élaboration de stratégies spécifiques aux médias sociaux pour optimiser la présence et l'impact en ligne."
+                ]
+            ]
+        },
+        {
+            "title": "Concepteur Développeur d'application En Alternance",
+            "company_name": "Chromatotec",
+            "points": [
+                "Conception et développement d'applications web en utilisant WordPress et d'autres technologies connexes.",
+                "Collaboration avec des équipes pluridisciplinaires pour créer des produits de haute qualité.",
+                "Mise en œuvre de conceptions adaptatives pour assurer la compatibilité multi-navigateurs.",
+                "Création de plug-ins pour WooCommerce et WordPress pour répondre aux besoins spécifiques de l'entreprise.",
+                "Développement d'une solution interne similaire à WeTransfer pour les besoins de Chromatotec et des scientifiques.",
+                "Suivi d'une formation d'administration système et réseau de bas niveau avec mon tuteur de diplôme.",
+                "Participation aux révisions de code et fourniture de commentaires constructifs aux autres développeurs et administrateurs système."
+            ],
+            "subPoints": [
+                [
+                    "Création de sites web personnalisés pour répondre aux besoins spécifiques de l'entreprise.",
+                    "Utilisation de technologies front-end telles que HTML, CSS, JavaScript pour modifier l'interface utilisateur du cms.",
+                    "Intégration de bases de données et développement côté serveur pour les fonctionnalités avancées."
+                ],
+                [
+                    "Échange avec l'équipe marketing pour intégrer mes maquettes graphiques.",
+                    "Coopération avec les chefs de produit france , europe et asie pour comprendre les besoins fonctionnels."
+                ],
+                [
+                    "Utilisation de Media Queries pour les designs réactifs.",
+                    "Tests approfondis sur différentes plateformes et navigateurs."
+                ],
+                [
+                    "Développement de fonctionnalités personnalisées pour la boutiques de devis en ligne.",
+                    "Intégration de modules  complémentaires que j'ai développer pour améliorer les performances du parcours utilisateur et administrateur"
+                ],
+                [
+                    "Integration d'un système de transfert de fichiers sécurisé et convivial en interne",
+                    "Intégration de fonctionnalités de suivi des envois et des téléchargements."
+                ],
+                [
+                    "Apprentissage des bases de l'administration des systèmes et des réseaux.",
+                    "Mise en pratique des connaissances acquises sur des projets internes."
+                ],
+                [
+                    "Analyse approfondie du code pour détecter les erreurs et les améliorations potentielles.",
+                    "Collaboration avec l'équipe pour améliorer la qualité et les performances des applications."
+                ]
+            ]
+        }
+    ]
 }
