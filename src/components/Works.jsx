@@ -7,6 +7,8 @@ import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 
+import {useTranslation} from "react-i18next";
+
 const ProjectCard = ({
   index,
   name,
@@ -57,11 +59,14 @@ const ProjectCard = ({
 };
 
 const Works = () => {
-  return (
+
+    const { t, i18n } = useTranslation();
+
+    return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText}>My work</p>
-        <h2 className={styles.sectionHeadText}>Projects.</h2>
+        <p className={styles.sectionSubText}>{t('my-works')}</p>
+        <h2 className={styles.sectionHeadText}>{t('projects')}.</h2>
       </motion.div>
 
       <div className="w-full flex">
@@ -69,12 +74,7 @@ const Works = () => {
           variants={fadeIn("", "", 0.1, 1)}
           className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]"
         >
-          Mon portfolio présente mes premiers projets en tant que jeune professionnel,
-           reflétant mes compétences acquises et expériences concrètes.
-            J'ajouterai volontiers les dépôts publics et démonstrations en direct.
-             Mon parcours est en constante évolution,
-              et je suis fier(e) de partager ces réalisations,
-               témoignant de mon engagement à progresser dans mon domaine d'intérêt.
+            {t('works_text')}
         </motion.p>
       </div>
 

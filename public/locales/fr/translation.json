@@ -1,11 +1,30 @@
 {
     "hello": "Bonjour",
+    "projects": "Projets",
+    "contact" : "Contactez-moi",
+    "FR": "FR",
+    "EN": "EN",
     "iam": "Je suis",
     "your_name": "Votre nom",
     "name?" : "Qu'elle et votre nom ?",
     "your_email": "Votre email",
     "email?": "Qu'elle et votre email ?",
     "your_message": "Votre message",
-    "message?": "Vous voulez discuter avec moi ?"
+    "message?": "Vous voulez discuter avec moi ?",
+    "send": "Envoyer",
+
+    "about": "A propos",
+    "overview": "Vue d'ensemble",
+
+    "i_develop": "Je développe",
+    "somes_interfaces": "des interfaces et des applications web",
+
+    "about_text": "Jeune développeur passionné, spécialisé en TypeScript,\n        JavaScript, Vue, Php, et Node.js. J'explore actuellement Three.js. \n        Créatif, efficace et prêt à donner vie à vos idées. Travaillons ensemble !",
+
+    "what_i_have_done" : "Ce que j'ai fait jusqu'à maintenant",
+    "proffesional_experience": "Expérience professionnelle",
+
+    "works_text" : " Mon portfolio présente mes premiers projets en tant que jeune professionnel,\n           reflétant mes compétences acquises et expériences concrètes.\n            J'ajouterai volontiers les dépôts publics et démonstrations en direct.\n             Mon parcours est en constante évolution,\n              et je suis fier(e) de partager ces réalisations,\n               témoignant de mon engagement à progresser dans mon domaine d'intérêt.",
+    "my-works": "Mon travail"
 
 }

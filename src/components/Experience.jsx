@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -12,7 +13,11 @@ import { experiences } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
 
+
 const ExperienceCard = ({ experience }) => {
+
+
+
   return (
     <VerticalTimelineElement
       contentStyle={{
@@ -71,11 +76,13 @@ const ExperienceCard = ({ experience }) => {
 };
 
 const Experience = () => {
-  return (
+    const { t, i18n } = useTranslation();
+
+    return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText}>Ce que j'ai fait jusqu'à maintenant</p>
-        <h2 className={styles.sectionHeadText}>Expériences professionnelles.</h2>
+        <p className={styles.sectionSubText}>{t('what_i_have_done')}</p>
+        <h2 className={styles.sectionHeadText}>{t('proffesional_experience')}</h2>
       </motion.div>
 
       <div className="mt-20 flex flex-col">

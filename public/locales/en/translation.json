@@ -1,11 +1,29 @@
 {
     "hello": "Hello",
+    "projects": "Projects",
+    "contact": "Contact",
+    "FR": "FR",
+    "EN": "EN",
     "iam": "I am",
     "your_name": "Your name",
     "name?": "What is your name?",
     "your_email": "Your email",
     "email?": "What is your email?",
     "your_message": "Your message",
-    "message?": "What you want to say to me ?"
+    "message?": "What you want to say to me ?",
+    "send": "Send",
 
+    "about": "About",
+    "overview": "Overview",
+
+    "i_develop": "I develop",
+    "somes_interfaces": "web interfaces and applications",
+
+    "about_text": "Passionate young developer specializing in TypeScript,\n        JavaScript, Vue, Php, and Node.js. Currently exploring Three.js. \n        Creative, efficient and ready to bring your ideas to life. Let's work together!",
+
+    "what_i_have_done" : "What I've achieved so far",
+    "proffessional_experience": "Professional experience",
+
+    "works_text" : "My portfolio presents my first projects as a young professional,\n           reflecting my acquired skills and practical experience.\n            I'd be happy to add public deposits and live demonstrations.\n             My career path is constantly evolving,\n              and I'm proud to share these achievements,\n               demonstrating my commitment to progress in my field of interest.",
+    "my_works": "My works"
 }

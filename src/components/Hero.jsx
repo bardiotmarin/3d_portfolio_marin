@@ -28,13 +28,13 @@ const Hero = () => {
                         {t('hello')}, {t('iam')} <span className="text-[#915EFF]">Marin</span>
                     </h1>
                     <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-                        Je développe <br className="sm:block hidden" />
-                        des interfaces et des applications web
+                        {t('i_develop')} <br className="sm:block hidden" />
+                        {t('somes_interfaces')}
                     </p>
                 </div>
             </div>
 
-            <ComputersCanvas />
+            <ComputersCanvas  />
 
             <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center">
                 <a href="#about">
