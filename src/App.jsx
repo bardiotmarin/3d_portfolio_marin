@@ -3,6 +3,9 @@ import { BrowserRouter } from "react-router-dom";
 import { About, Contact, Experience, Hero, Navbar, Tech, Works, StarsCanvas } from "./components";
 import "./i18n";
 
+import React from "react";
+import {Lotus} from "./components/canvas/index.js";
+
 const App = () => {
 
   return (

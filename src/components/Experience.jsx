@@ -9,6 +9,7 @@ import { styles } from "../styles";
 import { experiences } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
+import { Lotus } from "./canvas";
 
 const ExperienceCard = ({ experience }) => {
     const { t } = useTranslation();
@@ -32,7 +33,9 @@ const ExperienceCard = ({ experience }) => {
                 </div>
             }
         >
+
             <div>
+
                 <h3 className="text-white text-[24px] font-bold">{t(experience.title)}</h3>
                 <p className="text-secondary text-[16px] font-semibold" style={{ margin: 0 }}>
                     {t(experience.company_name)}
@@ -40,6 +43,7 @@ const ExperienceCard = ({ experience }) => {
             </div>
 
             <ul className="mt-5 list-disc ml-5 space-y-2">
+
                 {experience.points.map((point, index) => (
                     <li key={`experience-point-${index}`} className="text-white-500 text-[14px] pl-1 tracking-wider">
                         {t(point)} {/* Utilisez la clé de traduction pour obtenir le texte traduit */}
@@ -58,6 +62,7 @@ const ExperienceCard = ({ experience }) => {
                     </li>
                 ))}
             </ul>
+
         </VerticalTimelineElement>
     );
 };
@@ -84,6 +89,7 @@ const Experience = () => {
                         <ExperienceCard key={index} experience={experience} />
                     ))}
                 </VerticalTimeline>
+
             </div>
         </>
     );

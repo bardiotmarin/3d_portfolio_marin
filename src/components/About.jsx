@@ -7,6 +7,7 @@ import { styles } from "../styles";
 import { services } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
+import {Lotus} from "./canvas/index.js";
 
 const ServiceCard = ({ index, titleKey, icon }) => {
     const { t } = useTranslation();
@@ -43,6 +44,7 @@ const About = () => {
     }, [i18n.language]);
 
     return (
+
         <>
             <motion.div variants={textVariant()}>
                 <p className={styles.sectionSubText}>Introduction</p>
@@ -55,7 +57,9 @@ const About = () => {
             >
                 {t("about_text")}
             </motion.p>
-
+            <div>
+                <Lotus />
+            </div>
             <div className="mt-20 flex flex-wrap gap-10">
                 {services.map((service, index) => (
                     <ServiceCard key={service.title} index={index} titleKey={service.title} icon={service.icon} />
