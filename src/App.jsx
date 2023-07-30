@@ -4,7 +4,7 @@ import { About, Contact, Experience, Hero, Navbar, Tech, Works, StarsCanvas } fr
 import "./i18n";
 
 import React from "react";
-import {Lotus} from "./components/canvas/index.js";
+
 
 const App = () => {
 

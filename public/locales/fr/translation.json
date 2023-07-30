@@ -59,7 +59,10 @@
     "experience.1.point3": "Mise en œuvre de la conception réactive et assurance de la compatibilité multi-navigateurs.",
     "experience.1.point4": "Participation aux revues de code et fourniture de commentaires constructifs aux autres développeurs.",
 
-    "experience.2.title": "DJ et Technicien Son pour Lookéa - Expérience Musicale Passionnante",
+    "experience.2.point1": "DJ",
+    "experience.2.point2": "Responsable Technique Son et Lumière pour Lookéa ",
+    "experience.2.point3": "Scénographie, Décoration de Spectacles et Gestion de Projet",
+    "experience.2.point4": "Compétences Transférables pour le Développement Web",
     "experience.2.subPoint1.1": "Création d'une atmosphère musicale dynamique et captivante pour les vacanciers.",
     "experience.2.subPoint1.2": "Adaptation de la sélection musicale en fonction de l'ambiance.",
     "experience.2.subPoint1.3": "Animation musicale lors des soirées et des moments de détente.",
@@ -89,7 +92,7 @@
 
     "experience.3.title": "Growth Hacker & A&R chez Agency IKØNE",
     "experience.3.point1": "Développement web pour les artistes.",
-    "experience.3.point2": "Marketing musical et création de listes de lecture.",
+    "experience.3.point2": "Marketing musical et playlisting",
     "experience.3.point3": "Relations publiques et promotion.",
     "experience.3.point4": "Stratégie de croissance sur les réseaux sociaux.",
     "experience.3.point5": "Conception et création de contenu.",
@@ -119,7 +122,12 @@
     "experience.3.subPoint6.2": "Soutien dans les processus de financement et d'investissement.",
 
     "experience.3.subPoint7.1": "Fourniture de conseils et de solutions pour une croissance durable des carrières musicales.",
-    "experience.3.subPoint7.2": "Élaboration de stratégies à long terme pour la croissance des artistes.",
+    "experience.3.subPoint7.2": "Élaboration de stratégies à long terme pour l'épanouissement des artistes.",
+
+    "experience.3.subPoint8.1": "Recherche et négociation de placements de musique dans des projets de films, séries, publicités, etc.",
+    "experience.3.subPoint8.2": "Gestion des placements de musique synchronisée pour maximiser la visibilité et les revenus.",
+
+    "experience.3.subPoint9.1": "Élaboration de stratégies spécifiques aux médias sociaux pour optimiser la présence et l'impact en ligne.",
 
     "experience.4.title": "Concepteur et Développeur d'Applications en Apprentissage chez Chromatotec",
     "experience.4.point1": "Conception et développement d'applications web utilisant WordPress et d'autres technologies connexes.",
@@ -165,7 +173,7 @@
             ]
         },
         {
-            "title": "DJ et Technicien Son pour Lookéa - Expérience Musicale Enthousiasmante",
+            "title": " Responsable Technique Son & Lumière pour Lookéa - Expérience Musicale Enthousiasmante",
             "company_name": "Lookea",
             "points": [
                 "Dj :",

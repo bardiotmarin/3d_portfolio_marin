@@ -57,9 +57,9 @@ const About = () => {
             >
                 {t("about_text")}
             </motion.p>
-            <div>
-                <Lotus />
-            </div>
+            {/*<div>*/}
+            {/*    <Lotus />*/}
+            {/*</div>*/}
             <div className="mt-20 flex flex-wrap gap-10">
                 {services.map((service, index) => (
                     <ServiceCard key={service.title} index={index} titleKey={service.title} icon={service.icon} />

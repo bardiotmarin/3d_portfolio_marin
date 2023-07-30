@@ -60,7 +60,10 @@
     "experience.1.point3": "Implementing responsive design and ensuring cross-browser compatibility.",
     "experience.1.point4": "Participating in code reviews and providing constructive feedback to other developers.",
 
-    "experience.2.title": "DJ and Sound Technician for Lookéa - Exciting Music Experience",
+    "experience.2.point1": "DJ",
+    "experience.2.point2": "Sound & Light supervisor Technician for Lookéa - Exciting Music Experience",
+    "experience.2.point3": "Scenography, Show Decoration and Project Management",
+    "experience.2.point4": "Transferable Competencies for Web Development",
     "experience.2.subPoint1.1": "Creating a dynamic and captivating musical atmosphere for vacationers.",
     "experience.2.subPoint1.2": "Adapting the music selection according to the atmosphere.",
     "experience.2.subPoint1.3": "Musical animation during evenings and relaxation moments.",
@@ -117,10 +120,15 @@
     "experience.3.subPoint5.2": "Design of video content to promote artists.",
 
     "experience.3.subPoint6.1": "Assistance to artists in their growth and career development plan.",
-    "experience.3.subPoint6.2": "Support in financing and investment processes.",
+    "experience.3.subPoint6.2": "Support in financing processes.",
 
     "experience.3.subPoint7.1": "Providing advice and solutions for sustainable growth of musical careers.",
     "experience.3.subPoint7.2": "Development of long-term strategies for artists' growth.",
+
+    "experience.3.subPoint8.1": "Research and negotiation of music placements in film projects, series, commercials, etc.",
+    "experience.3.subPoint8.2": "Synchronized music placement management to maximize visibility and revenues.",
+
+    "experience.3.subPoint9.1": "Development of specific social media strategies to optimize online presence and impact.",
 
     "experience.4.title": "App Designer and Developer in Apprenticeship at Chromatotec",
     "experience.4.point1": "Design and development of web applications using WordPress and other related technologies.",

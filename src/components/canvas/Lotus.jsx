@@ -1,69 +1,53 @@
-import React, { useEffect, useRef } from "react";
+import React, {Suspense} from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
+import CanvasLoader from "../Loader";
+
 const Lotus = () => {
     const lotus = useGLTF("/lotus_flower/scene.gltf");
-    const canvasRef = useRef();
-    let contextLost = false;
-
-    useEffect(() => {
-        const canvas = canvasRef.current;
-
-        const handleContextLost = (event) => {
-            console.warn("WebGL context lost. Reason:", event.reason);
-            contextLost = true;
-            // Handle context loss here (e.g., cleanup resources)
-        };
-
-        const handleContextRestored = () => {
-            console.log("WebGL context restored.");
-            contextLost = false;
-            // Reinitialize your WebGL resources here
-            // For example, reload textures, recreate shaders, etc.
-        };
-
-        canvas.addEventListener("webglcontextlost", handleContextLost, false);
-        canvas.addEventListener("webglcontextrestored", handleContextRestored, false);
-
-        return () => {
-            canvas.removeEventListener("webglcontextlost", handleContextLost);
-            canvas.removeEventListener("webglcontextrestored", handleContextRestored);
-        };
-    }, []);
 
     return (
+
+        <primitive object={lotus.scene} scale={2.4} position-y={0} rotation-y={0} />
+
+    );
+};
+
+const LotusCanvas = () => {
+    return (
         <Canvas
-            ref={canvasRef}
-            shadows
+
             frameloop="demand"
             dpr={[1, 2]}
             gl={{ preserveDrawingBuffer: true }}
             camera={{
-                fov: 75,
+                fov: 45,
                 near: 0.1,
-                far: 1000,
-                position: [0, 0, 5],
+                far: 200,
+                position: [-4, 3, 6],
             }}
         >
-            <ambientLight intensity={0.5} />
-            <directionalLight
-                castShadow
-                position={[2.5, 8, 5]}
-                intensity={1.5}
-                shadow-mapSize-width={2048}
-                shadow-mapSize-height={2048}
-                shadow-camera-far={50}
-                shadow-camera-left={-10}
-                shadow-camera-right={10}
-                shadow-camera-top={10}
-                shadow-camera-bottom={-10}
+            <spotLight
+                position={[-10, -10, 90]}
+                angle={180}
+                penumbra={0}
+                intensity={12}
+
+                shadow-mapSize={5024}
             />
-            <pointLight position={[0, -10, 0]} intensity={0.5} />
-            <OrbitControls autoRotate enableZoom={false} maxPolarAngle={Math.PI / 4} minPolarAngle={Math.PI / 4} />
-            {lotus.scene && <primitive object={lotus.scene} scale={1.0} position={[0, 0, 0]} rotation={[0, 0, 0]} />}
+            <Suspense fallback={<CanvasLoader />}>
+                <OrbitControls
+                    autoRotate
+                    enableZoom={false}
+                    maxPolarAngle={Math.PI}
+                    minPolarAngle={Math.PI / 2}
+                />
+                <Lotus />
+
+                <Preload all />
+            </Suspense>
         </Canvas>
     );
 };
-
-export default Lotus;
+export default LotusCanvas;
