@@ -44,29 +44,31 @@ const About = () => {
     }, [i18n.language]);
 
     return (
-
         <>
-            <motion.div variants={textVariant()}>
-                <p className={styles.sectionSubText}>Introduction</p>
-                <h2 className={styles.sectionHeadText}>{t('overview')}</h2>
-            </motion.div>
+            <div id="about"> {/* Ajoutez l'ID "about" à cet élément */}
+                <motion.div variants={textVariant()}>
+                    <p className={styles.sectionSubText}>Introduction</p>
+                    <h2 className={styles.sectionHeadText}>{t('overview')}</h2>
+                </motion.div>
 
-            <motion.p
-                variants={fadeIn("", "", 0.1, 1)}
-                className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
-            >
-                {t("about_text")}
-            </motion.p>
-            {/*<div>*/}
-            {/*    <Lotus />*/}
-            {/*</div>*/}
-            <div className="mt-20 flex flex-wrap gap-10">
-                {services.map((service, index) => (
-                    <ServiceCard key={service.title} index={index} titleKey={service.title} icon={service.icon} />
-                ))}
+                <motion.p
+                    variants={fadeIn("", "", 0.1, 1)}
+                    className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
+                >
+                    {t("about_text")}
+                </motion.p>
+                {/*<div>*/}
+                {/*    <Lotus />*/}
+                {/*</div>*/}
+                <div className="mt-20 flex flex-wrap gap-10">
+                    {services.map((service, index) => (
+                        <ServiceCard key={service.title} index={index} titleKey={service.title} icon={service.icon} />
+                    ))}
+                </div>
             </div>
         </>
     );
 };
+
 
 export default SectionWrapper(About, "about");

@@ -210,6 +210,32 @@
   -webkit-text-fill-color: transparent;
 }
 
+/* Réglage du zoom du reCAPTCHA pour les petits écrans */
+@media (max-width: 480px) {
+  .grecaptcha-badge {
+    transform: scale(0.77);
+  }
+}
+
+/* Styles pour le conteneur du formulaire */
+.form-container {
+  width: 100%; /* Ajustez la largeur selon vos besoins */
+  max-width: 500px; /* Ajustez la largeur maximale selon vos besoins */
+  margin: 0 auto;
+  padding: 0 20px; /* Ajoutez une marge à gauche et à droite pour éviter que le reCAPTCHA soit coupé */
+}
+
+/* Réglage du reCAPTCHA pour les petits écrans */
+@media (max-width: 767px) {
+  .form-container {
+    overflow-x: hidden; /* Empêche le débordement horizontal */
+  }
+}
+
+.text-container {
+  position: relative;
+  z-index: 1; /* Définissez une valeur de z-index supérieure pour que le texte apparaisse par-dessus l'objet 3D */
+}
 
 
 /* canvas- styles */

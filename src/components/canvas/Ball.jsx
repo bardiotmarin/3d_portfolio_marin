@@ -45,7 +45,9 @@ const BallCanvas = ({ icon }) => {
       gl={{ preserveDrawingBuffer: true }}
     >
       <Suspense fallback={<CanvasLoader />}>
-        <OrbitControls enableZoom={false} />
+        <OrbitControls enableZoom={false}
+                       enablePan={false} // Désactiver le déplacement de la caméra avec clic droit
+        />
         <Ball imgUrl={icon} />
       </Suspense>
 

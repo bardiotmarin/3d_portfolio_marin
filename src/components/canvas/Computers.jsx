@@ -1,13 +1,17 @@
 import React, { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Preload, useGLTF, useTexture } from "@react-three/drei";
+import { OrbitControls, Preload, useGLTF, useTexture, OrthographicCamera } from "@react-three/drei";
 import CanvasLoader from "../Loader";
 import * as THREE from "three";
+import Moon from "./Moon.jsx";
 
 // Composant représentant l'objet 3D d'ordinateur
 const Computers = ({ scale, positionX, positionY }) => {
   // Charger le modèle 3D de l'ordinateur
   const computer = useGLTF("./desktop_pc/scene.gltf");
+  // Adjust the camera position and angle for a better view of the scene
+  const cameraPosition = [0, 0, 10];
+  const cameraAngle = 40;
 
   // // Charger la texture iridescente à partir de l'URL
   // const iridescentTexture = useTexture("/desktop_pc/textures/iridescent.png"); // Assurez-vous que le chemin est correct
@@ -52,6 +56,7 @@ const Computers = ({ scale, positionX, positionY }) => {
             position={[positionX, positionY, -0]} // Utiliser les positions X et Y calculées
             rotation={[-0.11, -5.0, -0.10]} // Rotation de l'objet (optionnelle)
         />
+
       </mesh>
   );
 };
@@ -124,22 +129,22 @@ const ComputersCanvas = () => {
       <Canvas
           frameloop="demand"
           shadows
-          dpr={[1, 2]}
+          dpr={[0, 1]}
           camera={{ position: [20, 3, 5], fov: 25 }}
           gl={{ preserveDrawingBuffer: true }}
       >
         <Suspense fallback={<CanvasLoader />}>
-          {/* Ajouter les contrôles de caméra pour interagir avec la scène 3D */}
           <OrbitControls
+              enablePan={false} // Désactiver le déplacement de la caméra avec clic droit
               autoRotate
               enableZoom={false}
               maxPolarAngle={Math.PI / 2}
               minPolarAngle={Math.PI / 2}
           />
-          {/* Afficher l'objet d'ordinateur dans la scène */}
           <Computers scale={scale} positionX={positionX} positionY={positionY} />
+          <Moon /> {/* Add the Moon component here */}
+          {/* Other objects can also be included here if needed */}
         </Suspense>
-        {/* Précharger les ressources pour améliorer les performances */}
         <Preload all />
       </Canvas>
   );
