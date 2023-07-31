@@ -9,6 +9,7 @@ import { styles } from "../styles";
 import { experiences } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
+import about from "./About.jsx";
 
 const ExperienceCard = ({ experience }) => {
     const { t } = useTranslation();
@@ -20,7 +21,7 @@ const ExperienceCard = ({ experience }) => {
                 color: "#fff",
             }}
             contentArrowStyle={{ borderRight: "7px solid #232631" }}
-            date={experience.date}
+            date={t(experience.date)}
             iconStyle={{ background: experience.iconBg }}
             icon={
                 <div className="flex justify-center items-center w-full h-full">
@@ -88,8 +89,8 @@ const Experience = () => {
                         <ExperienceCard key={index} experience={experience} />
                     ))}
                 </VerticalTimeline>
-
             </div>
+
         </>
     );
 };

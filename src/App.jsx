@@ -5,7 +5,6 @@ import "./i18n";
 
 import React from "react";
 
-
 const App = () => {
 
   return (
@@ -16,10 +15,9 @@ const App = () => {
           <Hero />
         </div>
         <About />
-        <Experience />
+        <Experience/>
         <Tech />
         <Works />
-
         <div className="relative z-0">
           <Contact />
           <StarsCanvas />

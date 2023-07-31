@@ -8,10 +8,8 @@ import {
   html,
   css,
   reactjs,
-  redux,
   tailwind,
   nodejs,
-  mongodb,
   git,
   figma,
   docker,
@@ -27,6 +25,8 @@ import {
   agencyIkone,
   snippet,
   wedrums,
+  ableton,
+  vuejs,
   threejs,
 } from "../assets";
 
@@ -36,7 +36,7 @@ export const navLinks = [
     title: "about",
   },
   {
-    id: "work",
+    id: "works",
     title: "my_works",
   },
   {
@@ -86,20 +86,12 @@ const technologies = [
     icon: reactjs,
   },
   {
-    name: "Redux Toolkit",
-    icon: redux,
-  },
-  {
     name: "Tailwind CSS",
     icon: tailwind,
   },
   {
     name: "Node JS",
     icon: nodejs,
-  },
-  {
-    name: "MongoDB",
-    icon: mongodb,
   },
   {
     name: "Three JS",
@@ -117,28 +109,42 @@ const technologies = [
     name: "docker",
     icon: docker,
   },
+  {
+    name: "ableton",
+    icon: ableton,
+  },
+  {
+    name: "vuejs",
+    icon: vuejs,
+  },
 ];
 
 const experiences = [
   {
-    title: "Dj Compositeur independant",
-    company_name: "nebula beatz",
+    title: "experience.1.title",
+    company_name: "experience.1.compagny",
     icon: starbucks, // Replace with the imported icon for nebula beatz
     iconBg: "#383E56",
-    date: "2017",
+    date: "experience.1.date",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
+      "experience.1.point1",
       "experience.1.point2",
       "experience.1.point3",
       "experience.1.point4",
     ],
+    subPoints: [
+        ["experience.1.subPoint1.1"],
+      ["experience.1.subPoint2.1"],
+      ["experience.1.subPoint3.1"],
+      ["experience.1.subPoint4.1"],
+    ],
   },
   {
-    title: "DJ et Technicien Son pour Lookéa - Expérience Musicale Enthousiasmante",
-    company_name: "Lookea",
+    title: "experience.2.title",
+    company_name: "experience.2.compagny",
     icon: tesla, // Replace with the imported icon for Lookea
     iconBg: "#E6DEDD",
-    date: "Sept 2018 - Sept 2019",
+    date: "experience.2.date",
     points: [
       "experience.2.point1",
       "experience.2.point2",
@@ -181,11 +187,11 @@ const experiences = [
     ],
   },
   {
-    title: "Growth Hacker & A&R",
-    company_name: "Agency IKØNE",
+    title: "experience.3.title",
+    company_name: "experience.3.compagny",
     icon: shopify, // Replace with the imported icon for Agency IKØNE
     iconBg: "#383E56",
-    date: "Janv 2019 - Juin 2023",
+    date: "experience.3.date",
     points: [
       "experience.3.point1",
       "experience.3.point2",
@@ -235,11 +241,11 @@ const experiences = [
     ],
   },
   {
-    title: "Concepteur Développeur d'application En Alternance",
-    company_name: "Chromatotec",
+    title: "experience.4.title",
+    company_name: "experience.4.compagny",
     icon: meta, // Replace with the imported icon for Chromatotec
     iconBg: "#E6DEDD",
-    date: "Sept 2021 - Juin 2023",
+    date: "experience.4.date",
     points: [
       "experience.4.point1",
       "experience.4.point2",
@@ -588,4 +594,4 @@ const projects = [
   },
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+export { services, technologies, experiences, testimonials, projects,  };

@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react";
 import { useGLTF } from "@react-three/drei";
 
 const Moon = () => {
-    const moon = useGLTF("public/moon/scene.gltf");
+    const moon = useGLTF("/moon/scene.gltf");
     const moonRef = useRef();
 
     useEffect(() => {
@@ -24,8 +24,6 @@ const Moon = () => {
             window.removeEventListener("scroll", handleScroll);
         };
     }, []);
-
     return <primitive object={moon.scene} ref={moonRef} />;
 };
-
 export default Moon;

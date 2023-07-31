@@ -45,7 +45,7 @@ const About = () => {
 
     return (
         <>
-            <div id="about"> {/* Ajoutez l'ID "about" à cet élément */}
+            <div id="About" > {/* Ajoutez l'ID "about" à cet élément */}
                 <motion.div variants={textVariant()}>
                     <p className={styles.sectionSubText}>Introduction</p>
                     <h2 className={styles.sectionHeadText}>{t('overview')}</h2>
@@ -57,9 +57,6 @@ const About = () => {
                 >
                     {t("about_text")}
                 </motion.p>
-                {/*<div>*/}
-                {/*    <Lotus />*/}
-                {/*</div>*/}
                 <div className="mt-20 flex flex-wrap gap-10">
                     {services.map((service, index) => (
                         <ServiceCard key={service.title} index={index} titleKey={service.title} icon={service.icon} />

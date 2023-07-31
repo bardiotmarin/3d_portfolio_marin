@@ -44,7 +44,7 @@ const Computers = ({ scale, positionX, positionY }) => {
             angle={0.12}
             penumbra={1}
             intensity={1}
-            castShadow
+            castShadow={true}
             shadow-mapSize={1024}
         />
         <pointLight intensity={1} />
@@ -142,8 +142,8 @@ const ComputersCanvas = () => {
               minPolarAngle={Math.PI / 2}
           />
           <Computers scale={scale} positionX={positionX} positionY={positionY} />
-          <Moon /> {/* Add the Moon component here */}
-          {/* Other objects can also be included here if needed */}
+          <Moon />
+
         </Suspense>
         <Preload all />
       </Canvas>

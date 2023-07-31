@@ -16,10 +16,11 @@ const Hero = () => {
     return (
         <section className={`relative w-full h-screen mx-auto`}>
 
-            <ComputersCanvas                 className={`absolute inset-0 top-[120px] max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
+            <ComputersCanvas
             />
             <div
-                className={`absolute inset-0 top-[120px] max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
+                className={`absolute top-[120px] 2xl:ms-57 xl:ms-78 lg:ms-14 md:ms-100  sm:ms-35 ms-45 max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
+                // style={{  marginLeft:"25%"}}
             >
                 <div className="flex flex-col justify-center items-center mt-5">
                     <div className="w-5 h-5 rounded-full bg-[#915EFF]" />

@@ -68,24 +68,26 @@ const Works = () => {
 
     return (
         <>
-            <motion.div variants={textVariant()}>
-                <p className={styles.sectionSubText}>{t("my_works")}</p>
-                <h2 className={styles.sectionHeadText}>{t("projects")}.</h2>
-            </motion.div>
+            <div id="works"> {/* Ajoutez l'ID "works" à cet élément */}
+                <motion.div variants={textVariant()}>
+                    <p className={styles.sectionSubText}>{t("my_works")}</p>
+                    <h2 className={styles.sectionHeadText}>{t("projects")}.</h2>
+                </motion.div>
 
-            <div className="w-full flex">
-                <motion.p
-                    variants={fadeIn("", "", 0.1, 1)}
-                    className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]"
-                >
-                    {t("works_text")}
-                </motion.p>
-            </div>
+                <div className="w-full flex">
+                    <motion.p
+                        variants={fadeIn("", "", 0.1, 1)}
+                        className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]"
+                    >
+                        {t("works_text")}
+                    </motion.p>
+                </div>
 
-            <div className="mt-20 flex flex-wrap gap-7">
-                {projects.map((project, index) => (
-                    <ProjectCard key={`project-${index}`} index={index} {...project} />
-                ))}
+                <div className="mt-20 flex flex-wrap gap-7">
+                    {projects.map((project, index) => (
+                        <ProjectCard key={`project-${index}`} index={index} {...project} />
+                    ))}
+                </div>
             </div>
         </>
     );

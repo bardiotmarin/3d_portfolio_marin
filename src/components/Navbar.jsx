@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import LanguageSelector from "./LanguageSelector";
+import  LanguageSelector from "./LanguageSelector";
 import { styles } from "../styles";
 import { navLinks } from "../constants";
 import { logo, menu, close } from "../assets";
@@ -18,10 +17,10 @@ const Navbar = () => {
       setScrolled(isScrolled);
     };
 
-    // Ajouter l'événement de scroll
+    // Add the scroll event listener
     window.addEventListener("scroll", handleScroll);
 
-    // Nettoyer l'événement lorsque le composant se démonte
+    // Clean up the event listener when the component unmounts
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -36,20 +35,23 @@ const Navbar = () => {
           }`}
       >
         <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
-          <Link
-              to="/"
+          <a
+              href="/"
               className="flex items-center gap-2"
               onClick={() => {
                 window.scrollTo(0, 0);
               }}
           >
-            <img src={logo} alt="logo" className="w-9 h-9 object-contain" />
+            <img src={logo} alt="logo" className="w-13 h-12 object-contain" />
             <p className="text-white text-[18px] font-bold cursor-pointer flex ">
               Marin &nbsp;
               <span className="sm:block hidden"> | 3D Portfolio</span>
             </p>
-          </Link>
-          <LanguageSelector />
+          </a>
+          <div className=" sm:ml-14 ml-10">
+            <LanguageSelector />
+          </div>
+
           <div className="hidden sm:flex items-center">
             <ul className="list-none flex flex-row gap-10">
               {navLinks.map((nav) => (
@@ -59,13 +61,12 @@ const Navbar = () => {
                           active === nav.id ? "text-white" : "text-secondary"
                       } hover:text-white text-[18px] font-medium cursor-pointer`}
                   >
-                    {/* Utiliser le composant Link de React Router */}
-                    <Link
-                        to={`#${nav.id}`}
-                        onClick={() => setActive(nav.id)} // Définir le lien actif au clic
+                    <a
+                        href={`#${nav.id}`}
+                        onClick={() => setActive(nav.id)}
                     >
                       {t(nav.title)}
-                    </Link>
+                    </a>
                   </li>
               ))}
             </ul>
@@ -95,8 +96,7 @@ const Navbar = () => {
                           setToggle(!toggle);
                         }}
                     >
-                      {/* Utiliser le composant Link de React Router */}
-                      <Link to={`#${nav.id}`}>{t(nav.title)}</Link>
+                      <a href={`#${nav.id}`}>{t(nav.title)}</a>
                     </li>
                 ))}
               </ul>
