@@ -131,7 +131,7 @@ const Contact = () => {
 
               {/* Ajouter le widget reCAPTCHA */}
               <ReCAPTCHA
-                  sitekey="6LdYBHInAAAAAPw8HZbVPAEeJNbiUyiqAhcgG5XQ" // Remplacez par votre clé d'API reCAPTCHA
+                  sitekey="6LcuB3InAAAAACJeifB8ecXRRPjUDg-7DkEkXdRE" // Remplacez par votre clé d'API reCAPTCHA
                   onChange={handleCaptchaChange}
               />
 
