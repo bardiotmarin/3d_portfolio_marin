@@ -41,11 +41,11 @@ const Contact = () => {
 
     emailjs
         .send(
-            "service_ysev0ho",
+            "portefolio",
             "template_hdq80qc",
             {
               form_name: form.name,
-              to_name: "Marin",
+              to_name: "",
               from_email: form.email,
               to_email: "bardiot.marin@mail.com",
               message: form.message,
@@ -131,7 +131,7 @@ const Contact = () => {
 
               {/* Ajouter le widget reCAPTCHA */}
               <ReCAPTCHA
-                  sitekey="6Ld-QHEnAAAAAKF4jh9BGXFhM8SPW2iY993x7mi-" // Remplacez par votre clé d'API reCAPTCHA
+                  sitekey="6LdYBHInAAAAAPw8HZbVPAEeJNbiUyiqAhcgG5XQ" // Remplacez par votre clé d'API reCAPTCHA
                   onChange={handleCaptchaChange}
               />
 
