@@ -6,15 +6,19 @@ const Moon = () => {
     const moonRef = useRef();
 
     useEffect(() => {
+        let ticking = false;
         const handleScroll = () => {
-            if (moonRef.current) {
-                const scrollY = window.scrollY;
-                const yPos = -scrollY / 50; // Adjust the speed of movement here
-                moonRef.current.position.y = yPos;
+            if (!ticking && moonRef.current && document.visibilityState === "visible") {
+                window.requestAnimationFrame(() => {
+                    const scrollY = window.scrollY;
+                    const yPos = -scrollY / 100;
+                    moonRef.current.position.y = yPos;
 
-                // Modify the scale to simulate the explosion effect
-                const scale = 1 - scrollY / 10000;
-                moonRef.current.scale.set(scale, scale, scale);
+                    // Effectuer d'autres ajustements ici si nécessaire
+
+                    ticking = false;
+                });
+                ticking = true;
             }
         };
 
@@ -24,6 +28,8 @@ const Moon = () => {
             window.removeEventListener("scroll", handleScroll);
         };
     }, []);
+
     return <primitive object={moon.scene} ref={moonRef} />;
 };
+
 export default Moon;

@@ -12,7 +12,7 @@ const ServiceCard = ({ index, titleKey, icon }) => {
     const { t } = useTranslation();
 
     return (
-        <Tilt className="xs:w-[250px] w-full parallax-effect" perspective={300}>
+        <Tilt className="xs:w-[250px] w-full parallax-effect" perspective={500}>
             <motion.div
                 variants={fadeIn("right", "spring", index * 0.5, 0.75)}
                 className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card"
