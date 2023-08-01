@@ -1,4 +1,3 @@
 npm install three
 
 npm install --legacy-peer-deps  react-tilt
-npm install @react-three/postprocessing --f

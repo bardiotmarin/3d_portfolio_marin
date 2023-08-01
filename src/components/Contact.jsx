@@ -41,8 +41,8 @@ const Contact = () => {
 
     emailjs
         .send(
-            "service_r0jcplm",
-            "template_1t76uxq",
+            "service_ysev0ho",
+            "template_hdq80qc",
             {
               form_name: form.name,
               to_name: "Marin",
@@ -50,7 +50,7 @@ const Contact = () => {
               to_email: "bardiot.marin@mail.com",
               message: form.message,
             },
-            "Jqq9AvwIuSjoMiA5c"
+            "9WyAwWe4Qg3bT7hza5qWl"
         )
         .then(
             () => {
@@ -67,7 +67,7 @@ const Contact = () => {
               setLoading(false);
 
               console.log(error);
-              alert("Something went wrong.");
+              alert("Something went wrong with our server please direct contact me via linkdin.");
             }
         );
   };
@@ -131,7 +131,7 @@ const Contact = () => {
 
               {/* Ajouter le widget reCAPTCHA */}
               <ReCAPTCHA
-                  sitekey="VOTRE_CLE_API_RECAPTCHA" // Remplacez par votre clé d'API reCAPTCHA
+                  sitekey="6Ld-QHEnAAAAAKF4jh9BGXFhM8SPW2iY993x7mi-" // Remplacez par votre clé d'API reCAPTCHA
                   onChange={handleCaptchaChange}
               />
 
