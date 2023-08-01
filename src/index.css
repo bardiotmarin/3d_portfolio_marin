@@ -337,3 +337,29 @@
   z-index: 1; /* Définissez une valeur de z-index supérieure pour que le texte apparaisse par-dessus l'objet 3D */
 }
 
+
+
+
+/* fx de paralax sur les carte */
+
+.parallax-effect {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 9px;
+
+  transform-style: preserve-3d;}
+
+  .inner-element {
+
+
+    font-style: italic;
+    color: white;
+    transform: translateZ(60px);
+  }
+
+.inner-element-2 {
+  text-size-adjust: auto;
+  transform: translateZ(45px);
+}

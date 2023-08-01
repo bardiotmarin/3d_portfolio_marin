@@ -12,7 +12,7 @@ const ServiceCard = ({ index, titleKey, icon }) => {
     const { t } = useTranslation();
 
     return (
-        <Tilt className="xs:w-[250px] w-full">
+        <Tilt className="xs:w-[250px] w-full parallax-effect" perspective={300}>
             <motion.div
                 variants={fadeIn("right", "spring", index * 0.5, 0.75)}
                 className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card"
@@ -23,10 +23,10 @@ const ServiceCard = ({ index, titleKey, icon }) => {
                         scale: 1,
                         speed: 450,
                     }}
-                    className="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col"
+                    className="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col "
                 >
-                    <img src={icon} alt="web-development" className="w-16 h-16 object-contain" />
-                    <h3 className="text-white text-[20px] font-bold text-center">{t(titleKey)}</h3>
+                    <img src={icon} alt="web-development" className="w-16 h-16 object-contain inner-element" />
+                    <h3 className="text-white text-[20px] font-bold text-center inner-element">{t(titleKey)}</h3>
                 </div>
             </motion.div>
         </Tilt>
@@ -44,7 +44,7 @@ const About = () => {
 
     return (
         <>
-            <div id="About" > {/* Ajoutez l'ID "about" à cet élément */}
+            <div id="About"  > {/* Ajoutez l'ID "about" à cet élément */}
                 <motion.div variants={textVariant()}>
                     <p className={styles.sectionSubText}>Introduction</p>
                     <h2 className={styles.sectionHeadText}>{t('overview')}</h2>
@@ -56,7 +56,7 @@ const About = () => {
                 >
                     {t("about_text")}
                 </motion.p>
-                <div className="mt-20 flex flex-wrap gap-10">
+                <div className="mt-20 flex flex-wrap gap-10 ">
                     {services.map((service, index) => (
                         <ServiceCard key={service.title} index={index} titleKey={service.title} icon={service.icon} />
                     ))}
