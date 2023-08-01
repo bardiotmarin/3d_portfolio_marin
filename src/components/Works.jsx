@@ -26,7 +26,6 @@ const ProjectCard = ({
                 options={{ max: 45, scale: 1, speed: 450 }}
                 perspective={900}
                 className="bg-tertiary p-5 rounded-2xl sm:w-full md:w-[300px] parallax-effect"
-                perspective={800}
             >
                 <div className="relative w-full h-[230px] inner-element">
                     <img
