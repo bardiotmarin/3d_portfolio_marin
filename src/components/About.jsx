@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Tilt from "react-tilt";
+import Tilt from 'react-parallax-tilt';
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
@@ -7,7 +7,6 @@ import { styles } from "../styles";
 import { services } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
-import {Lotus} from "./canvas/index.js";
 
 const ServiceCard = ({ index, titleKey, icon }) => {
     const { t } = useTranslation();
