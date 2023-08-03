@@ -30,7 +30,6 @@ const App = () => {
       const canvas = canvases[i];
       canvas.addEventListener("load", onCanvasLoaded);
     }
-
     // Cleanup: Remove event listeners when the component unmounts
     return () => {
       for (let i = 0; i < canvases.length; i++) {
