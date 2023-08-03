@@ -57,7 +57,7 @@ const EarthCanvas = () => {
                     maxAzimuthAngle={-Math.PI /8}
 
                 />
-                <Earth />
+                <Earth class="moon" />
                 <Preload all />
             </Suspense>
         </Canvas>

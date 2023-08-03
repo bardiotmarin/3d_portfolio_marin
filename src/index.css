@@ -340,7 +340,7 @@
 
 
 
-/* fx de paralax sur les carte */
+/* fx de paralax sur les cartes */
 
 .parallax-effect {
   display: flex;
@@ -362,4 +362,73 @@
 .inner-element-2 {
   text-size-adjust: auto;
   transform: translateZ(45px);
+}
+
+/* css du loader du site */
+
+/* fx de parallax sur les cartes */
+
+.parallax-effect {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 9px;
+  transform-style: preserve-3d;
+}
+
+.inner-element {
+  font-style: italic;
+  color: white;
+  transform: translateZ(70px);
+}
+
+.inner-element-2 {
+  text-size-adjust: auto;
+  transform: translateZ(45px);
+}
+
+/* css du loader du site */
+
+#sparkles > path {
+  animation: sparklyBits 1000ms infinite;
+  position: absolute;
+}
+
+#message {
+  margin-top: 20px;
+  text-align: center;
+}
+
+@keyframes sparklyBits {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* For loop to generate animation delays */
+#sparkles > path:nth-child(1) {
+  animation-delay: 35ms;
+}
+#sparkles > path:nth-child(2) {
+  animation-delay: 70ms;
+}
+#sparkles > path:nth-child(3) {
+  animation-delay: 105ms;
+}
+/* ... and so on for elements 4 to 29 */
+
+/* Boring Bit */
+#buritobox {
+  align-items: center;
+  background: #757F9A;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #D7DDE8, #757F9A);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #D7DDE8, #757F9A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  width: 100vw;
 }

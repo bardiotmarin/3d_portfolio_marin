@@ -1,4 +1,4 @@
-import { EarthCanvas, BallCanvas, ComputersCanvas, StarsCanvas, Lotus } from './canvas';
+import { EarthCanvas, BallCanvas, MewCanvas, StarsCanvas, Lotus } from './canvas';
 import Hero from "./Hero";
 import Navbar from "./Navbar";
 import About from "./About";
@@ -9,6 +9,7 @@ import Works from "./Works";
 import Contact from "./Contact";
 import CanvasLoader from "./Loader";
 import LanguageSelector from './LanguageSelector';
+import LoaderMain from './LoaderMain';
 
 export {
   LanguageSelector,
@@ -23,6 +24,7 @@ export {
   CanvasLoader,
   EarthCanvas, 
   BallCanvas, 
-  ComputersCanvas, 
-  StarsCanvas
+  MewCanvas,
+  StarsCanvas,
+  LoaderMain
 };

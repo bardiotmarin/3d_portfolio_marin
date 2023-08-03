@@ -1,43 +1,15 @@
-import React, { Suspense, useEffect, useState } from "react";
+
+import React, { useState, useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Preload, useGLTF, useTexture, OrthographicCamera } from "@react-three/drei";
-import CanvasLoader from "../Loader";
-import * as THREE from "three";
-import Moon from "./Moon.jsx";
+import { OrbitControls, useGLTF } from "@react-three/drei";
+import Moon from "./Moon";
 
-// Composant représentant l'objet 3D d'ordinateur
-const Computers = ({ scale, positionX, positionY }) => {
-  // Charger le modèle 3D de l'ordinateur
-  const computer = useGLTF("./desktop_pc/scene.gltf");
-  // Adjust the camera position and angle for a better view of the scene
-  const cameraPosition = [0, 0, 10];
-  const cameraAngle = 40;
-
-  // // Charger la texture iridescente à partir de l'URL
-  // const iridescentTexture = useTexture("/desktop_pc/textures/iridescent.png"); // Assurez-vous que le chemin est correct
-  //
-  // // Appliquer le matériau iridescent au modèle 3D (utilisez le MeshPhysicalMaterial)
-  // useEffect(() => {
-  //   if (computer && computer.scene) {
-  //     computer.scene.traverse((child) => {
-  //       if (child.isMesh) {
-  //         // Assurez-vous que l'objet n'est pas l'œil (ou tout autre objet que vous ne souhaitez pas avoir de texture iridescente)
-  //         if (!child.name.includes("eye")) {
-  //           child.material = new THREE.MeshPhysicalMaterial({
-  //             map: iridescentTexture,
-  //             metalness: .2, // Ajustez ces valeurs selon vos préférences
-  //             roughness: 0.12, // Ajustez ces valeurs selon vos préférences
-  //             envMapIntensity: 5.5, // Ajustez ces valeurs selon vos préférences
-  //           });
-  //         }
-  //       }
-  //     });
-  //   }
-  // }, [computer, iridescentTexture]);
+const Mew = ({ scale, positionX, positionY }) => {
+  const computer = useGLTF("/desktop_pc/scene.gltf");
 
   return (
       <mesh>
-        {/* Ajouter un éclairage à la scène */}
+        {/* Lighting */}
         <hemisphereLight intensity={0.15} groundColor="black" />
         <spotLight
             position={[50, 10, 70]}
@@ -49,19 +21,17 @@ const Computers = ({ scale, positionX, positionY }) => {
         />
         <pointLight intensity={1} />
 
-        {/* Ajouter l'objet 3D de l'ordinateur en tant que primitive */}
+        {/* Computer model */}
         <primitive
             object={computer.scene}
             scale={scale}
-            position={[positionX, positionY, -0]} // Utiliser les positions X et Y calculées
-            rotation={[-0.11, -5.0, -0.10]} // Rotation de l'objet (optionnelle)
+            position={[positionX, positionY, -0]}
+            rotation={[-0.11, -5.0, -0.10]}
         />
-
       </mesh>
   );
 };
-
-const ComputersCanvas = () => {
+const MewCanvas = () => {
   // État pour détecter la taille de l'écran
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
@@ -133,7 +103,7 @@ const ComputersCanvas = () => {
           camera={{ position: [20, 3, 5], fov: 25 }}
           gl={{ preserveDrawingBuffer: true, antialias: true  }}
       >
-        <Suspense fallback={<CanvasLoader />}>
+
           <OrbitControls
               enablePan={false} // Désactiver le déplacement de la caméra avec clic droit
               autoRotate
@@ -141,13 +111,12 @@ const ComputersCanvas = () => {
               maxPolarAngle={Math.PI / 2}
               minPolarAngle={Math.PI / 2}
           />
-          <Computers scale={scale} positionX={positionX} positionY={positionY} />
+          <Mew scale={scale} positionX={positionX} positionY={positionY} />
           <Moon />
 
-        </Suspense>
-        <Preload all />
+
       </Canvas>
   );
 };
 
-export default ComputersCanvas;
+export default MewCanvas;
