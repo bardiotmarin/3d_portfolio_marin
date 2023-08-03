@@ -25,12 +25,11 @@ const App = () => {
     };
 
     // Add event listeners to each canvas to detect loading completion
-    const canvases = document.getElementsByClassName("computer-canvas moon"); // Replace "your-canvas-class" with the actual class name of your canvas elements
+    const canvases = document.getElementsByClassName("computer-canvas moon experience-work-container"); // Replace "your-canvas-class" with the actual class name of your canvas elements
     for (let i = 0; i < canvases.length; i++) {
       const canvas = canvases[i];
       canvas.addEventListener("load", onCanvasLoaded);
     }
-
     // Cleanup: Remove event listeners when the component unmounts
     return () => {
       for (let i = 0; i < canvases.length; i++) {
