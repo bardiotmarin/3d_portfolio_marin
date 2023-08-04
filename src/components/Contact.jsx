@@ -50,7 +50,7 @@ const Contact = () => {
               to_email: "bardiot.marin@mail.com",
               message: form.message,
             },
-            "9WyAwWe4Qg3bT7hza5qWl"
+            "2jy7_QgL_MKn7O3D6"
         )
         .then(
             () => {
