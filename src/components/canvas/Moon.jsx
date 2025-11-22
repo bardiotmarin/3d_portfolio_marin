@@ -6,6 +6,14 @@ const MoonHero = () => {
     const moonRef = useRef();
 
     useEffect(() => {
+        let rotationId;
+        const animate = () => {
+            if (moonRef.current) {
+                moonRef.current.rotation.y += 0.0027;
+            }
+            rotationId = requestAnimationFrame(animate);
+        };
+        animate();
         let ticking = false;
         const handleScroll = () => {
             if (!ticking && moonRef.current && document.visibilityState === "visible") {
@@ -18,14 +26,13 @@ const MoonHero = () => {
                 ticking = true;
             }
         };
-
         window.addEventListener("scroll", handleScroll);
         return () => {
             window.removeEventListener("scroll", handleScroll);
+            if(rotationId) cancelAnimationFrame(rotationId);
         };
     }, []);
 
-    // Pass group for future compositing
     return (
         <group>
             <ambientLight intensity={0.2} />
