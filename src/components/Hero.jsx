@@ -1,10 +1,9 @@
 import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { useTranslation } from "react-i18next";
-// Imports
-import { MewCanvas } from "./canvas"; 
-// RENOMMAGE IMPORT
-import AudioVisualizer from "./canvas/playerAudio.jsx"; 
+import { Canvas } from "@react-three/fiber";
+import { MewCanvas } from "./canvas";
+import AudioVisualizer from "./canvas/playerAudio.jsx";
 import MoonHero from "./canvas/Moon.jsx";
 
 const Hero = () => {
@@ -12,24 +11,24 @@ const Hero = () => {
 
     return (
         <section className="relative w-full h-screen mx-auto overflow-hidden">
-            
-            {/* 1. AUDIO VISUALIZER (FOND) */}
-            <div className="absolute inset-0 w-full h-full z-0">
-                {/* Utilisation avec Majuscule */}
+            {/* Placement 3D canvas : tout dans le même Canvas R3F pour overlay/fond moon/mew */}
+            <Canvas
+                style={{ position: "absolute", zIndex: 0, width: '100vw', height: '100vh', top: 0, left: 0 }}
+                shadows
+                camera={{ position: [0, 0, 10], fov: 70 }}
+            >
+                {/* FOND LUNE (MoonHero) */}
+                <MoonHero />
+                {/* MEW devant (MewCanvas) */}
+                <MewCanvas />
+                {/* Effets visuels audio (peut être transformé en objets 3D si souhaité) */}
+                {/* <AudioVisualizer /> */}
+            </Canvas>
+            {/* 2. AUDIO VISUALIZER (fond effet visuel html/canvas quand non 3D) */}
+            <div className="absolute inset-0 w-full h-full z-5 pointer-events-auto">
                 <AudioVisualizer />
             </div>
-
-            {/* Si MoonHero est un Canvas à part, il faut gérer sa transparence aussi */}
-            <div className="absolute inset-0 w-full h-full z-5 pointer-events-none">
-                <MoonHero />
-            </div>
-
-            {/* 2. MEW (DEVANT) */}
-            <div className="absolute inset-0 w-full h-full z-10 pointer-events-none">
-                <MewCanvas />
-            </div>
-
-            {/* 3. TEXTE */}
+            {/* 3. TEXTE + Scroll */}
             <div className={`absolute top-[120px] max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5 z-20 pointer-events-none`}>
                 <div className="flex flex-col justify-center items-center mt-5">
                     <div className="w-5 h-5 rounded-full bg-[#915EFF]" />
@@ -45,7 +44,6 @@ const Hero = () => {
                     </p>
                 </div>
             </div>
-
             {/* SCROLL */}
             <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center z-20 pointer-events-auto">
                 <a href="#about">
