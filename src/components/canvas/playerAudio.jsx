@@ -48,7 +48,7 @@ const AudioVisualizer = () => {
       lineThickness: 1.8,
       lineStraightness: 2.53,
       idleWaveHeight: 0.01,
-      enableGrain: true,
+      enableGrain: false,
       grainIntensity: 0.075,
       grainSpeed: 2.0,
       grainMean: 0.0,
