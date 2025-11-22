@@ -1,0 +1,44 @@
+{
+  "name": "3dfolio",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@emailjs/browser": "^3.11.0",
+    "@react-three/drei": "^9.80.0",
+    "@react-three/fiber": "^8.11.1",
+    "@react-three/postprocessing": "^2.15.0",
+    "dat.gui": "^0.7.9",
+    "emailjs-com": "^3.2.0",
+    "framer-motion": "^9.0.7",
+    "i18next": "^23.3.0",
+    "i18next-browser-languagedetector": "^7.1.0",
+    "i18next-http-backend": "^2.2.1",
+    "maath": "^0.5.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-google-recaptcha": "^3.1.0",
+    "react-i18next": "^13.0.2",
+    "react-parallax-tilt": "^1.7.155",
+    "react-router-dom": "^6.8.1",
+    "react-tilt": "^1.0.2",
+    "react-vertical-timeline-component": "^3.6.0",
+    "resend": "^0.17.2",
+    "three": "^0.151.3"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "@vitejs/plugin-react": "^3.1.0",
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.2.6",
+    "vite": "^4.4.7",
+    "vitest": "^4.0.9"
+  }
+}

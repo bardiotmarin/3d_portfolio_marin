@@ -1,0 +1,6 @@
+npm install three
+
+npm install --legacy-peer-deps  react-tilt
+
+
+start serv : ''' sh: npm run dev '''
