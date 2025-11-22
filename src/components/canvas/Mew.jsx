@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 
 const Mew = ({ powerMode }) => {
-  // Responsive logique
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   useEffect(() => {
     const handleResize = () => setScreenWidth(window.innerWidth);
@@ -19,9 +18,9 @@ const Mew = ({ powerMode }) => {
   else if (screenWidth < 500) { scale = 0.030; positionX = -1.5; positionY = -1; }
   else { scale = 0.0022; positionX = 0; positionY = -1; }
 
-  const model = useGLTF("/desktop_pc/scene.gltf");
+  const gltf = useGLTF("/desktop_pc/scene.gltf");
 
-  // Animation d'effet selon powerMode : simple exemple d'émission/shader (à remplacer par ce que tu veux)
+  // Animation d'effet selon powerMode
   const [color, setColor] = useState("white");
   useEffect(() => {
     if(powerMode === "LEFT") setColor("#ff2e7a");
@@ -29,15 +28,23 @@ const Mew = ({ powerMode }) => {
     else setColor("white");
   }, [powerMode]);
 
+  // Patch: Itère sur tous les meshes enfants pour setter le material.color (R3F-safe)
+  useEffect(() => {
+    if (!gltf || !gltf.scene) return;
+    gltf.scene.traverse((obj) => {
+      if (obj.isMesh && obj.material) {
+        if (obj.material.color) obj.material.color.set(color);
+        if (obj.material.emissive) obj.material.emissive.set(color);
+      }
+    });
+  }, [color, gltf]);
+
   return (
     <group>
-      {/* Lights/FX globaux : tu peux changer intensité/effet selon powerMode aussi ! */}
       <hemisphereLight intensity={0.15} groundColor="black" />
       <spotLight position={[50, 10, 70]} angle={0.12} penumbra={1} intensity={1} castShadow shadow-mapSize={1024} />
       <pointLight intensity={1} />
-      {/* Effet super-pouvoir : couleur/émissif dynamique */}
-      <primitive object={model.scene} scale={scale} position={[positionX, positionY, 0]} rotation={[-0.11, -5.0, -0.10]}
-        material-color={color} material-emissive={color} />
+      <primitive object={gltf.scene} scale={scale} position={[positionX, positionY, 0]} rotation={[-0.11, -5.0, -0.10]} />
       <OrbitControls enablePan={false} autoRotate={false} enableZoom={false} maxPolarAngle={Math.PI / 2} minPolarAngle={Math.PI / 2} />
     </group>
   );
