@@ -2,33 +2,27 @@ import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { useTranslation } from "react-i18next";
 import { Canvas } from "@react-three/fiber";
-import { MewCanvas } from "./canvas";
+import Mew from "./canvas/Mew";
+import MoonHero from "./canvas/Moon";
 import AudioVisualizer from "./canvas/playerAudio.jsx";
-import MoonHero from "./canvas/Moon.jsx";
 
 const Hero = () => {
     const { t, i18n } = useTranslation();
-
     return (
         <section className="relative w-full h-screen mx-auto overflow-hidden">
-            {/* Placement 3D canvas : tout dans le même Canvas R3F pour overlay/fond moon/mew */}
+            {/* 1 seul Canvas pour toute la scène 3D (Moon + Mew) */}
             <Canvas
-                style={{ position: "absolute", zIndex: 0, width: '100vw', height: '100vh', top: 0, left: 0 }}
                 shadows
                 camera={{ position: [0, 0, 10], fov: 70 }}
-            >
-                {/* FOND LUNE (MoonHero) */}
+                style={{position: "absolute", zIndex: 0, width: '100vw', height: '100vh', top: 0, left: 0}}>
                 <MoonHero />
-                {/* MEW devant (MewCanvas) */}
-                <MewCanvas />
-                {/* Effets visuels audio (peut être transformé en objets 3D si souhaité) */}
-                {/* <AudioVisualizer /> */}
+                <Mew />
             </Canvas>
-            {/* 2. AUDIO VISUALIZER (fond effet visuel html/canvas quand non 3D) */}
+            {/* 2. AUDIO VISUALIZER en overlay (HTML/canvas custom) */}
             <div className="absolute inset-0 w-full h-full z-5 pointer-events-auto">
                 <AudioVisualizer />
             </div>
-            {/* 3. TEXTE + Scroll */}
+            {/* 3. TEXTE + SCROLL */}
             <div className={`absolute top-[120px] max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5 z-20 pointer-events-none`}>
                 <div className="flex flex-col justify-center items-center mt-5">
                     <div className="w-5 h-5 rounded-full bg-[#915EFF]" />
