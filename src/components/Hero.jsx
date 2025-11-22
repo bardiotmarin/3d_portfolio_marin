@@ -2,23 +2,39 @@ import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { useTranslation } from "react-i18next";
 import { Canvas } from "@react-three/fiber";
+import { OrbitControls } from "@react-three/drei";
 import Mew from "./canvas/Mew";
 import MoonHero from "./canvas/Moon";
 import AudioVisualizer from "./canvas/playerAudio.jsx";
+import { useState, useEffect } from "react";
 
 const Hero = () => {
     const { t, i18n } = useTranslation();
+    const [powerMode, setPowerMode] = useState(null);
+
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+            if (e.key === "ArrowLeft") setPowerMode("LEFT");
+            else if (e.key === "ArrowRight") setPowerMode("RIGHT");
+            else setPowerMode(null);
+        };
+        window.addEventListener("keydown", handleKeyDown);
+        return () => window.removeEventListener("keydown", handleKeyDown);
+    }, []);
+
     return (
         <section className="relative w-full h-screen mx-auto overflow-hidden">
-            {/* 1 seul Canvas pour toute la scène 3D (Moon + Mew) */}
+            {/* Canvas 3D unique : Moon en fond, visualizer 3D, MEW, OrbitControls -> powerMode pour effet clavier */}
             <Canvas
                 shadows
                 camera={{ position: [0, 0, 10], fov: 70 }}
                 style={{position: "absolute", zIndex: 0, width: '100vw', height: '100vh', top: 0, left: 0}}>
                 <MoonHero />
-                <Mew />
+                {/* Visualizer 3D possible ici, TODO si mesh audio visuelle */}
+                <Mew powerMode={powerMode} />
+                <OrbitControls enablePan={false} enableZoom={false} autoRotate={false} maxPolarAngle={Math.PI / 2} minPolarAngle={Math.PI / 2}/>
             </Canvas>
-            {/* 2. AUDIO VISUALIZER en overlay (HTML/canvas custom) */}
+            {/* 2. AUDIO VISUALIZER en overlay (HTML/canvas custom, z-5) */}
             <div className="absolute inset-0 w-full h-full z-5 pointer-events-auto">
                 <AudioVisualizer />
             </div>
