@@ -8,5 +8,6 @@ import TechBalls from "./TechBalls.jsx";
 import SmokeCloud3D from "./SmokeCloud3D.jsx";
 import Lightning from "./Lightning.jsx";
 import playerAudio from './playerAudio.jsx';
+import Papillon from "./Papillon.jsx";
 
-export { EarthCanvas, BallCanvas, MewCanvas, StarsCanvas, Lotus, MoonHero, TechBalls, SmokeCloud3D, Lightning, playerAudio };
+export { EarthCanvas, BallCanvas, MewCanvas, StarsCanvas, Lotus, MoonHero, TechBalls, SmokeCloud3D, Lightning, playerAudio, Papillon };

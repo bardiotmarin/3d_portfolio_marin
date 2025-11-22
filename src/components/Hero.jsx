@@ -4,9 +4,11 @@ import { useTranslation } from "react-i18next";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import Mew from "./canvas/Mew";
+import Papillon from "./canvas/Papillon";
 import MoonHero from "./canvas/Moon";
 import AudioVisualizer from "./canvas/playerAudio.jsx";
 import { useState, useEffect } from "react";
+
 
 const Hero = () => {
     const { t, i18n } = useTranslation();
@@ -31,7 +33,8 @@ const Hero = () => {
                 style={{position: "absolute", zIndex: 0, width: '100vw', height: '100vh', top: 0, left: 0}}>
                 <MoonHero />
                 {/* Visualizer 3D possible ici, TODO si mesh audio visuelle */}
-                <Mew powerMode={powerMode} />
+                {/* <Mew powerMode={powerMode} /> */}
+                <Papillon />
                 <OrbitControls enablePan={false} enableZoom={false} autoRotate={false} maxPolarAngle={Math.PI / 2} minPolarAngle={Math.PI / 2}/>
             </Canvas>
             {/* 2. AUDIO VISUALIZER en overlay (HTML/canvas custom, z-5) */}
