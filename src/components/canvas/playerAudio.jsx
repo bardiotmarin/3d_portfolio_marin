@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import audioFile from '../../assets/music/ECHO8.ogg';
 
+
 const AudioVisualizer = () => {
   const containerRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -48,8 +49,8 @@ const AudioVisualizer = () => {
       lineThickness: 1.8,
       lineStraightness: 2.53,
       idleWaveHeight: 0.01,
-      enableGrain: false,
-      grainIntensity: 0.075,
+      enableGrain: true,
+      grainIntensity: 0.0009,
       grainSpeed: 2.0,
       grainMean: 0.0,
       grainVariance: 0.5,
@@ -434,12 +435,12 @@ const AudioVisualizer = () => {
       
       {/* 2. Le Bouton (Devant) : position FIXED et z-index MAX pour être sûr de cliquer */}
       <div className="fixed bottom-10 left-1/2 transform -translate-x-1/2 z-[9999] pointer-events-auto">
-        {/* <button 
+        <button 
           onClick={togglePlay}
           className="px-8 py-3 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-full hover:bg-white/20 transition-all font-bold uppercase tracking-widest text-sm cursor-pointer"
         >
           {isPlaying ? "Stop Music" : "Play Music"}
-        </button> */}
+        </button>
       </div>
     </div>
   );
