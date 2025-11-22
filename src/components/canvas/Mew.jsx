@@ -32,13 +32,13 @@ const Mew = ({ powerMode }) => {
   useEffect(() => {
     if (!gltf || !gltf.scene) return;
     gltf.scene.traverse((obj) => {
-      if (obj.isMesh && obj.material) {
-        if (obj.material.color) obj.material.color.set(color);
-        if (obj.material.emissive) obj.material.emissive.set(color);
+      if (obj.isMesh && obj.material && obj.material.emissive) {
+        if (powerMode === "LEFT") obj.material.emissive.set("#ff2e7a");
+        else if (powerMode === "RIGHT") obj.material.emissive.set("#00abff");
+        else obj.material.emissive.set("#000000");
       }
     });
-  }, [color, gltf]);
-
+  }, [powerMode, gltf]);
   return (
     <group>
       <hemisphereLight intensity={0.15} groundColor="black" />

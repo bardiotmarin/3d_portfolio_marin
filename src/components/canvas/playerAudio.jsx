@@ -434,12 +434,12 @@ const AudioVisualizer = () => {
       
       {/* 2. Le Bouton (Devant) : position FIXED et z-index MAX pour être sûr de cliquer */}
       <div className="fixed bottom-10 left-1/2 transform -translate-x-1/2 z-[9999] pointer-events-auto">
-        <button 
+        {/* <button 
           onClick={togglePlay}
           className="px-8 py-3 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-full hover:bg-white/20 transition-all font-bold uppercase tracking-widest text-sm cursor-pointer"
         >
           {isPlaying ? "Stop Music" : "Play Music"}
-        </button>
+        </button> */}
       </div>
     </div>
   );
