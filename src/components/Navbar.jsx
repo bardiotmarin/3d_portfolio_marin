@@ -1,41 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import  LanguageSelector from "./LanguageSelector";
 import { styles } from "../styles";
 import { navLinks } from "../constants";
 import { logo, menu, close } from "../assets";
 import { useTranslation } from "react-i18next";
-
-// Music player logic moved here
-const useMusicPlayer = () => {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const audioRef = React.useRef(null);
-
-  useEffect(() => {
-    if (!audioRef.current) {
-      audioRef.current = new Audio("/assets/music/ECHO8.ogg");
-      audioRef.current.loop = true;
-    }
-  }, []);
-
-  const togglePlay = async () => {
-    if (!audioRef.current) return;
-    if (audioRef.current.paused) {
-      await audioRef.current.play();
-      setIsPlaying(true);
-    } else {
-      audioRef.current.pause();
-      setIsPlaying(false);
-    }
-  };
-  return { isPlaying, togglePlay };
-};
+import { AudioPlayerContext } from "../context/AudioPlayerContext.jsx";
 
 const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { t } = useTranslation();
-  const { isPlaying, togglePlay } = useMusicPlayer();
+  const { isPlaying, play, stop } = useContext(AudioPlayerContext);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,6 +21,10 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleToggleMusic = () => {
+    if (isPlaying) stop(); else play();
+  };
 
   return (
       <nav className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 ${scrolled ? "bg-primary" : "bg-transparent"}`}>        <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
@@ -65,9 +45,9 @@ const Navbar = () => {
             <LanguageSelector />
           </div>
           <div className="flex items-center gap-4">
-            {/* Play/Stop Music button now in navbar */}
+            {/* Play/Stop Music button now in navbar -- context aware! */}
             <button 
-              onClick={togglePlay}
+              onClick={handleToggleMusic}
               className="px-4 py-2 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-full hover:bg-white/20 transition-all font-bold uppercase tracking-widest text-xs cursor-pointer"
             >
               {isPlaying ? "Stop Music" : "Play Music"}
