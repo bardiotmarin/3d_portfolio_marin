@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import { useGLTF } from "@react-three/drei";
 
-const Moon = () => {
+const MoonHero = () => {
     const moon = useGLTF("/moon/scene.gltf");
     const moonRef = useRef();
 
@@ -13,9 +13,6 @@ const Moon = () => {
                     const scrollY = window.scrollY;
                     const yPos = -scrollY / 100;
                     moonRef.current.position.y = yPos;
-
-                    // Effectuer d'autres ajustements ici si nécessaire
-
                     ticking = false;
                 });
                 ticking = true;
@@ -23,13 +20,19 @@ const Moon = () => {
         };
 
         window.addEventListener("scroll", handleScroll);
-
         return () => {
             window.removeEventListener("scroll", handleScroll);
         };
     }, []);
 
-    return <primitive object={moon.scene} ref={moonRef} />;
+    // Pass group for future compositing
+    return (
+        <group>
+            <ambientLight intensity={0.2} />
+            <directionalLight position={[2, 5, -2]} intensity={1} />
+            <primitive object={moon.scene} ref={moonRef} />
+        </group>
+    );
 };
 
-export default Moon;
+export default MoonHero;
