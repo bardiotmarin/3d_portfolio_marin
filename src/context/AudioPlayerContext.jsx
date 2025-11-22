@@ -6,30 +6,26 @@ export const AudioPlayerProvider = ({ children }) => {
   const audioRef = useRef();
   const [isPlaying, setIsPlaying] = useState(false);
 
-  const getAudio = () => {
-    if (!audioRef.current) {
-      audioRef.current = new Audio("/assets/music/ECHO8.ogg");
-      audioRef.current.loop = true;
-    }
-    return audioRef.current;
-  };
+  // Always ensure audioRef.current stays the same instance
+  if (!audioRef.current) {
+    audioRef.current = new Audio("/assets/music/ECHO8.ogg");
+    audioRef.current.loop = true;
+  }
 
   const play = useCallback(async () => {
-    const audio = getAudio();
     try {
-      await audio.play();
+      await audioRef.current.play();
       setIsPlaying(true);
     } catch {}
   }, []);
 
   const stop = useCallback(() => {
-    const audio = getAudio();
-    audio.pause();
+    audioRef.current.pause();
     setIsPlaying(false);
   }, []);
 
   return (
-    <AudioPlayerContext.Provider value={{ isPlaying, play, stop }}>
+    <AudioPlayerContext.Provider value={{ isPlaying, play, stop, audioElement: audioRef.current }}>
       {children}
     </AudioPlayerContext.Provider>
   );
