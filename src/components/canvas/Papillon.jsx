@@ -4,6 +4,12 @@ import { useFrame, useThree } from "@react-three/fiber";
 import * as THREE from "three";
 import { useTranslation } from "react-i18next";
 
+// ✅ Import automatique de TOUS les fichiers .ogg du dossier
+const audioModules = import.meta.glob('../../assets/sample_papillon/*.ogg', { eager: true });
+const audioSamples = Object.values(audioModules).map(module => module.default);
+
+console.log("🎵 Samples audio chargés:", audioSamples.length, audioSamples);
+
 // ⌨️ Composant pour l'effet machine à écrire
 const Typewriter = ({ text, speed = 30 }) => {
   const [displayedText, setDisplayedText] = useState("");
@@ -22,7 +28,7 @@ const Typewriter = ({ text, speed = 30 }) => {
     return () => clearInterval(timer);
   }, [text, speed]);
 
-  return <>{displayedText}</>;
+  return <span>{displayedText || "\u00A0"}</span>;
 };
 
 const Papillon = () => {
@@ -30,12 +36,20 @@ const Papillon = () => {
   const { scene, animations } = useGLTF("/papillon/source/vfs.glb");
   const { actions } = useAnimations(animations, group);
   const { viewport } = useThree();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   // 💬 États pour les bulles
   const [message, setMessage] = useState(null);
   const [hasInteracted, setHasInteracted] = useState(false);
   const [messageStep, setMessageStep] = useState(0);
+  const [isMessageVisible, setIsMessageVisible] = useState(false);
+
+  // 🔊 Audio state et refs
+  const audioRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  
+  // ✅ NOUVEAU : Tracker les samples déjà joués
+  const playedSamples = useRef(new Set());
 
   // 🦋 Position bas-droite dynamique
   const getInitialPosition = () => {
@@ -61,7 +75,6 @@ const Papillon = () => {
   const waypoints = useRef([]);
   const currentWaypoint = useRef(0);
   
-  // 🛑 Empêche le vol auto au tout début pour laisser lire
   const isStartupPhase = useRef(true);
 
   const [touchStart, setTouchStart] = useState(null);
@@ -77,14 +90,69 @@ const Papillon = () => {
     ) || window.innerWidth < 1024
   );
 
-  // 🎭 SCÉNARIO DES BULLES (Machine à écrire + Séquence)
-  useEffect(() => {
-  if (hasInteracted && messageStep > 0) {
-    setMessage(null);
-    return;
-  }
+  // 🔊 Fonction pour jouer un sample VRAIMENT aléatoire
+  const playRandomSample = () => {
+    console.log("🦋 CLIC DÉTECTÉ !");
+    console.log(`📂 ${audioSamples.length} samples disponibles`);
+    
+    if (audioSamples.length === 0) {
+      console.error("❌ Aucun fichier audio trouvé !");
+      return;
+    }
 
-  const messages = [
+    // Si un audio est déjà en cours, on l'arrête
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+    }
+
+    // ✅ Si tous les samples ont été joués, on reset
+    if (playedSamples.current.size >= audioSamples.length) {
+      console.log("🔄 Tous les samples joués, reset !");
+      playedSamples.current.clear();
+    }
+
+    // ✅ Sélectionner un sample qui n'a pas encore été joué
+    let selectedSample;
+    let randomIndex;
+    let attempts = 0;
+    const maxAttempts = 50; // Éviter une boucle infinie
+
+    do {
+      randomIndex = Math.floor(Math.random() * audioSamples.length);
+      selectedSample = audioSamples[randomIndex];
+      attempts++;
+    } while (playedSamples.current.has(selectedSample) && attempts < maxAttempts);
+
+    // Marquer ce sample comme joué
+    playedSamples.current.add(selectedSample);
+
+    console.log(`🎵 Sample #${randomIndex} sélectionné (${playedSamples.current.size}/${audioSamples.length} joués)`);
+    console.log("🎧 URL:", selectedSample);
+
+    // Créer et jouer le nouvel audio
+    const audio = new Audio(selectedSample);
+    audioRef.current = audio;
+
+    audio.volume = 0.7;
+    
+    audio.play()
+      .then(() => {
+        setIsPlaying(true);
+        console.log("✅ Audio EN LECTURE");
+      })
+      .catch(error => {
+        console.error("❌ ERREUR lecture audio:", error);
+      });
+
+    audio.onended = () => {
+      setIsPlaying(false);
+      console.log("✅ Audio terminé");
+    };
+  };
+
+  // ✅ Fonction pour obtenir les messages traduits
+  const getMessages = () => [
     t("butterfly_msg_1"),
     t("butterfly_msg_2"),
     t("butterfly_msg_3"),
@@ -93,44 +161,81 @@ const Papillon = () => {
     t("butterfly_msg_6"),
   ];
 
-  let sequenceTimer;
+  // ✅ Met à jour SEULEMENT le texte du message quand la langue change
+  useEffect(() => {
+    if (isMessageVisible && messageStep >= 0) {
+      const messages = getMessages();
+      if (messages[messageStep]) {
+        setMessage(messages[messageStep]);
+      }
+    }
+  }, [i18n.language]);
 
-  const runSequence = () => {
-    if (messageStep >= messages.length) return;
-
-    setMessage(messages[messageStep]);
-
-    const readingTime = messageStep === 0 ? 5000 : 6000;
-
-    sequenceTimer = setTimeout(() => {
+  // 🎭 SCÉNARIO DES BULLES
+  useEffect(() => {
+    if (hasInteracted && messageStep > 0) {
+      setIsMessageVisible(false);
       setMessage(null);
+      return;
+    }
 
-      const gapTime = 7000;
+    const messages = [
+      t("butterfly_msg_1"),
+      t("butterfly_msg_2"),
+      t("butterfly_msg_3"),
+      t("butterfly_msg_4"),
+      t("butterfly_msg_5"),
+      t("butterfly_msg_6"),
+    ];
+
+    let sequenceTimer;
+
+    const runSequence = () => {
+      if (messageStep >= messages.length) return;
+
+      setIsMessageVisible(true);
+      setMessage(messages[messageStep]);
+
+      const readingTime = messageStep === 0 ? 5000 : 6000;
+
       sequenceTimer = setTimeout(() => {
-        if (!hasInteracted) {
-          setMessageStep((prev) => prev + 1);
-        }
-      }, gapTime);
-    }, readingTime);
-  };
+        setIsMessageVisible(false);
+        setMessage(null);
 
-  if (messageStep === 0 && !message) {
-    sequenceTimer = setTimeout(runSequence, 1000);
-  } else if (!message) {
-    runSequence();
-  }
+        const gapTime = 7000;
+        sequenceTimer = setTimeout(() => {
+          if (!hasInteracted) {
+            setMessageStep((prev) => prev + 1);
+          }
+        }, gapTime);
+      }, readingTime);
+    };
 
-  return () => clearTimeout(sequenceTimer);
-}, [messageStep, hasInteracted, t, message]);
+    if (messageStep === 0 && !isMessageVisible) {
+      sequenceTimer = setTimeout(runSequence, 5000);
+    } else if (!isMessageVisible && messageStep > 0) {
+      runSequence();
+    }
 
+    return () => clearTimeout(sequenceTimer);
+  }, [messageStep, hasInteracted, isMessageVisible, t]);
 
-
-  // Désactive la phase de démarrage après 10 secondes (libère le papillon)
+  // Désactive la phase de démarrage après 10 secondes
   useEffect(() => {
     const timer = setTimeout(() => {
       isStartupPhase.current = false;
     }, 10000);
     return () => clearTimeout(timer);
+  }, []);
+
+  // Cleanup audio au démontage du composant
+  useEffect(() => {
+    return () => {
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current = null;
+      }
+    };
   }, []);
 
   // Init position
@@ -197,22 +302,22 @@ const Papillon = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // ✅ Input détecte l'interaction et coupe la bulle
   const registerInput = () => {
-  if (!hasInteracted) {
-    setHasInteracted(true);
-    setMessage(null); // Disparition immédiate
-    if(messageStep === 0) {
-      setMessageStep(1); // Passe au message 2 pour éviter replay boucle
+    if (!hasInteracted) {
+      setHasInteracted(true);
+      setIsMessageVisible(false);
+      setMessage(null);
+      if (messageStep === 0) {
+        setMessageStep(1);
+      }
     }
-  }
-  lastInputTime.current = Date.now();
-  isAutoPilot.current = false;
-  flightPath.current = null;
-  waypoints.current = [];
-  currentWaypoint.current = 0;
-  isStartupPhase.current = false;
-};
+    lastInputTime.current = Date.now();
+    isAutoPilot.current = false;
+    flightPath.current = null;
+    waypoints.current = [];
+    currentWaypoint.current = 0;
+    isStartupPhase.current = false;
+  };
 
   const hasMoveInput = () => {
     const k = keys;
@@ -350,7 +455,6 @@ const Papillon = () => {
     const timeSinceInput = Date.now() - lastInputTime.current;
     const timeSinceRest = Date.now() - lastRestTime.current;
 
-    // ✅ CONDITION MODIFIÉE : Pas de vol auto pendant la phase de démarrage (lecture tuto)
     if (timeSinceInput > 3000 && !isAutoPilot.current && !isStartupPhase.current) {
       if (timeSinceRest > nextFlightDelay.current) {
         isAutoPilot.current = true;
@@ -361,8 +465,7 @@ const Papillon = () => {
       }
     }
 
-    // ✅ VITESSE RÉDUITE
-    const baseSpeed = isMobile.current ? 0.05 : 0.08; // Réduit de 0.08/0.12
+    const baseSpeed = isMobile.current ? 0.05 : 0.08;
     const boostFactor = isBoosting ? (isMobile.current ? 2.0 : 2.5) : 1.0;
     const speed = baseSpeed * boostFactor;
     let dx = 0,
@@ -423,7 +526,6 @@ const Papillon = () => {
         idleTimeoutRef.current = null;
       }
     } else {
-      // On ne passe en idle que si on n'est pas en pilote auto et pas en phase de démarrage
       if (flightState === "air" && !idleTimeoutRef.current && !isAutoPilot.current) {
         idleTimeoutRef.current = setTimeout(() => {
           setFlightState("ground");
@@ -466,14 +568,13 @@ const Papillon = () => {
     ];
     setPosition(currentPosition.current);
 
-    // Rotation + comportement
     let targetRot = rotation;
     if (dx !== 0 || dy !== 0) {
       targetRot = Math.atan2(dx, dy);
       setRotation(targetRot);
     }
 
-    if (message && messageStep < 5) {
+    if (isMessageVisible && messageStep < 5) {
       targetRot = Math.PI / 1.5;
     } else if (messageStep >= 5 && !hasInteracted) {
       targetRot = Math.PI * 1.2;
@@ -488,9 +589,9 @@ const Papillon = () => {
 
   return (
     <group ref={group} position={position}>
-      {message && (
+      {message && isMessageVisible && (
         <Html
-          position={[0, 0, 0]} // Centré sur le point de pivot
+          position={[0, 0, 0]}
           center
           distanceFactor={15}
           zIndexRange={[100, 0]}
@@ -501,40 +602,58 @@ const Papillon = () => {
               background: "rgba(255, 255, 255, 0.12)",
               backdropFilter: "blur(14px)",
               border: "1px solid rgba(255, 255, 255, 0.3)",
-              borderRadius: "20px",
-              padding: "12px 18px",
+              borderRadius: "16px",
+              padding: "8px 12px",
               color: "white",
-              fontSize: "13px",
+              fontSize: "11px",
               fontWeight: 500,
               textAlign: "center",
-              width: "220px",
-              boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
+              width: "180px",
+              maxWidth: "180px",
+              boxShadow: "0 6px 24px 0 rgba(31, 38, 135, 0.3)",
               position: "relative",
               whiteSpace: "normal",
-              transform: "translateY(-100%) translateY(-20px)", // Remonte la bulle au-dessus
+              lineHeight: "1.4",
+              transform: "translateY(-100%) translateY(-16px)",
             }}
           >
             <div
               style={{
                 position: "absolute",
-                bottom: "-8px",
+                bottom: "-6px",
                 left: "50%",
                 transform: "translateX(-50%)",
                 width: 0,
                 height: 0,
-                borderLeft: "8px solid transparent",
-                borderRight: "8px solid transparent",
-                borderTop: "8px solid rgba(255, 255, 255, 0.2)",
+                borderLeft: "6px solid transparent",
+                borderRight: "6px solid transparent",
+                borderTop: "6px solid rgba(255, 255, 255, 0.2)",
               }}
             />
-            {/* Texte avec effet machine à écrire */}
             <Typewriter text={message} />
           </div>
         </Html>
       )}
+      
+      {/* Zone cliquable - Remettre invisible une fois que ça marche */}
+      <mesh
+        onClick={(e) => {
+          e.stopPropagation();
+          playRandomSample();
+        }}
+        onPointerOver={() => {
+          document.body.style.cursor = 'pointer';
+        }}
+        onPointerOut={() => {
+          document.body.style.cursor = 'default';
+        }}
+      >
+        <sphereGeometry args={[3, 32, 32]} />
+        {/* ✅ Remettre opacity à 0 pour invisible */}
+        <meshBasicMaterial transparent opacity={0} />
+      </mesh>
 
       <primitive object={scene} scale={15} />
-
       <hemisphereLight intensity={0.2} groundColor="black" />
       <spotLight
         position={[50, 10, 70]}

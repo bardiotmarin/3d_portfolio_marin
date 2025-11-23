@@ -11,4 +11,5 @@ import playerAudio from './playerAudio.jsx';
 import Papillon from "./Papillon.jsx";
 import Galaxy from "./SpaceScene.jsx";
 
-export { Galaxy,EarthCanvas, BallCanvas, MewCanvas, StarsCanvas, Lotus, MoonHero, TechBalls, SmokeCloud3D, Lightning, playerAudio, Papillon };
+
+export { Galaxy,EarthCanvas, BallCanvas, MewCanvas, StarsCanvas, Lotus, MoonHero, TechBalls, SmokeCloud3D, Lightning, playerAudio, Papillon};

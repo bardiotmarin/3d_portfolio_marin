@@ -72,6 +72,7 @@ const App = () => {
           {/* Canvas papillon */}
           <Canvas
             id="papillon-canvas"
+            className="fixed top-0 left-0 w-full h-full pointer-events-none"
             shadows
             dpr={[1, 2]}
             gl={{ preserveDrawingBuffer: true }}
@@ -82,7 +83,7 @@ const App = () => {
               left: 0,
               width: "100vw",
               height: "100vh",
-              pointerEvents: "none"
+              pointerEvents: "auto"
             }}
           >
             <Papillon />
