@@ -20,6 +20,7 @@ const Hero = () => {
             else if (e.key === "ArrowRight") setPowerMode("RIGHT");
             else setPowerMode(null);
         };
+        
         window.addEventListener("keydown", handleKeyDown);
         return () => window.removeEventListener("keydown", handleKeyDown);
     }, []);
@@ -34,7 +35,7 @@ const Hero = () => {
                 <MoonHero />
                 {/* Visualizer 3D possible ici, TODO si mesh audio visuelle */}
                 {/* <Mew powerMode={powerMode} /> */}
-                <Papillon />
+                {/* <Papillon /> */}
                 <OrbitControls enablePan={false} enableZoom={false} autoRotate={false} maxPolarAngle={Math.PI / 2} minPolarAngle={Math.PI / 2}/>
             </Canvas>
             {/* 2. AUDIO VISUALIZER en overlay (HTML/canvas custom, z-5) */}
