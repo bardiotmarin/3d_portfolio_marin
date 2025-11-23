@@ -19,6 +19,15 @@
     "about_devops": "Ingénieur DevOps",
     "about_dev_frontandback": "Développeur backend et frontend",
     "about_creator": "Créateur de contenu musical",
+    "play_music": "Écouter ma musique",
+    "stop_music": "Arrêter la musique",
+
+    "butterfly_msg_1": "Hey ! Tu peux me déplacer avec les touches du clavier 🔼🔽◀️▶️ appuit sur espace ⌨️ , pour me faire voler plus vite🚀. Tu peux aussi scroller avec ta souris, je me déplace avec toi et je continue ma petite vie, mais je ne t'oublie pas....",
+    "butterfly_msg_2": "Si tu me gardes en l'air et que tu spammes un peu ESPACE, je pars en mode turbo. Toujours en douceur hein, je suis un papillon.",
+    "butterfly_msg_3": "Franchement, pour un papillon, je fais déjà plus de sport que toi aujourd'hui.",
+    "butterfly_msg_4": "Je peux aussi me balader tout seul, mais c'est plus cool si tu me dis où aller.",
+    "butterfly_msg_5": "Ah ouais... en fait tu me regardes juste voler sans rien faire ? Je commence à avoir un doute là.",
+    "butterfly_msg_6": "Ok, j'ai compris. Tu ne m'aimes pas tant que ça. Je boude... mais je continuerai quand même à voler, faut pas abuser.",
 
     "about": "A propos",
     "overview": "Vue d'ensemble",

@@ -9,5 +9,6 @@ import SmokeCloud3D from "./SmokeCloud3D.jsx";
 import Lightning from "./Lightning.jsx";
 import playerAudio from './playerAudio.jsx';
 import Papillon from "./Papillon.jsx";
+import Galaxy from "./SpaceScene.jsx";
 
-export { EarthCanvas, BallCanvas, MewCanvas, StarsCanvas, Lotus, MoonHero, TechBalls, SmokeCloud3D, Lightning, playerAudio, Papillon };
+export { Galaxy,EarthCanvas, BallCanvas, MewCanvas, StarsCanvas, Lotus, MoonHero, TechBalls, SmokeCloud3D, Lightning, playerAudio, Papillon };
