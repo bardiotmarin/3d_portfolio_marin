@@ -1,4 +1,4 @@
-import { EarthCanvas, BallCanvas, MewCanvas, StarsCanvas, MoonHero, playerAudio, Papillon, Galaxy } from './canvas';
+import { EarthCanvas, BallCanvas, MewCanvas, StarsCanvas, MoonHero, playerAudio, Papillon, Galaxy, OxygenPlant } from './canvas';
 import Hero from "./Hero";
 import Navbar from "./Navbar";
 import About from "./About";
@@ -31,5 +31,6 @@ export {
   MoonHero,
   playerAudio,
   Papillon,
-  Galaxy
+  Galaxy,
+  OxygenPlant
 };
