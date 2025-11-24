@@ -8,7 +8,7 @@
     "build": "vite build",
     "preview": "vite preview"
   },
-  "dependencies": {
+    "dependencies": {
     "@emailjs/browser": "^3.11.0",
     "@react-three/drei": "^9.80.0",
     "@react-three/fiber": "^8.11.1",
@@ -29,7 +29,7 @@
     "react-tilt": "^1.0.2",
     "react-vertical-timeline-component": "^3.6.0",
     "resend": "^0.17.2",
-    "three": "^0.151.3"
+    "three": "^0.153.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.27",
