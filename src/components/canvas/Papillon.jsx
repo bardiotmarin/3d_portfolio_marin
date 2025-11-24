@@ -713,7 +713,7 @@ const Papillon = () => {
     </Html>
 
     {/* Le papillon 3D */}
-    <primitive object={scene} scale={15} />
+    <primitive object={scene} scale={8} />
     <hemisphereLight intensity={0.2} groundColor="black" />
     <spotLight
       position={[50, 10, 70]}
