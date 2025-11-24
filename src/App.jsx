@@ -7,18 +7,20 @@ import { AudioPlayerProvider } from "./context/AudioPlayerContext";
 import Papillon from "./components/canvas/Papillon";
 import "./i18n";
 
+
 // 🔥 PRÉCHARGE TOUS LES MODÈLES 3D
 const PreloadAssets = () => {
   useGLTF.preload("/desktop_pc/scene.gltf");
   useGLTF.preload("/spaceman/scene.gltf");
   useGLTF.preload("/papillon/source/vfs.glb"); // 🦋 Papillon ajouté
-  // Ajoute ici tous tes autres modèles GLB/GLTF
   return null;
 };
+
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [assetsReady, setAssetsReady] = useState(false);
+
 
   // Timeout de sécurité
   useEffect(() => {
@@ -32,19 +34,20 @@ const App = () => {
     return () => clearTimeout(timeoutId);
   }, [isLoading]);
 
+
   const handleLoadComplete = () => {
     console.log("✅ Tous les assets sont chargés");
     setAssetsReady(true);
-    // Petit délai pour l'animation de sortie du loader
     setTimeout(() => {
       setIsLoading(false);
     }, 300);
   };
 
+
   return (
     <BrowserRouter>
       <AudioPlayerProvider>
-        {/* 🔥 LOADER CANVAS - Toujours monté pour précharger */}
+        {/* 🔥 LOADER CANVAS */}
         <div style={{ 
           position: 'fixed', 
           top: 0, 
@@ -63,16 +66,17 @@ const App = () => {
           </Canvas>
         </div>
 
-        {/* 🎨 CONTENU PRINCIPAL - Toujours monté mais caché */}
+
+        {/* 🎨 CONTENU PRINCIPAL */}
         <div style={{
           opacity: !isLoading ? 1 : 0,
           transition: 'opacity 0.5s ease-in',
           pointerEvents: !isLoading ? 'all' : 'none'
         }}>
-          {/* Canvas papillon */}
+          {/* 🦋 Canvas papillon - Caché sur mobile (< md:768px), responsive sur desktop */}
           <Canvas
             id="papillon-canvas"
-            className="fixed top-0 left-0 w-full h-full pointer-events-none"
+            className="hidden md:block fixed top-0 left-0 w-full h-full pointer-events-none scale-75 md:scale-90 lg:scale-100"
             shadows
             dpr={[1, 2]}
             gl={{ preserveDrawingBuffer: true }}
@@ -88,6 +92,7 @@ const App = () => {
           >
             <Papillon />
           </Canvas>
+
 
           {/* Contenu de la page */}
           <div className="relative z-0 bg-primary">
@@ -109,5 +114,6 @@ const App = () => {
     </BrowserRouter>
   );
 };
+
 
 export default App;

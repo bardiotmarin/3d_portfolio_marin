@@ -39,7 +39,7 @@ const Navbar = () => {
         >
           <img src={logo} alt="logo" className="w-12 h-12 object-contain" />
           <p className="text-white text-[18px] font-bold flex whitespace-nowrap">
-            Marin&nbsp;<span className="sm:block hidden">| 3D Portfolio</span>
+            Marin&nbsp;<span className="sm:block hidden">| Portfolio</span>
           </p>
         </div>
 

@@ -52,11 +52,13 @@ const Papillon = () => {
   const playedSamples = useRef(new Set());
 
   // 🦋 Position bas-droite dynamique
+  // 🦋 Position bas-GAUCHE dynamique (modification ligne ~82)
   const getInitialPosition = () => {
-    const rightEdge = viewport.width / 2 - 0.8;
+    const leftEdge = -viewport.width / 2 + 0.8; // ✅ Changé de rightEdge à leftEdge
     const bottomEdge = -viewport.height / 2 + 0.8;
-    return [rightEdge, bottomEdge, 0];
+    return [leftEdge, bottomEdge, 0]; // ✅ Utilise leftEdge au lieu de rightEdge
   };
+
 
   const [position, setPosition] = useState([0, 0, 0]);
   const [rotation, setRotation] = useState(0);
@@ -171,8 +173,9 @@ const Papillon = () => {
     }
   }, [i18n.language]);
 
-  // 🎭 SCÉNARIO DES BULLES
+  // 🎭 SCÉNARIO DES BULLES - VERSION CORRIGÉE
   useEffect(() => {
+    // ✅ Si l'utilisateur a interagi, on arrête tout après le message 1
     if (hasInteracted && messageStep > 0) {
       setIsMessageVisible(false);
       setMessage(null);
@@ -193,38 +196,50 @@ const Papillon = () => {
     const runSequence = () => {
       if (messageStep >= messages.length) return;
 
+      // Afficher le message
       setIsMessageVisible(true);
       setMessage(messages[messageStep]);
 
-      const readingTime = messageStep === 0 ? 5000 : 6000;
+      // ✅ Durée d'affichage : 4s pour le premier, 6s pour les autres
+      const readingTime = messageStep === 0 ? 4000 : 6000;
 
+      // ✅ Timer pour cacher le message
       sequenceTimer = setTimeout(() => {
         setIsMessageVisible(false);
         setMessage(null);
 
-        const gapTime = 7000;
-        sequenceTimer = setTimeout(() => {
+        // ✅ Attendre 7s avant de passer au suivant
+        const gapTimer = setTimeout(() => {
           if (!hasInteracted) {
             setMessageStep((prev) => prev + 1);
           }
-        }, gapTime);
+        }, 7000);
+
+        // ✅ IMPORTANT : Retourner le cleanup du gapTimer aussi
+        return () => clearTimeout(gapTimer);
       }, readingTime);
     };
 
+    // ✅ Démarrage de la séquence
     if (messageStep === 0 && !isMessageVisible) {
+      // Premier message après 5 secondes
       sequenceTimer = setTimeout(runSequence, 5000);
-    } else if (!isMessageVisible && messageStep > 0) {
+    } else if (messageStep > 0 && !isMessageVisible && !hasInteracted) {
+      // Messages suivants démarrent immédiatement
       runSequence();
     }
 
-    return () => clearTimeout(sequenceTimer);
-  }, [messageStep, hasInteracted, isMessageVisible, t]);
+    return () => {
+      if (sequenceTimer) clearTimeout(sequenceTimer);
+    };
+  }, [messageStep, hasInteracted, isMessageVisible, t, i18n.language]);
+
 
   // Désactive la phase de démarrage après 10 secondes
   useEffect(() => {
     const timer = setTimeout(() => {
       isStartupPhase.current = false;
-    }, 10000);
+    }, 16000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -590,48 +605,84 @@ const Papillon = () => {
   return (
   <group ref={group} position={position}>
     {message && isMessageVisible && (
-    <Html
-      position={[0, 0, 0]}
-      center
-      distanceFactor={15}
-      zIndexRange={[100, 0]}
-      style={{ pointerEvents: "none" }}
-    >
-      <div style={{
+  <Html
+    position={[0, 0, 0]} // On reste ancré sur le papillon
+    center // Le centrage de base, qu'on va surcharger avec le CSS
+    distanceFactor={15}
+    zIndexRange={[100, 0]}
+    style={{ pointerEvents: "none" }}
+  >
+    {/* Conteneur de la bulle */}
+    <div
+      style={{
         background: "rgba(255, 255, 255, 0.12)",
         backdropFilter: "blur(14px)",
         border: "1px solid rgba(255, 255, 255, 0.3)",
         borderRadius: "16px",
         padding: "10px 14px",
         color: "white",
-        fontSize: "9px",  // ✅ Réduit de 11px à 9px
+        fontSize: "9px",
         fontWeight: 500,
-        textAlign: "left",  // ✅ Alignement à gauche pour meilleure lisibilité
-        width: "200px",  // ✅ Augmenté légèrement pour plus d'espace
+        textAlign: "left",
+        width: "200px",
         maxWidth: "200px",
         boxShadow: "0 6px 24px 0 rgba(31, 38, 135, 0.3)",
         position: "relative",
-        whiteSpace: "pre-line",  // ✅ CLEF: Respecte les \n et wrap automatique
-        wordBreak: "break-word",  // ✅ Coupe les mots trop longs
-        lineHeight: "1.5",  // ✅ Augmenté pour plus d'aération
-        transform: "translateY(-100%) translateY(-20px)",
-      }}>
-        <div style={{
+        whiteSpace: "pre-line",
+        wordBreak: "break-word",
+        lineHeight: "1.5",
+
+        // 👇 LOGIQUE DE POSITIONNEMENT INTELLIGENTE 👇
+        transform: `
+          translateX(${
+            // Si on est trop à gauche (< bord gauche + marge) -> On aligne à 0% (vers la droite)
+            position[0] < -viewport.width / 2 + 3 ? "10%" : 
+            // Si on est trop à droite (> bord droit - marge) -> On aligne à -100% (vers la gauche)
+            position[0] > viewport.width / 2 - 3 ? "-110%" : 
+            // Sinon -> Centré
+            "-50%"
+          }) 
+          translateY(${
+            // Si on est trop haut (> bord haut - marge) -> On affiche EN DESSOUS (+20px)
+            position[1] > viewport.height / 2 - 3 ? "40px" : 
+            // Sinon -> Au dessus (-100% - marge)
+            "calc(-100% - 20px)"
+          })
+        `,
+        transition: "transform 0.2s ease-out" // Animation fluide du déplacement
+      }}
+    >
+      {/* La petite flèche (triangle) */}
+      <div
+        style={{
           position: "absolute",
-          bottom: "-6px",
-          left: "50%",
-          transform: "translateX(-50%)",
           width: 0,
           height: 0,
           borderLeft: "6px solid transparent",
           borderRight: "6px solid transparent",
-          borderTop: "6px solid rgba(255, 255, 255, 0.2)",
-        }} />
-        <Typewriter text={message} />
-      </div>
-    </Html>
+          
+          // 👇 Inversion de la flèche si la bulle est en dessous 👇
+          borderTop: position[1] > viewport.height / 2 - 3 ? "none" : "6px solid rgba(255, 255, 255, 0.2)",
+          borderBottom: position[1] > viewport.height / 2 - 3 ? "6px solid rgba(255, 255, 255, 0.2)" : "none",
 
-    )}
+          // 👇 Positionnement de la flèche pour suivre le papillon 👇
+          top: position[1] > viewport.height / 2 - 3 ? "-6px" : "auto",
+          bottom: position[1] > viewport.height / 2 - 3 ? "auto" : "-6px",
+          
+          left: 
+            position[0] < -viewport.width / 2 + 3 ? "20px" : // Flèche à gauche
+            position[0] > viewport.width / 2 - 3 ? "calc(100% - 20px)" : // Flèche à droite
+            "50%", // Flèche au centre
+            
+          transform: "translateX(-50%)",
+          transition: "all 0.2s ease-out"
+        }}
+      />
+      <Typewriter text={message} />
+    </div>
+  </Html>
+)}
+
     
     {/* ✅ Zone cliquable en HTML qui traverse le pointerEvents: none du Canvas */}
     <Html

@@ -14,7 +14,7 @@ const AudioVisualizer = () => {
   const materialRef = useRef(null);
   const animationIdRef = useRef(0);
   
-  // ✅ State pour l'interaction souris (conservé)
+  // ✅ State pour l'interaction souris
   const mouseRef = useRef({ x: 0, y: 0, isDown: false });
   const targetMouseRef = useRef({ x: 0, y: 0 });
   
@@ -37,7 +37,7 @@ const AudioVisualizer = () => {
   useEffect(() => {
     if (!containerRef.current) return;
 
-    // ✅ Event listeners pour la souris (conservés)
+    // ✅ Event listeners
     const handleMouseMove = (e) => {
       const rect = containerRef.current.getBoundingClientRect();
       targetMouseRef.current.x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
@@ -75,7 +75,7 @@ const AudioVisualizer = () => {
       mouseRef.current.isDown = false;
     };
 
-    // --- SHADERS (conservés) ---
+    // --- SHADERS ---
     const vertexShaderSource = `
       varying vec2 vUv;
       void main() {
@@ -98,6 +98,7 @@ const AudioVisualizer = () => {
 
       varying vec2 vUv;
 
+      // --- BRUIT ET FBM ---
       vec3 hash33(vec3 p) { 
         float n = sin(dot(p, vec3(7, 157, 113)));    
         return fract(vec3(2097152, 262144, 32768) * n); 
@@ -125,20 +126,33 @@ const AudioVisualizer = () => {
         return v;
       }
 
+      // --- FONCTION SLIME (SMOOTH MIN) ---
+      float smin(float a, float b, float k) {
+        float h = clamp(0.5 + 0.5 * (b - a) / k, 0.0, 1.0);
+        return mix(b, a, h) - k * h * (1.0 - h);
+      }
+
       float map(vec3 p) {
         float t = iTime * 0.5;
-        p.xz *= mat2(cos(t), -sin(t), sin(t), cos(t));
         
-        float mouseDist = length(p.xy - iMouse * 0.5);
-        float mouseDeform = smoothstep(0.8, 0.0, mouseDist) * mouseStrength * 0.5;
+        // Rotation
+        vec3 q = p;
+        q.xz *= mat2(cos(t), -sin(t), sin(t), cos(t));
         
-        float distortion = fbm(p * 1.5 + iTime);
-        distortion += sin(p.x * 5.0 + iTime * 3.0) * (lowFreq * 0.02);
-        distortion += mouseDeform;
+        // 1. Forme Principale
+        float distortion = fbm(q * 1.5 + iTime);
+        distortion += sin(q.x * 5.0 + iTime * 3.0) * (lowFreq * 0.02);
+        float d1 = length(q) - distortion * 0.23; 
+
+        // 2. Forme Souris
+        vec3 mousePos = vec3(iMouse.x, iMouse.y, 0.0);
+        float d2 = length(p - mousePos) - 0.05;
+
+        // 3. Fusion Slime
+        float k = 1.2 * mouseStrength; 
+        if (mouseStrength < 0.01) return d1;
         
-        float baseRadius = 0.0;
-        
-        return length(p) - baseRadius - distortion * 0.23; 
+        return smin(d1, d2, k);
       }
 
       vec3 calcNormal(vec3 p) {
@@ -168,6 +182,7 @@ const AudioVisualizer = () => {
         float d = 0.0;
         int hit = 0;
         
+        // Raymarching
         for(int i = 0; i < 64; i++) {
           vec3 p = ro + rd * t;
           d = map(p);
@@ -183,14 +198,31 @@ const AudioVisualizer = () => {
           vec3 n = calcNormal(p);
           
           float noiseVal = fbm(p * 2.0 + iTime);
-          vec3 col = palette(noiseVal + lowFreq * 0.01);
           
+          // --- EFFET ABERRATION CHROMATIQUE (PRISME) ---
+          // On calcule la couleur 3 fois avec un léger décalage pour R, G et B
+          // Cela donne l'effet "verre liquide" sur les bords
+          float aberration = 0.05; // Intensité de l'effet prisme
+          
+          vec3 col;
+          col.r = palette(noiseVal + lowFreq * 0.01 - aberration).r;
+          col.g = palette(noiseVal + lowFreq * 0.01).g;
+          col.b = palette(noiseVal + lowFreq * 0.01 + aberration).b;
+          
+          // Fresnel (Reflet sur les bords)
           float fresnel = pow(1.0 - max(0.0, dot(n, -rd)), 3.0);
-          col += vec3(0.2, 0.4, 0.6) * fresnel * 0.2;
           
-          float alpha = clamp(fresnel * 0.8, 0.1, 0.6);
+          // Ajout d'un reflet spéculaire très net pour l'effet "mouillé/gluant"
+          col += vec3(1.0) * fresnel * 0.5; 
+
+          // --- GESTION TRANSPARENCE ---
+          // Base très faible (0.05) pour voir à travers
+          // Le fresnel ajoute de l'opacité sur les bords pour définir la forme
+          float alpha = clamp(fresnel * 0.8 + 0.05, 0.0, 0.5);
+          
           finalColor = vec4(col, alpha);
         } else {
+          // Lueur de fond
           float dist = length(uv - vec2(0.0, yPosition - 0.15)); 
           float glow = 0.01 / (dist - 0.1);
           glow = clamp(glow, 0.0, 0.6);
@@ -257,7 +289,6 @@ const AudioVisualizer = () => {
       mouseRef.current.x = THREE.MathUtils.lerp(mouseRef.current.x, targetMouseRef.current.x, 0.1);
       mouseRef.current.y = THREE.MathUtils.lerp(mouseRef.current.y, targetMouseRef.current.y, 0.1);
       
-      // ✅ Utilise audioData du Context
       if (audioData && audioData.analyser && isPlaying) {
         const dataArray = new Uint8Array(audioData.analyser.frequencyBinCount);
         audioData.analyser.getByteFrequencyData(dataArray);
@@ -324,9 +355,8 @@ const AudioVisualizer = () => {
         rendererRef.current.dispose();
       }
     };
-  }, [isPlaying, audioData]); // ✅ Dépendances du Context
+  }, [isPlaying, audioData]);
 
-  // ✅ ON SUPPRIME LE BOUTON EN BAS (il est déjà dans la Navbar)
   return (
     <div className="relative w-full h-full">
       <div ref={containerRef} className="absolute inset-0 w-full h-full pointer-events-auto" />
