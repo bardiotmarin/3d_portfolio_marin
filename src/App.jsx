@@ -83,7 +83,7 @@ const App = () => {
               left: 0,
               width: "100vw",
               height: "100vh",
-              pointerEvents: "auto"
+              pointerEvents: "none"
             }}
           >
             <Papillon />

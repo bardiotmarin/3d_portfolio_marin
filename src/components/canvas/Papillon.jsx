@@ -588,84 +588,95 @@ const Papillon = () => {
   });
 
   return (
-    <group ref={group} position={position}>
-      {message && isMessageVisible && (
-        <Html
-          position={[0, 0, 0]}
-          center
-          distanceFactor={15}
-          zIndexRange={[100, 0]}
-          style={{ pointerEvents: "none" }}
-        >
-          <div
-            style={{
-              background: "rgba(255, 255, 255, 0.12)",
-              backdropFilter: "blur(14px)",
-              border: "1px solid rgba(255, 255, 255, 0.3)",
-              borderRadius: "16px",
-              padding: "8px 12px",
-              color: "white",
-              fontSize: "11px",
-              fontWeight: 500,
-              textAlign: "center",
-              width: "180px",
-              maxWidth: "180px",
-              boxShadow: "0 6px 24px 0 rgba(31, 38, 135, 0.3)",
-              position: "relative",
-              whiteSpace: "normal",
-              lineHeight: "1.4",
-              transform: "translateY(-100%) translateY(-16px)",
-            }}
-          >
-            <div
-              style={{
-                position: "absolute",
-                bottom: "-6px",
-                left: "50%",
-                transform: "translateX(-50%)",
-                width: 0,
-                height: 0,
-                borderLeft: "6px solid transparent",
-                borderRight: "6px solid transparent",
-                borderTop: "6px solid rgba(255, 255, 255, 0.2)",
-              }}
-            />
-            <Typewriter text={message} />
-          </div>
-        </Html>
-      )}
-      
-      {/* Zone cliquable - Remettre invisible une fois que ça marche */}
-      <mesh
+  <group ref={group} position={position}>
+    {message && isMessageVisible && (
+    <Html
+      position={[0, 0, 0]}
+      center
+      distanceFactor={15}
+      zIndexRange={[100, 0]}
+      style={{ pointerEvents: "none" }}
+    >
+      <div style={{
+        background: "rgba(255, 255, 255, 0.12)",
+        backdropFilter: "blur(14px)",
+        border: "1px solid rgba(255, 255, 255, 0.3)",
+        borderRadius: "16px",
+        padding: "10px 14px",
+        color: "white",
+        fontSize: "9px",  // ✅ Réduit de 11px à 9px
+        fontWeight: 500,
+        textAlign: "left",  // ✅ Alignement à gauche pour meilleure lisibilité
+        width: "200px",  // ✅ Augmenté légèrement pour plus d'espace
+        maxWidth: "200px",
+        boxShadow: "0 6px 24px 0 rgba(31, 38, 135, 0.3)",
+        position: "relative",
+        whiteSpace: "pre-line",  // ✅ CLEF: Respecte les \n et wrap automatique
+        wordBreak: "break-word",  // ✅ Coupe les mots trop longs
+        lineHeight: "1.5",  // ✅ Augmenté pour plus d'aération
+        transform: "translateY(-100%) translateY(-20px)",
+      }}>
+        <div style={{
+          position: "absolute",
+          bottom: "-6px",
+          left: "50%",
+          transform: "translateX(-50%)",
+          width: 0,
+          height: 0,
+          borderLeft: "6px solid transparent",
+          borderRight: "6px solid transparent",
+          borderTop: "6px solid rgba(255, 255, 255, 0.2)",
+        }} />
+        <Typewriter text={message} />
+      </div>
+    </Html>
+
+    )}
+    
+    {/* ✅ Zone cliquable en HTML qui traverse le pointerEvents: none du Canvas */}
+    <Html
+      position={[0, 0, 0]}
+      center
+      zIndexRange={[100, 0]}
+      style={{ pointerEvents: "auto" }}
+    >
+      <div
         onClick={(e) => {
           e.stopPropagation();
           playRandomSample();
         }}
-        onPointerOver={() => {
+        onMouseEnter={() => {
           document.body.style.cursor = 'pointer';
         }}
-        onPointerOut={() => {
+        onMouseLeave={() => {
           document.body.style.cursor = 'default';
         }}
-      >
-        <sphereGeometry args={[3, 32, 32]} />
-        {/* ✅ Remettre opacity à 0 pour invisible */}
-        <meshBasicMaterial transparent opacity={0} />
-      </mesh>
-
-      <primitive object={scene} scale={15} />
-      <hemisphereLight intensity={0.2} groundColor="black" />
-      <spotLight
-        position={[50, 10, 70]}
-        angle={0.12}
-        penumbra={1}
-        intensity={1.2}
-        castShadow
-        shadow-mapSize={1024}
+        style={{
+          width: '120px',  // Ajuste selon tes besoins
+          height: '120px', // Ajuste selon tes besoins
+          borderRadius: '50%',
+          cursor: 'pointer',
+          // background: 'rgba(255, 0, 0, 0.2)', // ✅ DEBUG: Décommente pour voir la zone
+        }}
       />
-      <pointLight intensity={1.5} />
-    </group>
-  );
+    </Html>
+
+    {/* Le papillon 3D */}
+    <primitive object={scene} scale={15} />
+    <hemisphereLight intensity={0.2} groundColor="black" />
+    <spotLight
+      position={[50, 10, 70]}
+      angle={0.12}
+      penumbra={1}
+      intensity={1.2}
+      castShadow
+      shadow-mapSize={1024}
+    />
+    <pointLight intensity={1.5} />
+  </group>
+);
+
+
 };
 
 export default Papillon;

@@ -186,9 +186,10 @@ const AudioVisualizer = () => {
           vec3 col = palette(noiseVal + lowFreq * 0.01);
           
           float fresnel = pow(1.0 - max(0.0, dot(n, -rd)), 3.0);
-          col += vec3(1.0) * fresnel * (0.5 + kickEnergy * 0.01);
+          col += vec3(0.2, 0.4, 0.6) * fresnel * 0.2;
           
-          finalColor = vec4(col, 1.0);
+          float alpha = clamp(fresnel * 0.8, 0.1, 0.6);
+          finalColor = vec4(col, alpha);
         } else {
           float dist = length(uv - vec2(0.0, yPosition - 0.15)); 
           float glow = 0.01 / (dist - 0.1);
