@@ -2,7 +2,7 @@ import { BrowserRouter } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Preload, useGLTF } from "@react-three/drei";
-import { About, Contact, Experience, Hero, Navbar, Tech, Works, StarsCanvas, LoaderMain } from "./components";
+import { About, Contact, Experience, Hero, Navbar, Tech, Works, StarsCanvas, LoaderMain, NebulaCanvas } from "./components";
 import { AudioPlayerProvider } from "./context/AudioPlayerContext";
 import Papillon from "./components/canvas/Papillon";
 import "./i18n";
@@ -109,10 +109,10 @@ const App = () => {
               <StarsCanvas />
             </div>
             
-            {/* Experience avec étoiles */}
+            {/* Experience avec nébuleuse (gaz + étoiles) */}
             <div className="relative">
               <Experience />
-              <StarsCanvas />
+              <NebulaCanvas />
             </div>
             
             {/* Tech avec étoiles */}
