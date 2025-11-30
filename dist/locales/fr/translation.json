@@ -16,8 +16,9 @@
 
     "about_dev": "Développeur d'applications web",
     "about_music": "Compositeur de musique",
+    "about_devops": "Ingénieur DevOps",
     "about_dev_frontandback": "Développeur backend et frontend",
-    "about_creator": "Créateur de contenu",
+    "about_creator": "Créateur de contenu musical",
 
     "about": "A propos",
     "overview": "Vue d'ensemble",
@@ -25,7 +26,7 @@
     "i_develop": "Je développe",
     "somes_interfaces": "des interfaces et des applications web",
 
-    "about_text": "Jeune développeur passionné, spécialisé en TypeScript,\n        JavaScript, Vue, Php, et Node.js. J'explore actuellement Three.js. \n        Créatif, efficace et prêt à donner vie à vos idées. Travaillons ensemble !",
+    "about_text": "Ingénieur DevOps et développeur full-stack, passionné par le code et l’infrastructure.\nTypeScript, JavaScript, Vue, PHP, Node.js, CI/CD, Kubernetes, Docker, GitHub Actions, Vault… je construis des projets fiables et automatisés.\nDJ, curateur et A&R, j’ai organisé des événements, promu des artistes et créé des expériences musicales uniques.\nCréatif, rigoureux et polyvalent, je transforme vos idées en projets concrets – web, infra ou musique.",
 
     "what_i_have_done": "Ce que j'ai fait jusqu'à maintenant",
     "professional_experience": "Expérience professionnelle",

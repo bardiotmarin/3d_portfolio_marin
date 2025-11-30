@@ -5,15 +5,15 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "npx vite build",
     "preview": "vite preview"
   },
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
-    "@react-three/drei": "^9.80.0",
+    "@react-three/drei": "^9.122.0",
     "@react-three/fiber": "^8.11.1",
-    "@react-three/postprocessing": "^2.15.0",
-    "emailjs-com": "^3.2.0",
+    "@react-three/postprocessing": "^2.19.1",
+    "dat.gui": "^0.7.9",
     "framer-motion": "^9.0.7",
     "i18next": "^23.3.0",
     "i18next-browser-languagedetector": "^7.1.0",
@@ -25,17 +25,20 @@
     "react-i18next": "^13.0.2",
     "react-parallax-tilt": "^1.7.155",
     "react-router-dom": "^6.8.1",
+    "react-tilt": "^1.0.2",
     "react-vertical-timeline-component": "^3.6.0",
     "resend": "^0.17.2",
-    "three": "^0.151.0"
+    "three": "^0.181.2",
+    "three-mesh-bvh": "^0.8.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
-    "@vitejs/plugin-react": "^3.1.0",
+    "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.4.13",
     "postcss": "^8.4.21",
     "tailwindcss": "^3.2.6",
-    "vite": "^4.4.7"
+    "vite": "^5.2.10",
+    "vitest": "^4.0.9"
   }
 }

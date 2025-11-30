@@ -16,7 +16,7 @@ const ProjectCard = ({
                          image,
                          source_code_link,
                      }) => {
-    const { t } = useTranslation(); // t function for translations
+    const { t } = useTranslation(); 
 
     return (
         <motion.div  >
@@ -71,7 +71,7 @@ const Works = () => {
 
     return (
         <>
-            <div id="works"> {/* Ajoutez l'ID "works" à cet élément */}
+            <div id="works"> 
                 <motion.div >
                     <p className={styles.sectionSubText}>{t("my_works")}</p>
                     <h2 className={styles.sectionHeadText}>{t("projects")}.</h2>

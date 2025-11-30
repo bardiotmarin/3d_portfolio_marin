@@ -1,4 +1,4 @@
-import { EarthCanvas, BallCanvas, MewCanvas, StarsCanvas, Lotus } from './canvas';
+import { EarthCanvas, BallCanvas, MewCanvas, StarsCanvas, MoonHero, playerAudio, Papillon, Galaxy, OxygenPlant, NebulaCanvas } from './canvas';
 import Hero from "./Hero";
 import Navbar from "./Navbar";
 import About from "./About";
@@ -10,6 +10,7 @@ import Contact from "./Contact";
 import CanvasLoader from "./Loader";
 import LanguageSelector from './LanguageSelector';
 import LoaderMain from './LoaderMain';
+
 
 export {
   LanguageSelector,
@@ -26,5 +27,11 @@ export {
   BallCanvas, 
   MewCanvas,
   StarsCanvas,
-  LoaderMain
+  LoaderMain,
+  MoonHero,
+  playerAudio,
+  Papillon,
+  Galaxy,
+  OxygenPlant,
+  NebulaCanvas
 };

@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
+/* --- AUDIO VISUALIZER & NOISE EFFECTS --- */
+/* Import fonts if needed specifically for this effect, otherwise use yours */
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;1,6..96,400&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -431,4 +434,52 @@
   height: 100vh;
   justify-content: center;
   width: 100vw;
+}
+
+
+/* Noise animation keyframes */
+@keyframes noise-animation {
+  0% { transform: translate(0, 0); }
+  10% { transform: translate(-2%, -3%); }
+  20% { transform: translate(-4%, 2%); }
+  30% { transform: translate(2%, -4%); }
+  40% { transform: translate(-2%, 5%); }
+  50% { transform: translate(-4%, 2%); }
+  60% { transform: translate(3%, 0); }
+  70% { transform: translate(0, 3%); }
+  80% { transform: translate(-3%, 0); }
+  90% { transform: translate(2%, 2%); }
+  100% { transform: translate(1%, 0); }
+}
+
+/* Noise overlay applied to body or a specific container */
+.noise-overlay::before {
+  content: "";
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: transparent url("http://assets.iceable.com/img/noise-transparent.png") repeat 0 0;
+  background-size: 300px 300px;
+  animation: noise-animation 0.3s steps(5) infinite;
+  opacity: 1;
+  will-change: transform;
+  z-index: 9999; /* Très haut pour être par dessus tout, peut gêner les clics si pointer-events n'est pas none */
+  pointer-events: none;
+}
+
+/* Custom cursor styles if you want them */
+.custom-cursor {
+  position: fixed;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  mix-blend-mode: difference;
+  z-index: 9999;
+  transition: width 0.2s, height 0.2s;
+  will-change: transform;
 }

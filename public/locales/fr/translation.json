@@ -16,17 +16,26 @@
 
     "about_dev": "Développeur d'applications web",
     "about_music": "Compositeur de musique",
+    "about_devops": "Ingénieur DevOps",
     "about_dev_frontandback": "Développeur backend et frontend",
-    "about_creator": "Créateur de contenu",
+    "about_creator": "Créateur de contenu musical",
+    "play_music": "Écouter ma musique",
+    "stop_music": "Arrêter la musique",
+
+    "butterfly_msg_1": "Hey ! Tu peux me déplacer avec les touches du clavier 🔼🔽◀️▶️ appuit sur espace ⌨️ , pour me faire voler plus vite🚀. Tu peux aussi scroller avec ta souris, je me déplace avec toi et je continue ma petite vie, mais je ne t'oublie pas....",
+    "butterfly_msg_2": "Si tu me gardes en l'air et que tu spammes un peu ESPACE, je pars en mode turbo. Toujours en douceur hein, je suis un papillon.",
+    "butterfly_msg_3": "Franchement, pour un papillon, je fais déjà plus de sport que toi aujourd'hui.",
+    "butterfly_msg_4": "Je peux aussi me balader tout seul, mais c'est plus cool si tu me dis où aller.",
+    "butterfly_msg_5": "Ah ouais... en fait tu me regardes juste voler sans rien faire ? Je commence à avoir un doute là.",
+    "butterfly_msg_6": "Ok, j'ai compris. Tu ne m'aimes pas tant que ça. Je boude... mais je continuerai quand même à voler, faut pas abuser.",
 
     "about": "A propos",
     "overview": "Vue d'ensemble",
 
-    "i_develop": "Je développe",
-    "somes_interfaces": "des interfaces et des applications web",
+    "i_develop": "Je conçois  automatise et maintiens des infrastructures cloud fiables.",
+    "somes_interfaces": "Et je donne vie à des expériences digitales modernes.",
 
-    "about_text": "Jeune développeur passionné, spécialisé en TypeScript,\n        JavaScript, Vue, Php, et Node.js. J'explore actuellement Three.js. \n        Créatif, efficace et prêt à donner vie à vos idées. Travaillons ensemble !",
-
+    "about_text": "Ingénieur DevOps et développeur full-stack, passionné par le code et l’infrastructure.\n CI/CD, Kubernetes, Docker, GitHub Actions, Jenkins, GCP, GKE, GRAFANA, Prometheus & VictoriaMetrics, Vault, TypeScript, JavaScript, Vue, PHP, Node.js,… je construis des projets fiables et automatisés.\nDJ, curateur et A&R, j’ai organisé des événements, promu des artistes et créé des expériences musicales uniques.\nCréatif, rigoureux et polyvalent, je transforme vos idées en projets concrets – web, infra ou musique.",
     "what_i_have_done": "Ce que j'ai fait jusqu'à maintenant",
     "professional_experience": "Expérience professionnelle",
 
@@ -171,6 +180,35 @@
     "experience.4.subPoint6.2": "Mise en pratique des connaissances acquises sur des projets internes.",
 
     "experience.4.subPoint7.1": "Analyse approfondie du code pour détecter les erreurs et les améliorations potentielles.",
-    "experience.4.subPoint7.2": "Collaboration avec l'équipe pour améliorer la qualité et les performances des applications."
+    "experience.4.subPoint7.2": "Collaboration avec l'équipe pour améliorer la qualité et les performances des applications.",
+     "experience.5.title": "Ingénieur Infrastructure – Developer Experience (DevOps)",
+    "experience.5.compagny": "Deezer",
+    "experience.5.date": "2024 - 2026",
+
+    "experience.5.point1": "Migration et optimisation CI/CD",
+    "experience.5.point2": "Infrastructure Cloud & Kubernetes",
+    "experience.5.point3": "Automatisation & Scalabilité (KEDA)",
+    "experience.5.point4": "Sécurité, secrets & fiabilité plateforme",
+    "experience.5.point5": "Amélioration de l’expérience développeur",
+
+    "experience.5.subPoint1.1": "Refonte et migration des pipelines de Jenkins vers GitHub Actions afin d’améliorer la vitesse, la fiabilité et l’autonomie des développeurs.",
+    "experience.5.subPoint1.2": "Modernisation des workflows de build (Gradle, PHP, Go, Node.js) pour réduire les temps d’exécution et garantir la reproductibilité.",
+    "experience.5.subPoint1.3": "Migration de l’ensemble des outils internes DevOps de GCP vers GKE, incluant SonarQube, l’infrastructure Gradle, Satis et les services de monitoring.",
+
+    "experience.5.subPoint2.1": "Gestion, optimisation et sécurisation des clusters Kubernetes sur GKE pour améliorer les performances et la résilience.",
+    "experience.5.subPoint2.2": "Création de Helm charts et automatisations infra pour uniformiser les déploiements entre les équipes.",
+    "experience.5.subPoint2.3": "Application des bonnes pratiques DevOps pour améliorer la stabilité des services et accompagner les équipes applicatives.",
+
+    "experience.5.subPoint3.1": "Mise en place de KEDA pour gérer automatiquement les pics de charge des tâches CI, des jobs internes et des workflows asynchrones.",
+    "experience.5.subPoint3.2": "Création de workflows event-driven basés sur RabbitMQ pour déclencher le scaling dynamique et automatiser les processus internes.",
+    "experience.5.subPoint3.3": "Automatisation complète de Renovate couplé à KEDA et RabbitMQ pour la gestion des dépendances et la correction des CVE.",
+
+    "experience.5.subPoint4.1": "Intégration de Vault pour centraliser la gestion des secrets dans la CI/CD et les environnements applicatifs.",
+    "experience.5.subPoint4.2": "Renforcement de la sécurité via la rotation automatique des secrets, les politiques d'accès et le hardening de la plateforme.",
+    "experience.5.subPoint4.3": "Contribution aux systèmes de monitoring, métriques et alerting pour améliorer la détection et la réponse aux incidents.",
+
+    "experience.5.subPoint5.1": "Amélioration du parcours développeur en réduisant les temps CI et en simplifiant les processus de déploiement.",
+    "experience.5.subPoint5.2": "Création d’outils internes, de templates et de documentation pour accélérer l’onboarding et les tâches quotidiennes.",
+    "experience.5.subPoint5.3": "Collaboration avec les équipes d’ingénierie pour identifier les blocages et livrer des solutions focalisées sur la Developer Experience."
 
 }

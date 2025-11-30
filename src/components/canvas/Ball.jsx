@@ -4,14 +4,20 @@ import {
   Decal,
   Float,
   OrbitControls,
-  Preload,
   useTexture,
+  Preload,
 } from "@react-three/drei";
-
-import CanvasLoader from "../Loader";
+import CanvasLoader from "../Loader"; // Ton loader
 
 const Ball = (props) => {
-  const [decal] = useTexture([props.imgUrl]);
+  // Gestion d'erreur pour le chargement de texture
+  const [decal] = useTexture(
+    [props.imgUrl],
+    // Callback en cas d'erreur
+    (error) => {
+      console.error('Erreur de chargement texture:', props.imgUrl, error);
+    }
+  );
 
   return (
     <Float speed={1.75} rotationIntensity={1} floatIntensity={2}>
@@ -20,7 +26,7 @@ const Ball = (props) => {
       <mesh castShadow receiveShadow scale={2.75}>
         <icosahedronGeometry args={[1, 1]} />
         <meshStandardMaterial
-          color="#fff8eb"
+          color='#fff8eb'
           polygonOffset
           polygonOffsetFactor={-5}
           flatShading
@@ -40,14 +46,12 @@ const Ball = (props) => {
 const BallCanvas = ({ icon }) => {
   return (
     <Canvas
-      frameloop="demand"
+      frameloop='demand'
       dpr={[1, 2]}
       gl={{ preserveDrawingBuffer: true }}
     >
       <Suspense fallback={<CanvasLoader />}>
-        <OrbitControls enableZoom={false}
-                       enablePan={false} // Désactiver le déplacement de la caméra avec clic droit
-        />
+        <OrbitControls enableZoom={false} />
         <Ball imgUrl={icon} />
       </Suspense>
 

@@ -16,17 +16,26 @@
 
     "about_dev": "Web applications developer",
     "about_music": "Music Composer",
+    "about_devops": "DevOps Engineer",
     "about_dev_frontandback": "Developer Front and Back",
-    "about_creator": "Content creator",
+    "about_creator": "Music content creator & bloger",
+    "play_music": "Listen to my music",
+    "stop_music": "Stop Music",
+
+    "butterfly_msg_1": "Hey! You can move me with the keyboard ,🔼🔽◀️▶️ and push space ⌨️ and make me fly faster 🚀. You can also scroll with your mouse, I'll move with you and still live my little butterfly life.",
+    "butterfly_msg_2": "If you keep me in the air and spam SPACE a bit, I go into turbo mode. Easy though, I'm a butterfly, not a jet.",
+    "butterfly_msg_3": "Honestly, for a butterfly I'm already doing more cardio than you today.",
+    "butterfly_msg_4": "I can also wander around on my own, but it's way cooler if you tell me where to go.",
+    "butterfly_msg_5": "So you're just watching me fly and doing nothing? I'm starting to feel a bit ignored here.",
+    "butterfly_msg_6": "Alright, I get it. You don't like me that much. I'm sulking… but I'll keep flying anyway.",
 
     "about": "About",
     "overview": "Overview",
 
-    "i_develop": "I develop",
-    "somes_interfaces": "web interfaces and applications",
+    "i_develop": "I engineer and operate reliable cloud infrastructures.",
+    "somes_interfaces": "Then I craft living digital experience",
 
-    "about_text": "Passionate young developer specializing in TypeScript,\n        JavaScript, Vue, Php, and Node.js. Currently exploring Three.js. \n        Creative, efficient and ready to bring your ideas to life. Let's work together!",
-
+    "about_text": "DevOps engineer and full-stack developer, passionate about code and infrastructure.\n            CI/CD, Kubernetes, Docker, GitHub Actions,Jenkins,GCP,GKE , GRAFANA , prom & victoria,  Vault… TypeScript, JavaScript, Vue, PHP, Node.js, I build reliable and automated projects.\n \n           DJ, curator, and A&R, I’ve organized events, promoted artists, and created unique musical experiences.\n\n Creative, rigorous, and versatile, I turn ideas into real projects – web, infrastructure, or music.",
     "what_i_have_done" : "Check out what I've done",
     "professional_experience": "Professional experience",
 
@@ -172,6 +181,37 @@
     "experience.4.subPoint6.2": "Putting into practice the knowledge gained on internal projects.",
 
     "experience.4.subPoint7.1": "In-depth code analysis to detect errors and potential improvements.",
-    "experience.4.subPoint7.2": "Collaboration with the team to improve the quality and performance of the applications."
+    "experience.4.subPoint7.2": "Collaboration with the team to improve the quality and performance of the applications.",
+    
+    "experience.5.title": "Infrastructure Engineer - Developer Experience (DevOps)",
+    "experience.5.compagny": "Deezer",
+    "experience.5.date": "2024 - 2026",
+
+    "experience.5.point1": "CI/CD Migration and Optimization",
+    "experience.5.point2": "Cloud Infrastructure & Kubernetes",
+    "experience.5.point3": "Automation & Scaling with KEDA",
+    "experience.5.point4": "Security, Secrets & Platform Stability",
+    "experience.5.point5": "Developer Experience Improvements",
+
+    "experience.5.subPoint1.1": "Migration and modernization of CI/CD pipelines from Jenkins to GitHub Actions to improve reliability, speed and developer autonomy.",
+    "experience.5.subPoint1.2": "Redesign of build workflows (Gradle, PHP, Go, Node.js) to reduce execution time and increase reproducibility.",
+    "experience.5.subPoint1.3": "Migration of CI/CD services and internal tooling from GCP to GKE, including SonarQube, Gradle infrastructure, Satis and monitoring tools.",
+
+    "experience.5.subPoint2.1": "Management and optimization of Kubernetes clusters on GKE to ensure performance, resilience and cost efficiency.",
+    "experience.5.subPoint2.2": "Creation of Helm charts and infrastructure automations to standardize deployments across teams.",
+    "experience.5.subPoint2.3": "Implementation of best DevOps practices to support application teams and improve platform reliability.",
+
+    "experience.5.subPoint3.1": "Setup of KEDA autoscaling to handle high workload peaks (CI tasks, dependency updates, async jobs).",
+    "experience.5.subPoint3.2": "RabbitMQ-based event-driven workflows to trigger scaling and automate internal processes.",
+    "experience.5.subPoint3.3": "Complete automation of Renovate workflows using KEDA and RabbitMQ for dependency management and security CVE fixes.",
+
+    "experience.5.subPoint4.1": "Integration of Vault for centralized secrets management across CI/CD and runtime environments.",
+    "experience.5.subPoint4.2": "Strengthening of security posture through automated secret rotations, access policies and platform hardening.",
+    "experience.5.subPoint4.3": "Contributions to infrastructure monitoring and alerting for improved incident response.",
+
+    "experience.5.subPoint5.1": "Improvement of the developer journey by reducing CI times and simplifying deployment processes.",
+    "experience.5.subPoint5.2": "Development of internal tools, documentation and templates to improve onboarding and daily efficiency.",
+    "experience.5.subPoint5.3": "Collaboration with engineering teams to identify bottlenecks and deliver DX-focused solutions."
+
 
 }

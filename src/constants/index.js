@@ -1,35 +1,56 @@
 import {
-  mobile,
-  backend,
-  creator,
-  web,
-  javascript,
-  typescript,
   html,
   css,
+  javascript,
+  typescript,
   reactjs,
   tailwind,
   nodejs,
+  threejs,
   git,
   figma,
   docker,
-  meta,
+  vuejs,
+  kubernetesIcon,
+  kedaIcon,
+  gkeIcon,
+  python,
+  goIcon,
+  yamlIcon,
+  argoCdIcon,
+  minio,
+  githubActionsIcon,
+  jenkinsIcon,
+  terraformIcon,
+  renovate ,
+  prometheusIcon,
+  grafanaIcon,
+  rabbitMqIcon,
+  vault,
+  consul,
+  web,
+  mobile,
+  devops,
+  backend,
+  creator,
   starbucks,
   tesla,
   shopify,
+  meta,
+  helmfileIcon,
+  wedrums ,
   chromatotecWebsite,
   anavoc,
   tripguide,
-  findtherose,
   playerRemake,
   agencyIkone,
+  findtherose,
   snippet,
-  wedrums,
   ableton,
-  vuejs,
-  threejs,
-} from "../assets";
+  deezer,
+  
 
+} from "../assets";
 export const navLinks = [
   {
     id: "about",
@@ -46,6 +67,10 @@ export const navLinks = [
 ];
 
 const services = [
+  {
+    title: "about_devops",
+    icon: devops,
+  },
   {
     title: "about_dev",
     icon: web,
@@ -65,6 +90,7 @@ const services = [
 ];
 
 const technologies = [
+  // Langages Web et Frontend
   {
     name: "HTML 5",
     icon: html,
@@ -81,43 +107,134 @@ const technologies = [
     name: "TypeScript",
     icon: typescript,
   },
+    {
+    name: "Python",
+    icon: python,
+  },
+
+  // Frameworks / Librairies Frontend
   {
     name: "React JS",
     icon: reactjs,
+  },
+  {
+    name: "Vue JS",
+    icon: vuejs,
   },
   {
     name: "Tailwind CSS",
     icon: tailwind,
   },
   {
-    name: "Node JS",
-    icon: nodejs,
-  },
-  {
     name: "Three JS",
     icon: threejs,
   },
+
+  // Backend et Runtime
   {
-    name: "git",
+    name: "Node JS",
+    icon: nodejs,
+  },
+
+  // Outils Dev et Versioning
+  {
+    name: "Git",
     icon: git,
   },
   {
-    name: "figma",
+    name: "Figma",
     icon: figma,
   },
+
+  // Créatif / Multimédia
   {
-    name: "docker",
+    name: "Ableton",
+    icon: ableton,
+  },
+
+  // Conteneurisation & Orchestration
+  {
+    name: "Docker",
     icon: docker,
   },
   {
-    name: "ableton",
-    icon: ableton,
+    name: "Kubernetes",
+    icon: kubernetesIcon, // à importer / créer
   },
   {
-    name: "vuejs",
-    icon: vuejs,
+    name: "Helm",
+    icon: helmfileIcon,
+  },
+  {
+    name: "KEDA",
+    icon: kedaIcon,
+  },
+  {
+    name: "Vault",
+    icon: vault,
+  },
+  {    name: "Consul",
+    icon: consul,
+  },
+
+  // Cloud et Infrastructures
+  {
+    name: "GKE",
+    icon: gkeIcon,
+  },
+
+  // CI/CD et Automation
+  {
+    name: "GitHub Actions",
+    icon: githubActionsIcon,
+  },
+  {
+    name: "Jenkins",
+    icon: jenkinsIcon,
+  },
+  {
+    name: "ArgoCD",
+    icon: argoCdIcon,
+  },
+  {
+    name: "Terraform",
+    icon: terraformIcon,
+  },
+  {
+    name: "Renovate",
+    icon: renovate ,
+  },
+
+  // Monitoring et Messaging
+  {
+    name: "Prometheus",
+    icon: prometheusIcon,
+  },
+  {
+    name: "Grafana",
+    icon: grafanaIcon,
+  },
+  {
+    name: "RabbitMQ",
+    icon: rabbitMqIcon,
+  },
+
+  // Langages & Formats
+  {
+    name: "Go",
+    icon: goIcon,
+  },
+  {
+    name: "YAML",
+    icon: yamlIcon,
+  },
+  // Ai
+  {
+    name: "MinIO",
+    icon: minio,
   },
 ];
+
 
 const experiences = [
   {
@@ -287,6 +404,48 @@ const experiences = [
       ],
     ],
   },
+  {
+  title: "experience.5.title",
+  company_name: "experience.5.compagny",
+  icon: deezer, // ← ton futur logo Deezer importé
+  iconBg: "#383E56",
+  date: "experience.5.date",
+  points: [
+    "experience.5.point1",
+    "experience.5.point2",
+    "experience.5.point3",
+    "experience.5.point4",
+    "experience.5.point5",
+  ],
+  subPoints: [
+    [
+      "experience.5.subPoint1.1",
+      "experience.5.subPoint1.2",
+      "experience.5.subPoint1.3"
+    ],
+    [
+      "experience.5.subPoint2.1",
+      "experience.5.subPoint2.2",
+      "experience.5.subPoint2.3"
+    ],
+    [
+      "experience.5.subPoint3.1",
+      "experience.5.subPoint3.2",
+      "experience.5.subPoint3.3"
+    ],
+    [
+      "experience.5.subPoint4.1",
+      "experience.5.subPoint4.2",
+      "experience.5.subPoint4.3"
+    ],
+    [
+      "experience.5.subPoint5.1",
+      "experience.5.subPoint5.2",
+      "experience.5.subPoint5.3"
+    ]
+  ],
+},
+
 ];
 
 const testimonials = [
@@ -572,7 +731,7 @@ const projects = [
 
     ],
     image: findtherose,
-    source_code_link: "https://github.com/bardiotmarin/blancobancco",
+    source_code_link: "https://bardiotmarin.github.io/find_the_rose/",
   },
   {
     name: "projet_open_source",

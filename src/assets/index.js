@@ -6,6 +6,7 @@ import web from "./web.png";
 import github from "./github.png";
 import menu from "./menu.svg";
 import close from "./close.svg";
+import devops from "./devops.png";
 
 import css from "./tech/css.png";
 import docker from "./tech/docker.png";
@@ -21,6 +22,24 @@ import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
 
+import kubernetesIcon from "./tech/kubernetesIcon.png";
+import helmfileIcon from "./tech/helmfileIcon.png";
+import kedaIcon from "./tech/kedaIcon.png";
+import gkeIcon from "./tech/gkeIcon.png";
+import goIcon from "./tech/goIcon.png";
+import yamlIcon from "./tech/yamlIcon.png";
+import argoCdIcon from "./tech/argoCdIcon.png";
+import githubActionsIcon from "./tech/githubActionsIcon.png";
+import jenkinsIcon from "./tech/jenkinsIcon.png";
+import terraformIcon from "./tech/terraformIcon.png";
+
+import prometheusIcon from "./tech/prometheusIcon.png";
+import grafanaIcon from "./tech/grafanaIcon.png";
+import rabbitMqIcon from "./tech/rabbitMqIcon.png";
+import vault from "./tech/vault.png";
+import consul from "./tech/consul.png";
+import renovate from "./tech/renovate.png";
+
 import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
 import starbucks from "./company/starbucks.png";
@@ -34,13 +53,20 @@ import playerRemake from "./playerRemake.png";
 import agencyIkone from "./agencyIkone.png";
 import snippet from "./snippet.png";
 import wedrums from "./wedrums.png";
+import deezer from "./company/deezer.png";
+import minio from "./tech/minio.png";
+import python from "./tech/python.png";
 
 
 export {
+  minio,
+  python,
+  deezer,
   logo,
   backend,
   creator,
   mobile,
+  devops,
   web,
   github,
   menu,
@@ -53,9 +79,26 @@ export {
   javascript,
   nodejs,
   reactjs,
+  renovate,
   tailwind,
   typescript,
   threejs,
+  kubernetesIcon,
+  helmfileIcon,
+  kedaIcon,
+  gkeIcon,
+  goIcon,
+  yamlIcon,
+  argoCdIcon,
+  githubActionsIcon,
+  jenkinsIcon,
+  terraformIcon,
+
+  prometheusIcon,
+  grafanaIcon,
+  rabbitMqIcon,
+  vault,
+  consul,
   meta,
   shopify,
   starbucks,
