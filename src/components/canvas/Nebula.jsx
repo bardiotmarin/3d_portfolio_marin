@@ -26,59 +26,70 @@ const NebulaScene = () => {
         speed={0.5} 
       />
       
-      {/* Poche de gaz 1 : Violet profond */}
+      {/* Poche de gaz 1 : Violet électrique intense */}
       <Cloud
-        opacity={0.25}
+        opacity={0.6}
+        speed={0.4}
+        width={15}
+        depth={2}
+        segments={35}
+        position={[-5, -2, -10]}
+        color="#c026d3"
+      />
+
+      {/* Poche de gaz 2 : Bleu lumineux */}
+      <Cloud
+        opacity={0.65}
+        speed={0.3}
+        width={18}
+        depth={2.5}
+        segments={40}
+        position={[6, 3, -14]}
+        color="#0ea5e9"
+      />
+
+      {/* Poche de gaz 3 : Rose néon vif */}
+      <Cloud
+        opacity={0.55}
+        speed={0.5}
+        width={20}
+        depth={2}
+        segments={30}
+        position={[0, 1, -18]}
+        color="#f472b6"
+      />
+
+      {/* Poche de gaz 4 : Cyan brillant */}
+      <Cloud
+        opacity={0.5}
+        speed={0.35}
+        width={14}
+        depth={2.2}
+        segments={32}
+        position={[-7, 4, -12]}
+        color="#22d3ee"
+      />
+
+      {/* Poche de gaz 5 : Orange cosmique */}
+      <Cloud
+        opacity={0.5}
+        speed={0.45}
+        width={16}
+        depth={1.8}
+        segments={28}
+        position={[5, -3, -16]}
+        color="#fb923c"
+      />
+
+      {/* Poche de gaz 6 : Vert aurore */}
+      <Cloud
+        opacity={0.45}
         speed={0.4}
         width={12}
         depth={1.5}
         segments={25}
-        position={[-5, -3, -12]}
-        color="#8b5cf6"
-      />
-
-      {/* Poche de gaz 2 : Bleu cosmique */}
-      <Cloud
-        opacity={0.3}
-        speed={0.3}
-        width={15}
-        depth={2}
-        segments={30}
-        position={[6, 3, -18]}
-        color="#3b82f6"
-      />
-
-      {/* Poche de gaz 3 : Rose néon */}
-      <Cloud
-        opacity={0.2}
-        speed={0.5}
-        width={18}
-        depth={1.5}
-        segments={20}
-        position={[0, 0, -25]}
-        color="#ec4899"
-      />
-
-      {/* Poche de gaz 4 : Cyan électrique */}
-      <Cloud
-        opacity={0.2}
-        speed={0.35}
-        width={10}
-        depth={1.8}
-        segments={22}
-        position={[-8, 4, -15]}
-        color="#06b6d4"
-      />
-
-      {/* Poche de gaz 5 : Violet clair (accent) */}
-      <Cloud
-        opacity={0.15}
-        speed={0.45}
-        width={14}
-        depth={1.2}
-        segments={18}
-        position={[4, -2, -20]}
-        color="#a78bfa"
+        position={[-3, 0, -20]}
+        color="#4ade80"
       />
     </group>
   );
