@@ -1,76 +1,70 @@
-import React, { useRef, Suspense, useState } from "react";
+import React, { useRef, Suspense } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { Stars, Cloud, Preload, Trail, Sparkles } from "@react-three/drei";
+import { Stars, Cloud, Preload } from "@react-three/drei";
 import * as THREE from "three";
 
-// Composant pour l'effet bioluminescent qui suit la souris
-const Bioluminescence = () => {
-  const { viewport } = useThree();
-  const lightRef = useRef();
-  const trailRef = useRef();
-  const sparklesRef = useRef();
+// Composant pour les éclairs subtils dans la nébuleuse
+const NebularLightning = () => {
+  const lightning1 = useRef();
+  const lightning2 = useRef();
+  const lightning3 = useRef();
 
   useFrame((state) => {
-    // Convertir la position de la souris en coordonnées 3D
-    const x = (state.mouse.x * viewport.width) / 2;
-    const y = (state.mouse.y * viewport.height) / 2;
-    const z = -10; // Profondeur où se trouvent les nuages
-
-    // Interpolation douce (lerp) pour un mouvement fluide
-    if (lightRef.current) {
-      lightRef.current.position.x += (x - lightRef.current.position.x) * 0.15;
-      lightRef.current.position.y += (y - lightRef.current.position.y) * 0.15;
-      lightRef.current.position.z = z;
+    const time = state.clock.elapsedTime;
+    
+    // Éclair 1 : Pulse lent et aléatoire
+    if (lightning1.current) {
+      const flicker = Math.sin(time * 2) * 0.5 + 0.5;
+      const random = Math.random() > 0.98 ? 2 : 0; // Flash rare
+      lightning1.current.intensity = (flicker + random) * 1.5;
     }
 
-    if (trailRef.current) {
-      trailRef.current.position.x = lightRef.current.position.x;
-      trailRef.current.position.y = lightRef.current.position.y;
-      trailRef.current.position.z = z;
+    // Éclair 2 : Pulse plus rapide
+    if (lightning2.current) {
+      const flicker = Math.sin(time * 3.5) * 0.5 + 0.5;
+      const random = Math.random() > 0.97 ? 3 : 0;
+      lightning2.current.intensity = (flicker + random) * 1.2;
     }
 
-    if (sparklesRef.current) {
-      sparklesRef.current.position.x = lightRef.current.position.x;
-      sparklesRef.current.position.y = lightRef.current.position.y;
-      sparklesRef.current.position.z = z;
+    // Éclair 3 : Pulse très subtil
+    if (lightning3.current) {
+      const flicker = Math.sin(time * 1.5) * 0.5 + 0.5;
+      lightning3.current.intensity = flicker * 0.8;
     }
   });
 
   return (
-    <group>
-      {/* Lumière qui suit la souris - effet d'illumination du plancton */}
+    <>
+      {/* Éclair violet électrique */}
       <pointLight
-        ref={lightRef}
-        color="#00ffff"
-        intensity={5}
-        distance={20}
+        ref={lightning1}
+        position={[-6, -3, -12]}
+        color="#c026d3"
+        intensity={1.5}
+        distance={15}
         decay={2}
       />
 
-      {/* Traînée lumineuse - sillage bioluminescent */}
-      <Trail
-        width={3}
-        length={8}
-        color={new THREE.Color(0, 1, 1)}
-        attenuation={(t) => t * t}
-      >
-        <mesh ref={trailRef}>
-          <sphereGeometry args={[0.4, 16, 16]} />
-          <meshBasicMaterial color="#00ffff" transparent opacity={0.9} />
-        </mesh>
-      </Trail>
-
-      {/* Particules de plancton autour du curseur */}
-      <Sparkles
-        ref={sparklesRef}
-        count={80}
-        scale={10}
-        size={3}
-        speed={0.6}
-        opacity={0.8}
-        color="#00ffff"
+      {/* Éclair bleu cosmique */}
+      <pointLight
+        ref={lightning2}
+        position={[7, 4, -15]}
+        color="#0ea5e9"
+        intensity={1.2}
+        distance={18}
+        decay={2}
       />
-    </group>
+
+      {/* Éclair cyan subtil */}
+      <pointLight
+        ref={lightning3}
+        position={[-8, 5, -14]}
+        color="#22d3ee"
+        intensity={0.8}
+        distance={12}
+        decay={2}
+      />
+    </>
   );
 };
 
@@ -91,8 +85,8 @@ const NebulaScene = () => {
       <ambientLight intensity={0.9} />
       <directionalLight position={[10, 10, 5]} intensity={0.6} />
 
-      {/* Effet bioluminescent interactif */}
-      <Bioluminescence />
+      {/* Éclairs subtils dans la nébuleuse */}
+      <NebularLightning />
 
       <group ref={cloudGroup}>
         {/* Fond étoilé principal */}
@@ -210,8 +204,6 @@ const NebulaCanvas = () => {
     <div className='w-full h-auto absolute inset-0 z-[-1]'>
       <Canvas 
         camera={{ position: [0, 0, 1], fov: 75 }}
-        eventSource={document.getElementById('root')}
-        eventPrefix="client"
       >
         <Suspense fallback={null}>
           <NebulaScene />
