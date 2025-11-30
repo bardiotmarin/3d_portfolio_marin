@@ -96,14 +96,38 @@ const App = () => {
 
           {/* Contenu de la page */}
           <div className="relative z-0 bg-primary">
-            <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
+            {/* Header/Hero avec étoiles */}
+            <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center relative">
               <Navbar />
               <Hero />
+              <StarsCanvas />
             </div>
-            <About />
-            <Experience />
-            <Tech />
-            <Works />
+            
+            {/* About avec étoiles */}
+            <div className="relative">
+              <About />
+              <StarsCanvas />
+            </div>
+            
+            {/* Experience avec étoiles */}
+            <div className="relative">
+              <Experience />
+              <StarsCanvas />
+            </div>
+            
+            {/* Tech avec étoiles */}
+            <div className="relative">
+              <Tech />
+              <StarsCanvas />
+            </div>
+            
+            {/* Works avec étoiles */}
+            <div className="relative">
+              <Works />
+              <StarsCanvas />
+            </div>
+            
+            {/* Contact avec étoiles */}
             <div className="relative z-0">
               <Contact />
               <StarsCanvas />
