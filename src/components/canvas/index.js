@@ -13,4 +13,4 @@ import Galaxy from "./SpaceScene.jsx";
 import OxygenPlant from "./OxygenPlant.jsx";
 
 
-export { Galaxy,EarthCanvas, BallCanvas, MewCanvas, StarsCanvas, Lotus, MoonHero, TechBalls, SmokeCloud3D, Lightning, playerAudio, Papillon, OxygenPlant };
+export { Galaxy, EarthCanvas, BallCanvas, MewCanvas, StarsCanvas, Lotus, MoonHero, TechBalls, SmokeCloud3D, Lightning, playerAudio, Papillon, OxygenPlant };
