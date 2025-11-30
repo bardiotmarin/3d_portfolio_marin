@@ -109,10 +109,22 @@ const App = () => {
               <StarsCanvas />
             </div>
             
-            {/* Experience avec nébuleuse (gaz + étoiles) */}
-            <div className="relative">
+            {/* Experience avec nébuleuse (gaz + étoiles) - Déborde avec masque fondu */}
+            <div className="relative" style={{ overflow: 'visible' }}>
               <Experience />
-              <NebulaCanvas />
+              {/* Nébuleuse qui déborde avec masque gradient */}
+              <div style={{
+                position: 'absolute',
+                top: '-15vh',
+                left: 0,
+                width: '100%',
+                height: 'calc(100% + 30vh)',
+                zIndex: -1,
+                maskImage: 'linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%)',
+                WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%)'
+              }}>
+                <NebulaCanvas />
+              </div>
             </div>
             
             {/* Tech avec étoiles */}
