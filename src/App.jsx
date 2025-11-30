@@ -4,23 +4,20 @@ import { Canvas } from "@react-three/fiber";
 import { Preload, useGLTF } from "@react-three/drei";
 import { About, Contact, Experience, Hero, Navbar, Tech, Works, StarsCanvas, LoaderMain, NebulaCanvas } from "./components";
 import { AudioPlayerProvider } from "./context/AudioPlayerContext";
-import Papillon from "./components/canvas/Papillon";
+// import Papillon from "./components/canvas/Papillon"; // 1. Import DÉSACTIVÉ
 import "./i18n";
-
 
 // 🔥 PRÉCHARGE TOUS LES MODÈLES 3D
 const PreloadAssets = () => {
   useGLTF.preload("/desktop_pc/scene.gltf");
   useGLTF.preload("/spaceman/scene.gltf");
-  useGLTF.preload("/papillon/source/vfs.glb"); // 🦋 Papillon ajouté
+  // useGLTF.preload("/papillon/source/vfs.glb"); // 2. Preload DÉSACTIVÉ
   return null;
 };
-
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [assetsReady, setAssetsReady] = useState(false);
-
 
   // Timeout de sécurité
   useEffect(() => {
@@ -34,7 +31,6 @@ const App = () => {
     return () => clearTimeout(timeoutId);
   }, [isLoading]);
 
-
   const handleLoadComplete = () => {
     console.log("✅ Tous les assets sont chargés");
     setAssetsReady(true);
@@ -42,7 +38,6 @@ const App = () => {
       setIsLoading(false);
     }, 300);
   };
-
 
   return (
     <BrowserRouter>
@@ -59,7 +54,42 @@ const App = () => {
           transition: 'opacity 0.5s ease-out',
           pointerEvents: isLoading ? 'all' : 'none'
         }}>
+            <Canvas>
+            <PreloadAssets />
+            <LoaderMain onLoadComplete={handleLoadComplete} />
+            <Preload all />
+          </Canvas>
+        </div>
 
+        {/* 🎨 CONTENU PRINCIPAL */}
+        <div style={{
+          opacity: !isLoading ? 1 : 0,
+          transition: 'opacity 0.5s ease-in',
+          pointerEvents: !isLoading ? 'all' : 'none'
+        }}>
+          
+          {/* 3. BLOC PAPILLON DÉSACTIVÉ POUR ÉVITER LE CRASH MOBILE */}
+          {/* 
+          🦋 Canvas papillon - Caché sur mobile (< md:768px), responsive sur desktop
+          <Canvas
+            id="papillon-canvas"
+            className="hidden md:block fixed top-0 left-0 w-full h-full pointer-events-none scale-75 md:scale-90 lg:scale-100"
+            shadows
+            dpr={[1, 2]}
+            gl={{ preserveDrawingBuffer: true }}
+            camera={{ fov: 45, near: 0.1, far: 200, position: [0, 0, 6] }}
+            style={{
+              position: "fixed",
+              top: 0,
+              left: 0,
+              width: "100vw",
+              height: "100vh",
+              pointerEvents: "none"
+            }}
+          >
+            <Papillon />
+          </Canvas> 
+          */}
 
           {/* Contenu de la page */}
           <div className="relative z-0 bg-primary">
@@ -117,6 +147,5 @@ const App = () => {
     </BrowserRouter>
   );
 };
-
 
 export default App;
