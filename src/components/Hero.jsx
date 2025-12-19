@@ -26,18 +26,25 @@ const Hero = () => {
         <section className="relative w-full h-screen mx-auto overflow-hidden">
             {/* Canvas 3D */}
             <Canvas
-                shadows
-                camera={{ position: [0, 0, 10], fov: 70 }}
-                style={{
-                  position: "absolute", 
-                  zIndex: 0, 
-                  width: '100vw', 
-                  height: '100vh', 
-                  top: 0, 
-                  left: 0,
-                  background: 'linear-gradient(to bottom, #000000, #0a0a1a)'
-                }}
-            >
+            shadows
+            camera={{ position: [0, 0, 10], fov: 70 }}
+            gl={{ 
+                alpha: true, 
+                preserveDrawingBuffer: true,
+                antialias: false  // Évite crash mobile
+            }}
+            dpr={[1, 2]}
+            frameloop="demand"  // Rend uniquement sur interaction
+            style={{
+                position: 'absolute',
+                zIndex: 0,
+                width: '100vw',
+                height: '100vh',
+                top: 0,
+                left: 0,
+                background: 'linear-gradient(to bottom, #000000, #0a0a1a)'
+            }}
+            >   
                 <SpaceScene />
                 <OrbitControls 
                   enablePan={true} 

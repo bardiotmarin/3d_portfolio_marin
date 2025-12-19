@@ -54,11 +54,15 @@ const App = () => {
           transition: 'opacity 0.5s ease-out',
           pointerEvents: isLoading ? 'all' : 'none'
         }}>
-            <Canvas>
-            <PreloadAssets />
-            <LoaderMain onLoadComplete={handleLoadComplete} />
-            <Preload all />
-          </Canvas>
+            <Canvas
+              gl={{ alpha: true, preserveDrawingBuffer: true }}
+              frameloop="demand"
+              dpr={[1, 2]}
+              style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', zIndex: isLoading ? 9999 : -1 }}
+            >
+              <PreloadAssets />
+              <LoaderMain onLoadComplete={handleLoadComplete} />
+            </Canvas>
         </div>
 
         {/* 🎨 CONTENU PRINCIPAL */}
