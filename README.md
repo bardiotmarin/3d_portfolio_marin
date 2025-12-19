@@ -1,6 +1,5 @@
-# 🌌 3D Portfolio - Marin Bardiot
+# 🌌  Portfolio - Marin Bardiot - Use as you w/ for you own portfolio :) 
 
-> Un portfolio interactif et immersif en 3D construit avec React, Three.js et Vite
 
 [![Déployé sur Vercel](https://img.shields.io/badge/Déployé%20sur-Vercel-black?style=flat&logo=vercel)](https://3d-portfolio-marin-fgds.vercel.app)
 [![React](https://img.shields.io/badge/React-18.2.0-blue?style=flat&logo=react)](https://reactjs.org/)
